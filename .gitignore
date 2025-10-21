@@ -1,6 +1,6 @@
 # 忽略数据集图片文件
 data/DeepFashion-MultiModal/images/
-data/DeepFashion-MultiModal/captions/
+
 
 # Python缓存文件
 __pycache__/
