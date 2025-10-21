@@ -40,7 +40,7 @@ def load_model(model_path, device):
     print(f"模型加载完成，词汇表大小: {len(vocab)}")
     return model, vocab
 
-def generate_caption(image_path, model, vocab, device, max_length=20):
+def generate_caption(image_path, model, vocab, device, max_length=50):
     """为单张图像生成描述"""
     # 图像预处理
     transform = ImageTransforms(224, is_training=False)
@@ -65,8 +65,8 @@ def generate_caption(image_path, model, vocab, device, max_length=20):
         for word_id in generated[0]:  # 取第一个样本
             word = vocab.idx2word[word_id.item()]
             
-            # 检查是否到达结束标记
-            if word == vocab.EOS_TOKEN:
+            # 检查是否到达结束标记（使用索引比较更可靠）
+            if word_id.item() == vocab.eos_idx or word == vocab.EOS_TOKEN:
                 break
                 
             # 过滤特殊标记
@@ -82,7 +82,7 @@ def main():
                        help='模型文件路径')
     parser.add_argument('--device', default='auto', 
                        choices=['auto', 'cuda', 'cpu'], help='运行设备')
-    parser.add_argument('--max_length', type=int, default=20, 
+    parser.add_argument('--max_length', type=int, default=50, 
                        help='最大生成长度')
     
     args = parser.parse_args()

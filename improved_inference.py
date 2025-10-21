@@ -1,17 +1,16 @@
 #!/usr/bin/env python3
 """
 改进的图像描述生成推理脚本
-解决生成描述不完整的问题
+解决半句话问题，提供更好的调试信息
 """
 
 import os
 import sys
-import argparse
 import torch
 from PIL import Image
 
 # 添加项目根目录到路径
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 from models.cnn_gru.model import CNNGruModel
 from data.transforms import ImageTransforms
@@ -20,9 +19,11 @@ def load_model(model_path, device):
     """加载训练好的模型"""
     print(f"加载模型: {model_path}")
     
+    # 加载检查点
     checkpoint = torch.load(model_path, map_location=device)
     vocab = checkpoint['vocab']
     
+    # 创建模型
     model = CNNGruModel(
         embed_size=512,
         hidden_size=512,
@@ -31,20 +32,23 @@ def load_model(model_path, device):
         pretrained=True
     ).to(device)
     
+    # 加载权重
     model.load_state_dict(checkpoint['model_state_dict'])
     model.eval()
     
     print(f"模型加载完成，词汇表大小: {len(vocab)}")
+    print(f"特殊标记索引: SOS={vocab.sos_idx}, EOS={vocab.eos_idx}, PAD={vocab.pad_idx}, UNK={vocab.unk_idx}")
     return model, vocab
 
-def generate_caption_improved(image_path, model, vocab, device, max_length=30, temperature=1.0):
-    """改进的图像描述生成"""
+def generate_caption_improved(image_path, model, vocab, device, max_length=50, debug=False):
+    """改进的描述生成函数，解决半句话问题"""
     # 图像预处理
     transform = ImageTransforms(224, is_training=False)
     
     try:
         image = Image.open(image_path).convert('RGB')
         image_tensor = transform.get_transforms()(image).unsqueeze(0).to(device)
+        print(f"图像加载成功: {image_path}")
     except Exception as e:
         print(f"图像加载失败: {e}")
         return None
@@ -53,127 +57,100 @@ def generate_caption_improved(image_path, model, vocab, device, max_length=30, t
     with torch.no_grad():
         # 提取图像特征
         features = model.encoder(image_tensor)
+        print(f"图像特征形状: {features.shape}")
         
-        # 手动实现生成过程，增加更多控制
-        batch_size = 1
-        generated = []
-        input_word = torch.tensor([vocab.sos_idx] * batch_size, device=device)
-        hidden = None
+        # 使用解码器的sample方法生成描述
+        generated = model.decoder.sample(features, max_length, vocab)
+        print(f"生成序列形状: {generated.shape}")
         
-        print(f"开始生成描述 (最大长度: {max_length}):")
-        
-        for step in range(max_length):
-            # 词嵌入
-            embedded = model.decoder.embed(input_word.unsqueeze(1))
-            
-            # 结合图像特征
-            image_features = features.unsqueeze(1)
-            gru_input = embedded + image_features
-            
-            # GRU前向传播
-            output, hidden = model.decoder.gru(gru_input, hidden)
-            
-            # 输出层
-            logits = model.decoder.linear(output.squeeze(1))
-            
-            # 应用温度缩放
-            if temperature != 1.0:
-                logits = logits / temperature
-            
-            # 获取概率分布
-            probs = torch.softmax(logits, dim=1)
-            
-            # 选择最可能的词
-            predicted = probs.argmax(1)
-            word = vocab.idx2word[predicted.item()]
-            
-            print(f"步骤 {step+1}: {word} (概率: {probs[0, predicted.item()]:.4f})")
-            
-            generated.append(predicted)
-            
-            # 更新输入
-            input_word = predicted
-            
-            # 如果生成了结束标记，停止
-            if predicted.item() == vocab.eos_idx:
-                print(f"遇到结束标记，停止生成")
-                break
-        
-        # 转换为文本
+        # 转换为文本，添加详细调试信息
         caption = []
-        for word_id in generated:
+        generated_words = []
+        
+        if debug:
+            print("\n=== 生成过程调试信息 ===")
+            print("生成的词ID序列:", generated[0].tolist())
+        
+        for i, word_id in enumerate(generated[0]):
             word = vocab.idx2word[word_id.item()]
-            if word == vocab.EOS_TOKEN:
+            generated_words.append(f"{word}({word_id.item()})")
+            
+            if debug:
+                print(f"步骤 {i+1}: 词ID={word_id.item()}, 词='{word}'")
+            
+            # 检查是否到达结束标记（使用索引比较更可靠）
+            if word_id.item() == vocab.eos_idx:
+                if debug:
+                    print(f"检测到EOS标记，停止生成")
                 break
+                
+            # 过滤特殊标记
             if word not in [vocab.SOS_TOKEN, vocab.PAD_TOKEN, vocab.UNK_TOKEN]:
                 caption.append(word)
+            
+            # 添加额外的停止条件（如果句子看起来完整）
+            if len(caption) > 0 and caption[-1] in ['.', '!', '?']:
+                if debug:
+                    print(f"检测到句子结束标点，停止生成")
+                break
         
-        return ' '.join(caption)
+        if debug:
+            print(f"完整生成序列: {' '.join(generated_words)}")
+            print(f"过滤后的描述: {' '.join(caption)}")
+        
+        result = ' '.join(caption)
+        print(f"生成的描述: {result}")
+        
+        return result
 
-def generate_multiple_captions(image_path, model, vocab, device, num_captions=3):
-    """生成多个候选描述"""
-    captions = []
-    
-    for i in range(num_captions):
-        print(f"\n生成候选描述 {i+1}:")
-        caption = generate_caption_improved(image_path, model, vocab, device, max_length=25, temperature=0.8)
-        if caption:
-            captions.append(caption)
-            print(f"候选 {i+1}: {caption}")
-    
-    return captions
+def generate_caption_with_beam_search(image_path, model, vocab, device, beam_size=3, max_length=50):
+    """使用束搜索生成描述（可选的高级方法）"""
+    # 这里可以实现束搜索，暂时使用贪心搜索
+    return generate_caption_improved(image_path, model, vocab, device, max_length, debug=True)
 
 def main():
-    parser = argparse.ArgumentParser(description='改进的图像描述生成推理')
-    parser.add_argument('--image', required=True, help='输入图像路径')
-    parser.add_argument('--model', default='checkpoints/cnn_gru/best_model.pth', 
-                       help='模型文件路径')
-    parser.add_argument('--device', default='auto', 
-                       choices=['auto', 'cuda', 'cpu'], help='运行设备')
-    parser.add_argument('--max_length', type=int, default=30, 
-                       help='最大生成长度')
-    parser.add_argument('--temperature', type=float, default=1.0, 
-                       help='生成温度')
-    parser.add_argument('--multiple', action='store_true', 
-                       help='生成多个候选描述')
+    """主函数"""
+    # 配置
+    model_path = "checkpoints/cnn_gru/best_model.pth"
+    image_path = "data/DeepFashion-MultiModal/images/MEN-Denim-id_00000080-01_7_additional.jpg"
     
-    args = parser.parse_args()
-    
-    # 设备选择
-    if args.device == 'auto':
-        device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-    else:
-        device = torch.device(args.device)
-    
+    # 设备
+    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     print(f"使用设备: {device}")
     
     # 检查文件是否存在
-    if not os.path.exists(args.image):
-        print(f"错误: 图像文件不存在: {args.image}")
+    if not os.path.exists(model_path):
+        print(f"错误: 模型文件不存在: {model_path}")
+        print("请先训练模型或检查模型路径")
         return
     
-    if not os.path.exists(args.model):
-        print(f"错误: 模型文件不存在: {args.model}")
+    if not os.path.exists(image_path):
+        print(f"错误: 图像文件不存在: {image_path}")
+        print("请检查图像路径")
         return
     
     # 加载模型
-    model, vocab = load_model(args.model, device)
+    model, vocab = load_model(model_path, device)
     
-    # 生成描述
-    print(f"\n处理图像: {args.image}")
+    # 生成描述（带调试信息）
+    print(f"\n处理图像: {image_path}")
+    print("=" * 50)
     
-    if args.multiple:
-        captions = generate_multiple_captions(args.image, model, vocab, device)
-        print(f"\n所有候选描述:")
-        for i, caption in enumerate(captions, 1):
-            print(f"{i}. {caption}")
+    caption = generate_caption_improved(
+        image_path, model, vocab, device, 
+        max_length=50, debug=True
+    )
+    
+    print("=" * 50)
+    if caption:
+        print(f"最终生成的描述: {caption}")
+        
+        # 分析生成结果
+        words = caption.split()
+        print(f"描述长度: {len(words)} 个词")
+        print(f"是否以标点结尾: {caption.endswith(('.', '!', '?'))}")
     else:
-        caption = generate_caption_improved(args.image, model, vocab, device, 
-                                          args.max_length, args.temperature)
-        if caption:
-            print(f"\n生成的描述: {caption}")
-        else:
-            print("描述生成失败")
+        print("描述生成失败")
 
 if __name__ == '__main__':
     main()

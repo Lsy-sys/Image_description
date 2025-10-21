@@ -70,7 +70,7 @@ class GRUDecoder(nn.Module):
         
         return output
     
-    def sample(self, features, max_length=20, vocab=None):
+    def sample(self, features, max_length=50, vocab=None):
         """
         生成描述（推理时使用）
         Args:

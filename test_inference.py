@@ -71,7 +71,7 @@ def test_inference():
         print(f"图像特征形状: {features.shape}")
         
         # 使用解码器的sample方法生成描述
-        generated = model.decoder.sample(features, max_length=20, vocab=vocab)
+        generated = model.decoder.sample(features, max_length=50, vocab=vocab)
         print(f"生成序列形状: {generated.shape}")
         
         # 转换为文本
@@ -79,8 +79,8 @@ def test_inference():
         for word_id in generated[0]:  # 取第一个样本
             word = vocab.idx2word[word_id.item()]
             
-            # 检查是否到达结束标记
-            if word == vocab.EOS_TOKEN:
+            # 检查是否到达结束标记（使用索引比较更可靠）
+            if word_id.item() == vocab.eos_idx or word == vocab.EOS_TOKEN:
                 break
                 
             # 过滤特殊标记
