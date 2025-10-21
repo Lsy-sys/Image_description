@@ -1,0 +1,45 @@
+# 区域特征+Transformer模型配置
+
+# 模型参数
+model:
+  vocab_size: 10000
+  d_model: 512
+  num_heads: 8
+  num_encoder_layers: 6
+  num_decoder_layers: 6
+  d_ff: 2048
+  dropout: 0.1
+  max_len: 100
+
+# 训练参数
+training:
+  epochs: 50
+  batch_size: 16
+  learning_rate: 0.0001
+  optimizer: 'adamw'
+  scheduler: 'cosine'
+  grad_clip: 1.0
+  weight_decay: 0.01
+  warmup_steps: 1000
+
+# 数据参数
+data:
+  max_regions: 36
+  region_feature_dim: 2048
+  max_caption_length: 20
+  min_freq: 5
+  num_workers: 4
+
+# 路径配置
+paths:
+  data_dir: 'data/DeepFashion-MultiModal'
+  checkpoint_dir: 'checkpoints/transformer'
+  log_dir: 'logs/transformer'
+  vocab_path: 'data/vocab.json'
+
+# 其他配置
+misc:
+  seed: 42
+  device: 'auto'  # 'auto', 'cuda', 'cpu'
+  save_every: 10
+  validate_every: 1

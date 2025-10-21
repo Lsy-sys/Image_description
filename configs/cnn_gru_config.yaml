@@ -1,0 +1,41 @@
+# CNN+GRU模型配置
+
+# 模型参数
+model:
+  embed_size: 512
+  hidden_size: 512
+  vocab_size: 10000
+  num_layers: 1
+  dropout: 0.5
+  pretrained: true
+
+# 训练参数
+training:
+  epochs: 50
+  batch_size: 32
+  learning_rate: 0.001
+  optimizer: 'adam'
+  scheduler: 'plateau'
+  grad_clip: 5.0
+  weight_decay: 1e-4
+
+# 数据参数
+data:
+  image_size: 224
+  max_caption_length: 20
+  min_freq: 5
+  num_workers: 4
+
+# 路径配置
+paths:
+  data_dir: 'data/DeepFashion-MultiModal'
+  checkpoint_dir: 'checkpoints/cnn_gru'
+  log_dir: 'logs/cnn_gru'
+  vocab_path: 'data/vocab.json'
+
+# 其他配置
+misc:
+  seed: 42
+  device: 'auto'  # 'auto', 'cuda', 'cpu'
+  save_every: 10
+  validate_every: 1
