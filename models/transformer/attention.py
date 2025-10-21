@@ -61,7 +61,11 @@ class MultiHeadAttention(nn.Module):
         
         # 应用掩码
         if mask is not None:
-            mask = mask.unsqueeze(1).expand(-1, self.num_heads, -1, -1)
+            if mask.dim() == 2:
+                mask = mask.unsqueeze(1).unsqueeze(1)  # (batch_size, 1, 1, seq_len)
+            elif mask.dim() == 3:
+                mask = mask.unsqueeze(1)  # (batch_size, 1, seq_len_q, seq_len_k)
+            mask = mask.expand(-1, self.num_heads, -1, -1)
             scores = scores.masked_fill(mask == 0, -1e9)
         
         # Softmax

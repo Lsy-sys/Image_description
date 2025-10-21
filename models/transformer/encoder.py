@@ -5,6 +5,7 @@ Transformer编码器
 
 import torch
 import torch.nn as nn
+import math
 from .attention import MultiHeadAttention, PositionalEncoding
 
 
