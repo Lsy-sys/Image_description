@@ -55,6 +55,12 @@ codes/
 │   ├── train_transformer_simple.py # 简化Transformer训练脚本
 │   └── evaluate.py        # 模型评估脚本
 ├── transformer_inference.py # Transformer推理脚本
+├── frontend/             # 前端Web界面
+│   ├── index.html        # 主页面
+│   ├── styles.css        # 样式文件
+│   ├── script.js         # JavaScript功能
+│   ├── api_server.py     # 后端API服务器
+│   └── README.md         # 前端使用说明
 ├── checkpoints/           # 模型检查点
 ├── logs/                  # 训练日志
 └── requirements.txt       # 依赖包列表
@@ -454,6 +460,49 @@ Transformer: "The man is wearing a casual short-sleeved shirt with solid blue co
 2. **监控训练过程**: 观察损失函数和评估指标的变化
 3. **比较模型**: 同时运行CNN+GRU和Transformer进行对比
 4. **使用简化训练**: 使用 `train_transformer_simple.py` 避免NumPy版本冲突
+
+### 6. Web前端界面使用
+
+项目提供了美观的Web前端界面，可以通过浏览器上传图像并生成描述。
+
+#### 启动前端服务
+
+```bash
+# 1. 安装Flask依赖（如果未安装）
+pip install flask flask-cors
+
+# 2. 启动API服务器（在项目根目录）
+python frontend/api_server.py
+```
+
+#### 访问前端界面
+
+服务器启动后，在浏览器中访问：
+```
+http://localhost:5000
+```
+
+#### 使用方法
+
+1. **上传图像**：点击上传框或直接拖拽图像文件
+2. **选择模型**：在下拉菜单中选择CNN+GRU或Transformer模型
+3. **生成描述**：点击"生成描述"按钮
+4. **查看结果**：在右侧查看生成的图像描述
+5. **复制描述**：点击"复制描述"按钮将结果复制到剪贴板
+
+#### 功能特点
+
+- ✅ 支持拖拽上传
+- ✅ 图像预览
+- ✅ 模型切换
+- ✅ 响应式设计（适配手机和电脑）
+- ✅ 现代化UI界面
+
+#### 注意事项
+
+- 确保模型文件已训练完成并保存在 `checkpoints/` 目录下
+- 前端默认使用CNN+GRU模型，如果未训练Transformer模型，只能使用CNN+GRU
+- 建议使用Chrome或Edge浏览器获得最佳体验
 
 ## 📚 参考资料
 

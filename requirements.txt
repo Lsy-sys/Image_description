@@ -38,3 +38,7 @@ ipywidgets>=8.0.0
 # 其他
 requests>=2.31.0
 tqdm>=4.65.0
+
+# Web框架（前端API服务）
+flask>=2.3.0
+flask-cors>=4.0.0
