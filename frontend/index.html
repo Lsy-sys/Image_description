@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>服饰图像描述生成系统</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🖼️ 服饰图像描述生成系统</h1>
+            <p class="subtitle">基于深度学习的图像自动描述生成</p>
+        </header>
+
+        <main>
+            <div class="upload-section">
+                <div class="upload-box" id="uploadBox">
+                    <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="17 8 12 3 7 8"></polyline>
+                        <line x1="12" y1="3" x2="12" y2="15"></line>
+                    </svg>
+                    <p class="upload-text">点击或拖拽图像到这里上传</p>
+                    <p class="upload-hint">支持 JPG、PNG 格式，最大 10MB</p>
+                    <input type="file" id="imageInput" accept="image/jpeg,image/png,image/jpg" hidden>
+                </div>
+            </div>
+
+            <div class="controls">
+                <div class="model-selector">
+                    <label for="modelSelect">选择模型：</label>
+                    <select id="modelSelect">
+                        <option value="cnn_gru">CNN+GRU 模型</option>
+                        <option value="transformer">Transformer 模型</option>
+                    </select>
+                </div>
+                <button class="generate-btn" id="generateBtn" disabled>
+                    <span class="btn-icon">✨</span>
+                    生成描述
+                </button>
+                <button class="clear-btn" id="clearBtn" disabled>
+                    <span class="btn-icon">🗑️</span>
+                    清除
+                </button>
+            </div>
+
+            <div class="result-section" id="resultSection" style="display: none;">
+                <div class="image-preview">
+                    <img id="previewImage" alt="预览图像">
+                </div>
+                <div class="caption-result">
+                    <h2>生成的描述</h2>
+                    <div class="caption-box" id="captionBox">
+                        <p class="loading" id="loadingText">正在生成描述...</p>
+                    </div>
+                    <div class="caption-actions">
+                        <button class="copy-btn" id="copyBtn">
+                            <span class="btn-icon">📋</span>
+                            复制描述
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-section">
+                <h3>💡 使用说明</h3>
+                <ul>
+                    <li>上传一张服饰图像（如衣服、鞋子、配饰等）</li>
+                    <li>选择要使用的模型（CNN+GRU 或 Transformer）</li>
+                    <li>点击"生成描述"按钮，等待处理完成</li>
+                    <li>系统会自动分析图像并生成详细的文字描述</li>
+                </ul>
+                <h3>📊 模型对比</h3>
+                <div class="model-comparison">
+                    <div class="model-card">
+                        <h4>CNN+GRU</h4>
+                        <ul>
+                            <li>✅ 训练速度快</li>
+                            <li>✅ 内存需求低</li>
+                            <li>✅ 适合快速原型</li>
+                        </ul>
+                    </div>
+                    <div class="model-card">
+                        <h4>Transformer</h4>
+                        <ul>
+                            <li>✅ 生成质量更高</li>
+                            <li>✅ 更好的长距离依赖</li>
+                            <li>✅ 适合高质量生成</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>基于深度学习 • 图像描述生成系统</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
