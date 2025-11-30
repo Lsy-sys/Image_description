@@ -74,7 +74,8 @@ class TransformerModel(nn.Module):
         
         return outputs
     
-    def generate(self, regions, vocab, max_length=20, temperature=1.0):
+    def generate(self, regions, vocab, max_length=20, temperature=1.0, 
+                 return_probs=False, sample=True):
         """
         生成图像描述
         Args:
@@ -82,8 +83,10 @@ class TransformerModel(nn.Module):
             vocab: 词汇表对象
             max_length: 最大生成长度
             temperature: 温度参数
+            return_probs: 是否返回概率分布
+            sample: 是否采样（False时使用greedy解码）
         Returns:
-            生成的序列 (batch_size, max_length)
+            生成的序列，如果return_probs=True，还返回log_probs
         """
         # 投影区域特征
         region_features = self.region_projection(regions)
@@ -92,9 +95,10 @@ class TransformerModel(nn.Module):
         encoder_output = self.encoder(region_features)
         
         # 生成描述
-        generated = self.decoder.sample(encoder_output, max_length, vocab, temperature)
+        result = self.decoder.sample(encoder_output, max_length, vocab, temperature,
+                                    return_probs=return_probs, sample=sample)
         
-        return generated
+        return result
     
     def get_region_features(self, regions):
         """

@@ -331,13 +331,67 @@ python transformer_inference.py
 ### 评测指标
 - **ROUGE-L**: 基于最长公共子序列，评估生成文本的流畅性
 - **CIDEr-D**: 基于TF-IDF的n-gram相似度，评估描述的准确性
+- **BLEU-1/2/3/4**: 基于n-gram精确率的评测指标，评估不同粒度下的匹配度
 
 ### 运行评估
 ```bash
 python scripts/evaluate.py \
-    --model_path checkpoints/cnn_gru/best_model.pth \
-    --test_data data/DeepFashion-MultiModal/test_list.txt
+    --model_type cnn_gru \
+    --config configs/cnn_gru_config.yaml \
+    --checkpoint checkpoints/cnn_gru/best_model.pth \
+    --data_dir data/DeepFashion-MultiModal \
+    --vocab_path checkpoints/cnn_gru/vocab.pkl
 ```
+
+## 🎯 强化学习训练
+
+### 概述
+项目支持基于强化学习的训练方法，直接优化评测指标（BLEU、CIDEr-D、ROUGE-L等），解决了交叉熵损失与评测指标不一致的问题。
+
+### 算法实现
+- **Self-Critical Sequence Training (SCST)**: 使用greedy解码作为基线，减少方差
+- **REINFORCE算法**: 基于策略梯度的方法
+- **多指标支持**: 支持CIDEr-D、ROUGE-L、BLEU-4或组合指标作为奖励
+
+### 强化学习训练
+
+```bash
+# 使用CNN+GRU模型进行RL训练
+python scripts/train_rl.py \
+    --config configs/rl_config.yaml \
+    --model_type cnn_gru
+
+# 使用Transformer模型进行RL训练
+python scripts/train_rl.py \
+    --config configs/rl_config.yaml \
+    --model_type transformer
+```
+
+### RL配置说明 (configs/rl_config.yaml)
+
+```yaml
+rl:
+  reward_type: 'cider_d'  # 奖励类型: 'cider_d', 'rouge_l', 'bleu_4', 'combined'
+  baseline_type: 'self_critical'  # 基线类型: 'self_critical', 'average', 'none'
+  temperature: 1.0  # 采样温度
+  sample_size: 1  # 每个样本的采样数量
+```
+
+### 奖励类型说明
+- **cider_d**: 使用CIDEr-D作为奖励，通常效果最好
+- **rouge_l**: 使用ROUGE-L作为奖励
+- **bleu_4**: 使用BLEU-4作为奖励
+- **combined**: 组合CIDEr-D(0.5) + ROUGE-L(0.3) + BLEU-4(0.2)
+
+### 训练流程建议
+1. **第一阶段**: 使用交叉熵损失预训练模型（标准训练）
+2. **第二阶段**: 使用强化学习损失微调模型，直接优化评测指标
+
+### 优势
+- ✅ **直接优化评测指标**: 不再依赖交叉熵损失的间接优化
+- ✅ **更好的生成质量**: RL训练通常能获得更高的BLEU和CIDEr分数
+- ✅ **灵活的奖励函数**: 可以根据任务选择合适的评测指标
+- ✅ **Self-Critical基线**: 减少方差，稳定训练过程
 
 ## ⚙️ 配置说明
 

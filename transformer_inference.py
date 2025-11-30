@@ -16,45 +16,29 @@ sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 from models.transformer.model import TransformerModel
 from data.transforms import ImageTransforms
+from utils.faster_rcnn_extractor import FasterRCNNFeatureExtractor
 
-class RegionFeatureExtractor:
-    """区域特征提取器（简化版本）"""
+# 为了向后兼容，保留简化的提取器作为备选
+class SimpleRegionFeatureExtractor:
+    """区域特征提取器（简化版本，作为备选）"""
     
     def __init__(self, device):
         self.device = device
-        # 这里使用ResNet-50作为特征提取器（简化版本）
-        # 在实际应用中，应该使用Faster R-CNN提取区域特征
         import torchvision.models as models
         self.backbone = models.resnet50(pretrained=True)
-        self.backbone = nn.Sequential(*list(self.backbone.children())[:-1])  # 移除最后的分类层
+        self.backbone = nn.Sequential(*list(self.backbone.children())[:-1])
         self.backbone.eval()
         self.backbone.to(device)
-        
-        # 区域特征维度
         self.feature_dim = 2048
         
     def extract_regions(self, image_tensor, num_regions=36):
-        """
-        提取图像区域特征
-        Args:
-            image_tensor: 图像张量 (1, 3, H, W)
-            num_regions: 区域数量
-        Returns:
-            区域特征 (1, num_regions, 2048)
-        """
+        """提取图像区域特征（简化版本）"""
         with torch.no_grad():
-            # 提取全局特征
-            global_features = self.backbone(image_tensor)  # (1, 2048, 1, 1)
-            global_features = global_features.squeeze(-1).squeeze(-1)  # (1, 2048)
-            
-            # 为了简化，我们复制全局特征作为多个区域特征
-            # 在实际应用中，这里应该使用Faster R-CNN提取真正的区域特征
-            region_features = global_features.unsqueeze(1).repeat(1, num_regions, 1)  # (1, num_regions, 2048)
-            
-            # 添加一些随机噪声来模拟不同区域的特征差异
+            global_features = self.backbone(image_tensor)
+            global_features = global_features.squeeze(-1).squeeze(-1)
+            region_features = global_features.unsqueeze(1).repeat(1, num_regions, 1)
             noise = torch.randn_like(region_features) * 0.1
             region_features = region_features + noise
-            
             return region_features
 
 def load_transformer_model(model_path, device):
@@ -100,8 +84,20 @@ def generate_caption_transformer(image_path, model, vocab, region_extractor, dev
     
     # 提取区域特征
     print("提取区域特征...")
-    region_features = region_extractor.extract_regions(image_tensor, num_regions=36)
-    print(f"区域特征形状: {region_features.shape}")
+    try:
+        # 尝试使用Faster R-CNN提取区域特征
+        if isinstance(region_extractor, FasterRCNNFeatureExtractor):
+            region_features = region_extractor.extract_regions(image_tensor, num_regions=36)
+        else:
+            region_features = region_extractor.extract_regions(image_tensor, num_regions=36)
+        print(f"区域特征形状: {region_features.shape}")
+    except Exception as e:
+        print(f"Faster R-CNN提取失败: {e}")
+        print("尝试使用简化版本...")
+        # 如果Faster R-CNN失败，使用简化版本
+        simple_extractor = SimpleRegionFeatureExtractor(device)
+        region_features = simple_extractor.extract_regions(image_tensor, num_regions=36)
+        print(f"区域特征形状: {region_features.shape}")
     
     # 生成描述
     with torch.no_grad():
@@ -173,7 +169,19 @@ def main():
         return
     
     # 创建区域特征提取器
-    region_extractor = RegionFeatureExtractor(device)
+    # 使用Faster R-CNN提取真正的区域特征
+    use_faster_rcnn = True  # 设置为False可以使用简化版本
+    
+    if use_faster_rcnn:
+        print("使用Faster R-CNN提取区域特征...")
+        region_extractor = FasterRCNNFeatureExtractor(
+            device=device,
+            min_score=0.05,  # 最小置信度阈值
+            max_regions=36   # 最大区域数量
+        )
+    else:
+        print("使用简化版本提取区域特征...")
+        region_extractor = SimpleRegionFeatureExtractor(device)
     
     # 加载模型
     model, vocab = load_transformer_model(model_path, device)

@@ -156,12 +156,22 @@ def main():
     
     # 计算评测指标
     print("计算评测指标...")
-    results = compute_metrics(candidates, references, ['rouge_l', 'cider_d'])
+    results = compute_metrics(candidates, references, ['rouge_l', 'cider_d', 'bleu_1', 'bleu_2', 'bleu_3', 'bleu_4'])
     
     # 打印结果
     print("\n评测结果:")
-    print(f"ROUGE-L: {results['rouge_l']['mean']:.4f} ± {results['rouge_l']['std']:.4f}")
-    print(f"CIDEr-D: {results['cider_d']['mean']:.4f} ± {results['cider_d']['std']:.4f}")
+    if 'rouge_l' in results:
+        print(f"ROUGE-L: {results['rouge_l']['mean']:.4f} ± {results['rouge_l']['std']:.4f}")
+    if 'cider_d' in results:
+        print(f"CIDEr-D: {results['cider_d']['mean']:.4f} ± {results['cider_d']['std']:.4f}")
+    if 'bleu_1' in results:
+        print(f"BLEU-1: {results['bleu_1']['mean']:.4f} ± {results['bleu_1']['std']:.4f}")
+    if 'bleu_2' in results:
+        print(f"BLEU-2: {results['bleu_2']['mean']:.4f} ± {results['bleu_2']['std']:.4f}")
+    if 'bleu_3' in results:
+        print(f"BLEU-3: {results['bleu_3']['mean']:.4f} ± {results['bleu_3']['std']:.4f}")
+    if 'bleu_4' in results:
+        print(f"BLEU-4: {results['bleu_4']['mean']:.4f} ± {results['bleu_4']['std']:.4f}")
     
     # 保存结果
     output_data = {

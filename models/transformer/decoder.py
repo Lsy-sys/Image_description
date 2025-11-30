@@ -134,7 +134,8 @@ class TransformerDecoder(nn.Module):
         mask = mask.masked_fill(mask == 1, float('-inf'))
         return mask
     
-    def sample(self, encoder_output, max_length=20, vocab=None, temperature=1.0):
+    def sample(self, encoder_output, max_length=20, vocab=None, temperature=1.0, 
+               return_probs=False, sample=True):
         """
         生成描述（推理时使用）
         Args:
@@ -142,15 +143,18 @@ class TransformerDecoder(nn.Module):
             max_length: 最大生成长度
             vocab: 词汇表对象
             temperature: 温度参数
+            return_probs: 是否返回概率分布
+            sample: 是否采样（False时使用greedy解码）
         Returns:
-            生成的序列 (batch_size, max_length)
+            生成的序列，如果return_probs=True，还返回log_probs
         """
         batch_size = encoder_output.size(0)
         device = encoder_output.device
         
         # 初始化
         generated = []
-        input_word = torch.tensor([vocab.sos_idx] * batch_size, device=device)
+        log_probs_list = []
+        finished = torch.zeros(batch_size, dtype=torch.bool, device=device)
         
         for _ in range(max_length):
             # 准备输入序列
@@ -169,17 +173,43 @@ class TransformerDecoder(nn.Module):
             # 获取最后一个时间步的输出
             next_token_logits = output[:, -1, :] / temperature
             
-            # 选择下一个词
-            if temperature == 0:
-                next_token = next_token_logits.argmax(dim=-1)
-            else:
+            if sample and temperature > 0:
+                # 采样
                 probs = F.softmax(next_token_logits, dim=-1)
-                next_token = torch.multinomial(probs, 1).squeeze(1)
+                dist = torch.distributions.Categorical(probs)
+                next_token = dist.sample()
+                if return_probs:
+                    log_probs = dist.log_prob(next_token)
+            else:
+                # Greedy解码
+                next_token = next_token_logits.argmax(dim=-1)
+                if return_probs:
+                    probs = F.softmax(next_token_logits, dim=-1)
+                    log_probs = torch.log(probs.gather(1, next_token.unsqueeze(1)).squeeze(1) + 1e-10)
+            
+            # 处理已完成的序列
+            next_token = torch.where(finished, torch.tensor(vocab.eos_idx, device=device), next_token)
+            if return_probs:
+                log_probs = torch.where(finished, torch.tensor(0.0, device=device), log_probs)
             
             generated.append(next_token)
+            if return_probs:
+                log_probs_list.append(log_probs)
             
-            # 如果生成了结束标记，停止
-            if (next_token == vocab.eos_idx).all():
+            # 更新完成状态
+            finished = finished | (next_token == vocab.eos_idx)
+            
+            # 如果所有序列都完成，提前退出
+            if finished.all():
                 break
         
-        return torch.stack(generated, dim=1)
+        generated_seq = torch.stack(generated, dim=1)  # (batch_size, max_length)
+        
+        if return_probs:
+            # 填充log_probs到相同长度
+            while len(log_probs_list) < max_length:
+                log_probs_list.append(torch.zeros(batch_size, device=device))
+            log_probs = torch.stack(log_probs_list, dim=1)  # (batch_size, max_length)
+            return generated_seq, log_probs
+        
+        return generated_seq

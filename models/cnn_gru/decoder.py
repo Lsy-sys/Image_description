@@ -70,21 +70,25 @@ class GRUDecoder(nn.Module):
         
         return output
     
-    def sample(self, features, max_length=50, vocab=None):
+    def sample(self, features, max_length=50, vocab=None, temperature=1.0, return_probs=False, sample=True):
         """
         生成描述（推理时使用）
         Args:
             features: 图像特征 (batch_size, embed_size)
             max_length: 最大生成长度
             vocab: 词汇表对象
+            temperature: 采样温度（1.0表示使用原始概率，>1.0更随机，<1.0更确定）
+            return_probs: 是否返回概率分布
+            sample: 是否采样（False时使用greedy解码）
         Returns:
-            生成的序列
+            生成的序列，如果return_probs=True，还返回log_probs
         """
         batch_size = features.size(0)
         device = features.device
         
         # 初始化
         generated = []
+        log_probs_list = []
         input_word = torch.tensor([vocab.sos_idx] * batch_size, device=device)
         hidden = None
         
@@ -100,10 +104,26 @@ class GRUDecoder(nn.Module):
             output, hidden = self.gru(gru_input, hidden)
             
             # 输出层
-            output = self.linear(output.squeeze(1))  # (batch_size, vocab_size)
+            logits = self.linear(output.squeeze(1))  # (batch_size, vocab_size)
+            logits = logits / temperature
             
-            # 选择最可能的词
-            predicted = output.argmax(1)  # (batch_size,)
+            if sample:
+                # 采样
+                probs = torch.softmax(logits, dim=-1)
+                dist = torch.distributions.Categorical(probs)
+                predicted = dist.sample()
+                if return_probs:
+                    log_probs = dist.log_prob(predicted)
+                    log_probs_list.append(log_probs)
+            else:
+                # Greedy解码
+                predicted = logits.argmax(1)
+                if return_probs:
+                    # 对于greedy解码，计算选择词的对数概率
+                    probs = torch.softmax(logits, dim=-1)
+                    log_probs = torch.log(probs.gather(1, predicted.unsqueeze(1)).squeeze(1) + 1e-10)
+                    log_probs_list.append(log_probs)
+            
             generated.append(predicted)
             
             # 更新输入
@@ -113,4 +133,13 @@ class GRUDecoder(nn.Module):
             if (predicted == vocab.eos_idx).all():
                 break
         
-        return torch.stack(generated, dim=1)  # (batch_size, max_length)
+        generated_seq = torch.stack(generated, dim=1)  # (batch_size, max_length)
+        
+        if return_probs:
+            # 填充log_probs到相同长度
+            while len(log_probs_list) < max_length:
+                log_probs_list.append(torch.zeros(batch_size, device=device))
+            log_probs = torch.stack(log_probs_list, dim=1)  # (batch_size, max_length)
+            return generated_seq, log_probs
+        
+        return generated_seq

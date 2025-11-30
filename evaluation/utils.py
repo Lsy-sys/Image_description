@@ -5,6 +5,7 @@
 import numpy as np
 from .rouge_l import RougeL
 from .cider_d import CiderD
+from .bleu import BLEU
 
 
 def compute_metrics(candidates, references_list, metrics=['rouge_l', 'cider_d']):
@@ -13,7 +14,7 @@ def compute_metrics(candidates, references_list, metrics=['rouge_l', 'cider_d'])
     Args:
         candidates: 候选序列列表
         references_list: 参考序列列表的列表
-        metrics: 要计算的指标列表
+        metrics: 要计算的指标列表，可选值：'rouge_l', 'cider_d', 'bleu', 'bleu_1', 'bleu_2', 'bleu_3', 'bleu_4'
     Returns:
         指标分数字典
     """
@@ -36,6 +37,35 @@ def compute_metrics(candidates, references_list, metrics=['rouge_l', 'cider_d'])
             'mean': np.mean(cider_scores),
             'std': np.std(cider_scores)
         }
+    
+    # 处理BLEU指标
+    bleu_metrics = [m for m in metrics if m.startswith('bleu')]
+    if bleu_metrics:
+        bleu = BLEU(max_n=4)
+        
+        # 如果请求所有BLEU指标或单独的BLEU-1到BLEU-4
+        if 'bleu' in metrics or any(f'bleu_{i}' in metrics for i in range(1, 5)):
+            all_bleu_scores = bleu.compute_batch_all_bleu(candidates, references_list)
+            
+            # 添加各个BLEU分数
+            for i in range(1, 5):
+                metric_name = f'bleu_{i}'
+                if metric_name in metrics or 'bleu' in metrics:
+                    scores = all_bleu_scores[metric_name]
+                    results[metric_name] = {
+                        'scores': scores,
+                        'mean': np.mean(scores),
+                        'std': np.std(scores)
+                    }
+            
+            # 如果请求完整的BLEU-4（作为主要BLEU分数）
+            if 'bleu' in metrics:
+                bleu_4_scores = all_bleu_scores['bleu_4']
+                results['bleu'] = {
+                    'scores': bleu_4_scores,
+                    'mean': np.mean(bleu_4_scores),
+                    'std': np.std(bleu_4_scores)
+                }
     
     return results
 
