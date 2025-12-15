@@ -49,10 +49,8 @@ codes/
 │   ├── cnn_gru_config.yaml      # CNN+GRU模型配置
 │   └── transformer_config.yaml  # Transformer模型配置
 ├── scripts/               # 运行脚本
-│   ├── simple_train.py    # 简化训练脚本
 │   ├── train_cnn_gru.py   # CNN+GRU训练脚本
 │   ├── train_transformer.py # Transformer训练脚本
-│   ├── train_transformer_simple.py # 简化Transformer训练脚本
 │   └── evaluate.py        # 模型评估脚本
 ├── transformer_inference.py # Transformer推理脚本
 ├── frontend/             # 前端Web界面
@@ -107,10 +105,10 @@ data/DeepFashion-MultiModal/
 #### CNN+GRU模型训练
 ```bash
 # 基础训练
-python scripts/simple_train.py --config configs/cnn_gru_config.yaml --batch_size 16
+python scripts/train_cnn_gru.py --config configs/cnn_gru_config.yaml
 
 # 自定义参数训练
-python scripts/simple_train.py \
+python scripts/train_cnn_gru.py \
     --config configs/cnn_gru_config.yaml \
     --batch_size 32 \
     --epochs 100 \
@@ -147,10 +145,6 @@ python scripts/inference.py \
 #### 方法2: Python代码使用
 
 ```python
-# 使用演示脚本
-python scripts/demo.py
-
-# 或在代码中直接使用
 import torch
 from models.cnn_gru.model import CNNGruModel
 from data.transforms import ImageTransforms
@@ -233,14 +227,12 @@ for path, caption in results.items():
 
 #### Transformer模型训练
 
-**推荐使用简化版本（避免NumPy版本冲突）**：
-
 ```bash
 # 基础训练
-python scripts/train_transformer_simple.py --config configs/transformer_config.yaml
+python scripts/train_transformer.py --config configs/transformer_config.yaml
 
 # 自定义参数训练
-python scripts/train_transformer_simple.py \
+python scripts/train_transformer.py \
     --config configs/transformer_config.yaml \
     --batch_size 8 \
     --epochs 50 \
@@ -258,12 +250,12 @@ python scripts/train_transformer_simple.py \
 **内存优化**：
 ```bash
 # 如果遇到内存不足，减少批次大小
-python scripts/train_transformer_simple.py \
+python scripts/train_transformer.py \
     --config configs/transformer_config.yaml \
     --batch_size 4
 
 # 使用CPU训练
-python scripts/train_transformer_simple.py \
+python scripts/train_transformer.py \
     --config configs/transformer_config.yaml \
     --device cpu
 ```
@@ -491,8 +483,8 @@ Transformer: "The man is wearing a casual short-sleeved shirt with solid blue co
 #### 3. 序列长度不一致
 **问题**: `RuntimeError: stack expects each tensor to be equal size`
 **解决方案**:
-- 使用 `train_transformer_simple.py` 脚本（已包含自定义collate函数）
-- 该脚本会自动处理不同长度的序列
+- 使用正式脚本 `train_transformer.py`，其中的数据加载管线已处理变长序列（自定义collate）
+- 确保`data/utils.py`中的collate函数正常工作；如有需要，减少batch_size
 
 #### 4. 模型加载失败
 **问题**: 模型文件不存在或格式错误
@@ -513,7 +505,7 @@ Transformer: "The man is wearing a casual short-sleeved shirt with solid blue co
 1. **检查词汇表**: 确保词汇表包含所需的词
 2. **监控训练过程**: 观察损失函数和评估指标的变化
 3. **比较模型**: 同时运行CNN+GRU和Transformer进行对比
-4. **使用简化训练**: 使用 `train_transformer_simple.py` 避免NumPy版本冲突
+4. **保持一致的数据管线**: 统一使用 `train_transformer.py`，确保collate与模型配置一致
 
 ### 6. Web前端界面使用
 
