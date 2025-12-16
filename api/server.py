@@ -9,12 +9,13 @@ import torch
 import numpy as np
 from pathlib import Path
 from typing import Optional, List
-from fastapi import FastAPI, File, UploadFile, HTTPException
+from fastapi import FastAPI, File, UploadFile, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse, FileResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 import uvicorn
+import json
 from PIL import Image
 import io
 import base64
@@ -63,18 +64,7 @@ def load_model(model_type: str):
         return model_cache[model_type], vocab_cache[model_type]
     
     # 模型配置映射
-    config_map = {
-        "cnn_gru": "configs/models/1_cnn_gru.yaml",
-        "attn_gru": "configs/models/2_attn_gru.yaml",
-        "region_trans": "configs/models/3_region_trans.yaml",
-        "vit_trans": "configs/models/4_vit_trans.yaml",
-        "graph_trans": "configs/models/5_graph_trans.yaml"
-    }
-    
-    if model_type not in config_map:
-        raise ValueError(f"Unknown model type: {model_type}")
-    
-    config_path = config_map[model_type]
+    config_path = get_model_config_path(model_type)
     
     # 加载配置
     config = load_config(config_path)
@@ -110,6 +100,20 @@ def load_model(model_type: str):
     vocab_cache[model_type] = vocab
     
     return model, vocab
+
+
+def get_model_config_path(model_type: str) -> str:
+    """根据model_type获取模型配置路径（供其他接口复用）"""
+    config_map = {
+        "cnn_gru": "configs/models/1_cnn_gru.yaml",
+        "attn_gru": "configs/models/2_attn_gru.yaml",
+        "region_trans": "configs/models/3_region_trans.yaml",
+        "vit_trans": "configs/models/4_vit_trans.yaml",
+        "graph_trans": "configs/models/5_graph_trans.yaml"
+    }
+    if model_type not in config_map:
+        raise ValueError(f"Unknown model type: {model_type}")
+    return config_map[model_type]
 
 
 def preprocess_image(image_bytes: bytes) -> torch.Tensor:
@@ -255,6 +259,33 @@ async def list_models():
         ],
         "strategies": ["greedy", "beam_search", "sampling"]
     }
+
+
+@app.get("/api/training_log")
+async def get_training_log(model_type: str = Query("region_trans", description="模型类型，用于选择对应log目录")):
+    """
+    返回训练日志，用于前端 Training Monitor 与分析脚本
+    """
+    try:
+        config_path = get_model_config_path(model_type)
+        config = load_config(config_path)
+        log_dir = config['paths'].get('log_dir', 'logs')
+        log_path = os.path.join(log_dir, 'training_log.json')
+
+        if not os.path.exists(log_path):
+            return JSONResponse({"epochs": [], "train_loss": [], "val_loss": []})
+
+        with open(log_path, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+
+        # 确保三个关键字段存在
+        data.setdefault("epochs", list(range(1, len(data.get("train_loss", [])) + 1)))
+        data.setdefault("train_loss", [])
+        data.setdefault("val_loss", [])
+
+        return JSONResponse(data)
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
 
 
 # 挂载静态文件（前端）

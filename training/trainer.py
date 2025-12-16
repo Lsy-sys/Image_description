@@ -8,69 +8,99 @@ import torch.optim as optim
 from torch.utils.data import DataLoader
 import time
 import os
+import json
 from tqdm import tqdm
 import numpy as np
 
+from data.utils import create_data_loader, prepare_teacher_forcing_batch
+from data.graph_dataset import graph_collate_fn
+
 
 class BaseTrainer:
-    """基础训练器"""
+    """基础训练器（新版接口，与 scripts/train.py 对齐）"""
     
-    def __init__(self, model, train_loader, val_loader, vocab, config):
+    def __init__(
+        self,
+        model,
+        train_dataset,
+        val_dataset,
+        loss_fn,
+        optimizer,
+        scheduler,
+        device,
+        config,
+        vocab
+    ):
         """
         Args:
-            model: 模型
-            train_loader: 训练数据加载器
-            val_loader: 验证数据加载器
+            model: 模型（ImageCaptioner）
+            train_dataset: 训练数据集
+            val_dataset: 验证数据集
+            loss_fn: 损失函数（CrossEntropyLoss 或 SCSTLoss 等）
+            optimizer: 优化器
+            scheduler: 学习率调度器（可为 None）
+            device: 设备 (torch.device)
+            config: 配置（完整config dict）
             vocab: 词汇表
-            config: 配置
         """
         self.model = model
-        self.train_loader = train_loader
-        self.val_loader = val_loader
         self.vocab = vocab
         self.config = config
-        
-        # 设备
-        self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+        self.device = device
         self.model.to(self.device)
         
-        # 优化器
-        self.optimizer = self._create_optimizer()
+        # DataLoader
+        batch_size = config['training']['batch_size']
+        num_workers = config['data'].get('num_workers', 4)
+        # 区分普通图像模型与图模型 (graph_transformer)
+        model_type = config['model']['type']
+        if model_type == 'graph_transformer':
+            # 图模型使用专门的 graph_collate_fn
+            self.train_loader = create_data_loader(
+                train_dataset,
+                batch_size=batch_size,
+                shuffle=True,
+                num_workers=num_workers,
+                collate_fn=graph_collate_fn,
+            )
+            self.val_loader = create_data_loader(
+                val_dataset,
+                batch_size=batch_size,
+                shuffle=False,
+                num_workers=num_workers,
+                collate_fn=graph_collate_fn,
+            )
+        else:
+            self.train_loader = create_data_loader(
+                train_dataset,
+                batch_size=batch_size,
+                shuffle=True,
+                num_workers=num_workers
+            )
+            self.val_loader = create_data_loader(
+                val_dataset,
+                batch_size=batch_size,
+                shuffle=False,
+                num_workers=num_workers
+            )
         
-        # 学习率调度器
-        self.scheduler = self._create_scheduler()
-        
-        # 损失函数
-        self.criterion = nn.CrossEntropyLoss(ignore_index=vocab.pad_idx)
+        # 优化器 & 调度器 & 损失
+        self.optimizer = optimizer
+        self.scheduler = scheduler
+        self.loss_fn = loss_fn
         
         # 训练状态
         self.current_epoch = 0
         self.best_val_loss = float('inf')
         self.train_losses = []
         self.val_losses = []
+        # 训练日志（用于分析脚本与前端 Training Monitor）
+        self.training_log = {
+            "epochs": [],
+            "train_loss": [],
+            "val_loss": [],
+        }
         
-    def _create_optimizer(self):
-        """创建优化器"""
-        if self.config.optimizer == 'adam':
-            return optim.Adam(self.model.parameters(), lr=self.config.learning_rate)
-        elif self.config.optimizer == 'adamw':
-            return optim.AdamW(self.model.parameters(), lr=self.config.learning_rate)
-        elif self.config.optimizer == 'sgd':
-            return optim.SGD(self.model.parameters(), lr=self.config.learning_rate, momentum=0.9)
-        else:
-            raise ValueError(f"Unknown optimizer: {self.config.optimizer}")
-    
-    def _create_scheduler(self):
-        """创建学习率调度器"""
-        if self.config.scheduler == 'step':
-            return optim.lr_scheduler.StepLR(self.optimizer, step_size=10, gamma=0.1)
-        elif self.config.scheduler == 'cosine':
-            return optim.lr_scheduler.CosineAnnealingLR(self.optimizer, T_max=self.config.epochs)
-        elif self.config.scheduler == 'plateau':
-            return optim.lr_scheduler.ReduceLROnPlateau(self.optimizer, mode='min', patience=5)
-        else:
-            return None
-    
     def train_epoch(self):
         """训练一个epoch"""
         self.model.train()
@@ -80,36 +110,53 @@ class BaseTrainer:
         pbar = tqdm(self.train_loader, desc=f'Epoch {self.current_epoch+1}')
         
         for batch_idx, batch in enumerate(pbar):
+            model_type = self.config['model']['type']
+
             # 准备数据
-            if 'images' in batch:
-                images = batch['images'].to(self.device)
-                captions = batch['captions']
+            if model_type == 'graph_transformer':
+                node_features = batch['node_features'].to(self.device)
+                adj_matrix = batch['adj_matrix'].to(self.device)
+                images = None
+                regions = None
             else:
-                regions = batch['regions'].to(self.device)
-                captions = batch['captions']
+                if 'images' in batch:
+                    images = batch['images'].to(self.device)
+                    regions = None
+                else:
+                    images = None
+                    regions = batch['regions'].to(self.device)
+            captions = batch['captions']
             
-            # 准备输入和目标
-            input_seqs, target_seqs = self._prepare_batch(captions)
+            # 准备输入和目标 (Teacher Forcing)
+            input_seqs, target_seqs = prepare_teacher_forcing_batch(batch, self.vocab)
             input_seqs = input_seqs.to(self.device)
             target_seqs = target_seqs.to(self.device)
             
             # 前向传播
             self.optimizer.zero_grad()
             
-            if 'images' in batch:
-                outputs = self.model(images, input_seqs)
+            if model_type == 'graph_transformer':
+                outputs = self.model(
+                    node_features=node_features,
+                    adj_matrix=adj_matrix,
+                    captions=input_seqs,
+                )
             else:
-                outputs = self.model(regions, input_seqs)
+                if 'images' in batch:
+                    outputs = self.model(images=images, captions=input_seqs)
+                else:
+                    outputs = self.model(regions=regions, captions=input_seqs)
             
             # 计算损失
-            loss = self.criterion(outputs.view(-1, outputs.size(-1)), target_seqs.view(-1))
+            loss = self.loss_fn(outputs, target_seqs)
             
             # 反向传播
             loss.backward()
             
             # 梯度裁剪
-            if self.config.grad_clip > 0:
-                torch.nn.utils.clip_grad_norm_(self.model.parameters(), self.config.grad_clip)
+            grad_clip = self.config['training'].get('grad_clip', 0.0)
+            if grad_clip and grad_clip > 0:
+                torch.nn.utils.clip_grad_norm_(self.model.parameters(), grad_clip)
             
             self.optimizer.step()
             
@@ -131,27 +178,43 @@ class BaseTrainer:
         
         with torch.no_grad():
             for batch in tqdm(self.val_loader, desc='Validation'):
+                model_type = self.config['model']['type']
+
                 # 准备数据
-                if 'images' in batch:
-                    images = batch['images'].to(self.device)
-                    captions = batch['captions']
+                if model_type == 'graph_transformer':
+                    node_features = batch['node_features'].to(self.device)
+                    adj_matrix = batch['adj_matrix'].to(self.device)
+                    images = None
+                    regions = None
                 else:
-                    regions = batch['regions'].to(self.device)
-                    captions = batch['captions']
+                    if 'images' in batch:
+                        images = batch['images'].to(self.device)
+                        regions = None
+                    else:
+                        images = None
+                        regions = batch['regions'].to(self.device)
+                captions = batch['captions']
                 
                 # 准备输入和目标
-                input_seqs, target_seqs = self._prepare_batch(captions)
+                input_seqs, target_seqs = prepare_teacher_forcing_batch(batch, self.vocab)
                 input_seqs = input_seqs.to(self.device)
                 target_seqs = target_seqs.to(self.device)
                 
                 # 前向传播
-                if 'images' in batch:
-                    outputs = self.model(images, input_seqs)
+                if model_type == 'graph_transformer':
+                    outputs = self.model(
+                        node_features=node_features,
+                        adj_matrix=adj_matrix,
+                        captions=input_seqs,
+                    )
                 else:
-                    outputs = self.model(regions, input_seqs)
+                    if 'images' in batch:
+                        outputs = self.model(images=images, captions=input_seqs)
+                    else:
+                        outputs = self.model(regions=regions, captions=input_seqs)
                 
                 # 计算损失
-                loss = self.criterion(outputs.view(-1, outputs.size(-1)), target_seqs.view(-1))
+                loss = self.loss_fn(outputs, target_seqs)
                 total_loss += loss.item()
         
         avg_loss = total_loss / num_batches
@@ -159,16 +222,13 @@ class BaseTrainer:
         
         return avg_loss
     
-    def _prepare_batch(self, captions):
-        """准备批次数据（子类需要实现）"""
-        raise NotImplementedError
-    
     def train(self):
         """训练模型"""
-        print(f"开始训练，共{self.config.epochs}个epoch")
+        total_epochs = self.config['training']['epochs']
+        print(f"开始训练，共{total_epochs}个epoch")
         print(f"设备: {self.device}")
         
-        for epoch in range(self.config.epochs):
+        for epoch in range(total_epochs):
             self.current_epoch = epoch
             
             # 训练
@@ -184,8 +244,20 @@ class BaseTrainer:
                 else:
                     self.scheduler.step()
             
+            # 记录日志
+            self.training_log["epochs"].append(epoch + 1)
+            self.training_log["train_loss"].append(float(train_loss))
+            self.training_log["val_loss"].append(float(val_loss))
+
+            # 写入日志文件，供 analysis 脚本和前端使用
+            log_dir = self.config['paths'].get('log_dir', 'logs')
+            os.makedirs(log_dir, exist_ok=True)
+            log_path = os.path.join(log_dir, 'training_log.json')
+            with open(log_path, 'w', encoding='utf-8') as f:
+                json.dump(self.training_log, f, ensure_ascii=False, indent=2)
+
             # 打印结果
-            print(f'Epoch {epoch+1}/{self.config.epochs}:')
+            print(f'Epoch {epoch+1}/{total_epochs}:')
             print(f'  Train Loss: {train_loss:.4f}')
             print(f'  Val Loss: {val_loss:.4f}')
             print(f'  LR: {self.optimizer.param_groups[0]["lr"]:.6f}')
@@ -216,12 +288,14 @@ class BaseTrainer:
             checkpoint['scheduler_state_dict'] = self.scheduler.state_dict()
         
         # 保存最新检查点
-        checkpoint_path = os.path.join(self.config.checkpoint_dir, 'latest_checkpoint.pth')
+        checkpoint_dir = self.config['paths']['checkpoint_dir']
+        os.makedirs(checkpoint_dir, exist_ok=True)
+        checkpoint_path = os.path.join(checkpoint_dir, 'latest_checkpoint.pth')
         torch.save(checkpoint, checkpoint_path)
         
         # 保存最佳检查点
         if is_best:
-            best_path = os.path.join(self.config.checkpoint_dir, 'best_model.pth')
+            best_path = os.path.join(checkpoint_dir, 'best_model.pth')
             torch.save(checkpoint, best_path)
     
     def load_checkpoint(self, checkpoint_path):

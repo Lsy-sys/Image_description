@@ -73,13 +73,20 @@ class PositionalEncoding(nn.Module):
         self.register_buffer('pe', pe)
     
     def forward(self, x):
-        # x: (batch_size, seq_len, d_model) 或 (seq_len, batch_size, d_model)
-        if x.dim() == 3 and x.size(0) != self.pe.size(0):
-            # (batch_size, seq_len, d_model)
-            return x + self.pe[:x.size(1), :].unsqueeze(0).transpose(0, 1)
-        else:
-            # (seq_len, batch_size, d_model)
-            return x + self.pe[:x.size(0), :]
+        """
+        位置编码前向
+
+        当前项目中，所有调用都会在传入前先将张量变换为
+        形状 (seq_len, batch_size, d_model)，比如：
+
+            x = x.transpose(0, 1)  # (seq_len, batch, d_model)
+            x = self.pos_encoding(x)
+
+        因此这里按标准Transformer实现，始终认为第 0 维是 seq_len。
+        """
+        # x: (seq_len, batch_size, d_model)
+        seq_len = x.size(0)
+        return x + self.pe[:seq_len, :]
 
 
 class AttentionLayer(nn.Module):
@@ -116,5 +123,6 @@ class AttentionLayer(nn.Module):
         attn_features = torch.bmm(alpha.unsqueeze(1), features)  # (batch_size, 1, embed_size)
         
         return attn_features, alpha
+
 
 

@@ -10,20 +10,28 @@ import torch.nn as nn
 from .captioner import ImageCaptioner
 
 
+def _deep_update(base: Dict[str, Any], override: Dict[str, Any]) -> Dict[str, Any]:
+    """递归合并字典，override 优先"""
+    result = dict(base)
+    for k, v in override.items():
+        if k in result and isinstance(result[k], dict) and isinstance(v, dict):
+            result[k] = _deep_update(result[k], v)
+        else:
+            result[k] = v
+    return result
+
+
 def load_config(config_path: str) -> Dict[str, Any]:
-    """加载配置文件，支持继承"""
+    """加载配置文件，支持继承，使用深度合并"""
     with open(config_path, 'r', encoding='utf-8') as f:
         config = yaml.safe_load(f)
     
-    # 处理继承
     if '_base_' in config:
         base_path = config['_base_']
         if not os.path.isabs(base_path):
             base_path = os.path.join(os.path.dirname(config_path), base_path)
         base_config = load_config(base_path)
-        # 合并配置（当前配置优先）
-        merged = {**base_config, **config}
-        merged.pop('_base_', None)
+        merged = _deep_update(base_config, {k: v for k, v in config.items() if k != '_base_'})
         return merged
     
     return config

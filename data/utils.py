@@ -5,23 +5,36 @@
 import torch
 from torch.utils.data import DataLoader
 import random
+from typing import Optional
 
 
 def collate_fn(batch):
     """
     自定义批处理函数
-    Args:
-        batch: 批次数据
-    Returns:
-        处理后的批次数据
+
+    兼容两种样本格式：
+    1) (image, caption_tensor) 的 tuple（当前 DeepFashionDataset 返回）
+    2) dict 格式，包含 'image' 和 'captions' 等键（为以后扩展保留）
     """
+    # tuple 格式样本：(image, caption_tensor)
+    if isinstance(batch[0], tuple):
+        images = torch.stack([item[0] for item in batch])
+        captions = [item[1] for item in batch]
+
+        return {
+            'images': images,
+            'captions': captions,
+            'raw_captions': [[] for _ in batch],
+            'item_ids': [None for _ in batch],
+        }
+
+    # dict 格式样本（兼容旧逻辑）
     images = torch.stack([item['image'] for item in batch])
-    
-    # 处理多个描述
+
     captions = []
     raw_captions = []
     item_ids = []
-    
+
     for item in batch:
         # 随机选择一个描述
         if item['captions']:
@@ -29,48 +42,56 @@ def collate_fn(batch):
             captions.append(torch.LongTensor(caption))
         else:
             captions.append(torch.LongTensor([]))
-        
-        raw_captions.append(item['raw_captions'])
-        item_ids.append(item['item_id'])
-    
+
+        raw_captions.append(item.get('raw_captions', []))
+        item_ids.append(item.get('item_id'))
+
     return {
         'images': images,
         'captions': captions,
         'raw_captions': raw_captions,
-        'item_ids': item_ids
+        'item_ids': item_ids,
     }
 
 
 def region_collate_fn(batch):
     """
     区域特征批处理函数
-    Args:
-        batch: 批次数据
-    Returns:
-        处理后的批次数据
+
+    同样兼容 tuple / dict 两种格式。
     """
+    if isinstance(batch[0], tuple):
+        regions = torch.stack([item[0] for item in batch])
+        captions = [item[1] for item in batch]
+
+        return {
+            'regions': regions,
+            'captions': captions,
+            'raw_captions': [[] for _ in batch],
+            'item_ids': [None for _ in batch],
+        }
+
     regions = torch.stack([item['regions'] for item in batch])
-    
-    # 处理多个描述
+
     captions = []
     raw_captions = []
     item_ids = []
-    
+
     for item in batch:
         if item['captions']:
             caption = random.choice(item['captions'])
             captions.append(torch.LongTensor(caption))
         else:
             captions.append(torch.LongTensor([]))
-        
-        raw_captions.append(item['raw_captions'])
-        item_ids.append(item['item_id'])
-    
+
+        raw_captions.append(item.get('raw_captions', []))
+        item_ids.append(item.get('item_id'))
+
     return {
         'regions': regions,
         'captions': captions,
         'raw_captions': raw_captions,
-        'item_ids': item_ids
+        'item_ids': item_ids,
     }
 
 

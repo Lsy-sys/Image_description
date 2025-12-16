@@ -7,11 +7,14 @@ from .dataset import DeepFashionDataset
 from .transforms import ImageTransforms
 from .vocabulary import Vocabulary
 from .utils import collate_fn, create_data_loader
+from .graph_dataset import GraphDataset, graph_collate_fn
 
 __all__ = [
     'DeepFashionDataset',
     'ImageTransforms', 
     'Vocabulary',
     'collate_fn',
-    'create_data_loader'
+    'create_data_loader',
+    'GraphDataset',
+    'graph_collate_fn',
 ]

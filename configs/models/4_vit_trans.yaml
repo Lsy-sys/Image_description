@@ -7,8 +7,10 @@ model:
   type: 'vit_transformer'
   encoder:
     type: 'vit'
-    model_name: 'vit_base_patch16_224'
-    feature_dim: 768
+    # 使用官方公开的预训练权重仓库 ID
+    model_name: 'google/vit-base-patch16-224'
+    # 将ViT输出映射到与Transformer解码器一致的维度 (d_model=512)
+    feature_dim: 512
     patch_size: 16
     num_patches: 196  # 14x14
   decoder:
@@ -34,5 +36,6 @@ training:
 paths:
   checkpoint_dir: 'checkpoints/vit_transformer'
   log_dir: 'logs/vit_transformer'
+
 
 

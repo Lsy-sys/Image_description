@@ -24,3 +24,4 @@ class WordEmbedding(nn.Module):
         return self.embedding(x) * (self.embed_dim ** 0.5)
 
 
+
