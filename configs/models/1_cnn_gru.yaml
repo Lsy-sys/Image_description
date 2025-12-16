@@ -1,0 +1,30 @@
+# Model A: ResNet + GRU (基线模型)
+# 继承基础配置，覆盖特定参数
+
+_base_: '../base.yaml'
+
+model:
+  type: 'cnn_gru'
+  encoder:
+    type: 'resnet'
+    embed_size: 512
+    pretrained: true
+  decoder:
+    type: 'gru'
+    hidden_size: 512
+    num_layers: 1
+    dropout: 0.5
+  vocab_size: 10000
+
+training:
+  epochs: 30
+  batch_size: 32
+  learning_rate: 0.001
+  optimizer: 'adam'
+  scheduler: 'plateau'
+
+paths:
+  checkpoint_dir: 'checkpoints/cnn_gru'
+  log_dir: 'logs/cnn_gru'
+
+

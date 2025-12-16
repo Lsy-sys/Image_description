@@ -1,0 +1,40 @@
+# 基础配置 (路径, seed, vocab等)
+# 所有模型配置都会继承这个基础配置
+
+# 路径配置
+paths:
+  data_dir: 'data/DeepFashion-MultiModal'
+  checkpoint_dir: 'checkpoints'
+  log_dir: 'logs'
+  vocab_path: 'data/vocab.json'
+  feature_dir: 'data/features'  # 预提取的特征文件目录
+  graph_dir: 'data/graphs'      # 图结构数据目录
+
+# 数据配置
+data:
+  image_size: 224
+  max_caption_length: 50
+  min_freq: 5
+  num_workers: 4
+  pin_memory: true
+
+# 训练通用配置
+training:
+  epochs: 30
+  batch_size: 32
+  learning_rate: 0.001
+  optimizer: 'adam'
+  weight_decay: 1e-4
+  grad_clip: 5.0
+  save_every: 5
+  validate_every: 1
+  early_stopping_patience: 10
+
+# 其他配置
+misc:
+  seed: 42
+  device: 'auto'  # 'auto', 'cuda', 'cpu'
+  num_gpus: 1
+  mixed_precision: false
+
+

@@ -1,0 +1,39 @@
+# Model E: GCN + Transformer
+# 使用图卷积网络处理节点和边信息
+
+_base_: '../base.yaml'
+
+model:
+  type: 'graph_transformer'
+  encoder:
+    type: 'gcn'
+    node_feature_dim: 2048
+    edge_feature_dim: 128
+    hidden_dim: 512
+    num_layers: 3
+    dropout: 0.1
+  decoder:
+    type: 'transformer'
+    d_model: 512
+    num_heads: 8
+    num_encoder_layers: 6
+    num_decoder_layers: 6
+    d_ff: 2048
+    dropout: 0.1
+    max_len: 100
+  vocab_size: 10000
+
+training:
+  epochs: 30
+  batch_size: 16
+  learning_rate: 0.0001
+  optimizer: 'adamw'
+  scheduler: 'cosine'
+  warmup_steps: 1000
+  grad_clip: 1.0
+
+paths:
+  checkpoint_dir: 'checkpoints/graph_transformer'
+  log_dir: 'logs/graph_transformer'
+
+

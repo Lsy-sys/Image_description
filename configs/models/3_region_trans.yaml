@@ -1,0 +1,36 @@
+# Model C: FasterRCNN + Transformer (主力模型)
+# 使用区域特征和Transformer架构
+
+_base_: '../base.yaml'
+
+model:
+  type: 'region_transformer'
+  encoder:
+    type: 'faster_rcnn'
+    feature_dim: 2048
+    max_regions: 36
+  decoder:
+    type: 'transformer'
+    d_model: 512
+    num_heads: 8
+    num_encoder_layers: 6
+    num_decoder_layers: 6
+    d_ff: 2048
+    dropout: 0.1
+    max_len: 100
+  vocab_size: 10000
+
+training:
+  epochs: 30
+  batch_size: 16
+  learning_rate: 0.0001
+  optimizer: 'adamw'
+  scheduler: 'cosine'
+  warmup_steps: 1000
+  grad_clip: 1.0
+
+paths:
+  checkpoint_dir: 'checkpoints/region_transformer'
+  log_dir: 'logs/region_transformer'
+
+

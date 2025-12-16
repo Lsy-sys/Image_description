@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeepFashion AI Workbench | 图像描述生成系统</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    
+    <!-- Lottie -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js"></script>
+    
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="cyberpunk-bg">
+    <!-- Hero Section -->
+    <header class="hero-section">
+        <div class="hero-content animate__animated animate__fadeInDown">
+            <h1 class="gradient-text">DeepFashion AI Workbench</h1>
+            <p class="hero-subtitle">Neural Network Powered Image Captioning</p>
+        </div>
+        <div id="lottie-bg" class="lottie-background"></div>
+    </header>
+
+    <!-- Main Workbench -->
+    <main class="workbench-container">
+        <!-- Input Zone (Left) -->
+        <section class="glass-card input-zone animate__animated animate__fadeInLeft">
+            <h2 class="section-title">📤 Input Zone</h2>
+            <div class="upload-area" id="uploadArea">
+                <div class="upload-border">
+                    <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="17 8 12 3 7 8"></polyline>
+                        <line x1="12" y1="3" x2="12" y2="15"></line>
+                    </svg>
+                    <p class="upload-text">Drag & Drop Image Here</p>
+                    <p class="upload-hint">or click to browse</p>
+                </div>
+                <input type="file" id="imageInput" accept="image/*" hidden>
+            </div>
+            <div id="imagePreview" class="image-preview hidden">
+                <img id="previewImg" alt="Preview">
+                <div class="scanning-overlay" id="scanningOverlay">
+                    <div class="scan-line"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Control Panel (Center) -->
+        <section class="glass-card control-panel animate__animated animate__fadeInUp">
+            <h2 class="section-title">⚙️ Control Panel</h2>
+            
+            <!-- Model Switcher -->
+            <div class="control-group">
+                <label class="control-label">Model Switcher</label>
+                <div class="model-switcher">
+                    <button class="model-btn active" data-model="cnn_gru" title="Model A: CNN+GRU (基线模型)">CNN+GRU</button>
+                    <button class="model-btn" data-model="attn_gru" title="Model B: Attn-GRU (带注意力)">Attn-GRU</button>
+                    <button class="model-btn" data-model="region_trans" title="Model C: Region-Transformer (主力)">Region-Trans</button>
+                    <button class="model-btn" data-model="vit_trans" title="Model D: ViT-Transformer">ViT-Trans</button>
+                    <button class="model-btn" data-model="graph_trans" title="Model E: Graph-Transformer">Graph-Trans</button>
+                </div>
+            </div>
+
+            <!-- Strategy Knob -->
+            <div class="control-group">
+                <label class="control-label">Decoding Strategy</label>
+                <div class="strategy-knob">
+                    <input type="range" id="strategySlider" min="0" max="2" value="0" class="slider">
+                    <div class="strategy-labels">
+                        <span>Greedy</span>
+                        <span>Beam</span>
+                        <span>Sampling</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Generate Button -->
+            <button id="generateBtn" class="generate-button" disabled>
+                <span class="btn-glow"></span>
+                <span class="btn-text">Generate Caption</span>
+            </button>
+        </section>
+
+        <!-- Output Zone (Right) -->
+        <section class="glass-card output-zone animate__animated animate__fadeInRight">
+            <h2 class="section-title">📝 Output Zone</h2>
+            
+            <!-- Caption Display -->
+            <div class="caption-display" id="captionDisplay">
+                <p class="placeholder-text">Generated caption will appear here...</p>
+            </div>
+
+            <!-- Live Metrics -->
+            <div class="metrics-bar">
+                <div class="metric-item">
+                    <span class="metric-label">CIDEr Score</span>
+                    <div class="metric-value" id="ciderScore">0.0000</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="ciderProgress"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- X-Ray Vision Section -->
+    <section class="xray-section glass-card hidden" id="xraySection">
+        <h2 class="section-title">🔍 X-Ray Vision</h2>
+        <div class="xray-container">
+            <div class="xray-image-container">
+                <img id="xrayImage" alt="Image">
+                <canvas id="attentionCanvas" class="attention-overlay"></canvas>
+            </div>
+            <div class="caption-with-attention" id="captionWithAttention">
+                <!-- 可点击的单词将在这里动态生成 -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Training Monitor Section (Optional) -->
+    <section class="monitor-section glass-card hidden" id="monitorSection">
+        <h2 class="section-title">📊 Training Monitor</h2>
+        <div class="chart-container">
+            <canvas id="trainingChart"></canvas>
+        </div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+</body>
+</html>
+

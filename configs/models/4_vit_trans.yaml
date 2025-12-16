@@ -1,0 +1,38 @@
+# Model D: ViT + Transformer
+# 使用Vision Transformer提取特征
+
+_base_: '../base.yaml'
+
+model:
+  type: 'vit_transformer'
+  encoder:
+    type: 'vit'
+    model_name: 'vit_base_patch16_224'
+    feature_dim: 768
+    patch_size: 16
+    num_patches: 196  # 14x14
+  decoder:
+    type: 'transformer'
+    d_model: 512
+    num_heads: 8
+    num_encoder_layers: 6
+    num_decoder_layers: 6
+    d_ff: 2048
+    dropout: 0.1
+    max_len: 100
+  vocab_size: 10000
+
+training:
+  epochs: 30
+  batch_size: 16
+  learning_rate: 0.0001
+  optimizer: 'adamw'
+  scheduler: 'cosine'
+  warmup_steps: 1000
+  grad_clip: 1.0
+
+paths:
+  checkpoint_dir: 'checkpoints/vit_transformer'
+  log_dir: 'logs/vit_transformer'
+
+

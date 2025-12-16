@@ -1,0 +1,24 @@
+# 交叉熵训练策略配置
+
+loss:
+  type: 'cross_entropy'
+  label_smoothing: 0.1
+  ignore_index: 0  # padding index
+
+optimizer:
+  type: 'adam'
+  lr: 0.001
+  weight_decay: 1e-4
+  betas: [0.9, 0.999]
+
+scheduler:
+  type: 'plateau'  # or 'cosine', 'step'
+  mode: 'min'
+  factor: 0.5
+  patience: 5
+  min_lr: 1e-6
+
+decoding:
+  strategy: 'teacher_forcing'  # 训练时使用teacher forcing
+
+

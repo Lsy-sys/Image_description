@@ -1,0 +1,27 @@
+# 强化学习微调策略配置
+
+loss:
+  type: 'scst'  # Self-Critical Sequence Training
+  reward_type: 'cider_d'  # 'cider_d', 'bleu_4', 'rouge_l', 'combined'
+  baseline_type: 'self_critical'  # 'self_critical', 'average', 'none'
+  temperature: 1.0
+  sample_size: 1
+
+optimizer:
+  type: 'adam'
+  lr: 5e-5  # 微调时使用较小的学习率
+  weight_decay: 1e-4
+  betas: [0.9, 0.999]
+
+scheduler:
+  type: 'cosine'
+  warmup_steps: 500
+  max_steps: 10000
+
+decoding:
+  strategy: 'sampling'  # 推理时使用采样
+  beam_size: 3
+  top_k: 5
+  top_p: 0.9
+
+

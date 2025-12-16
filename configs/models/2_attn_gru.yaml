@@ -1,0 +1,31 @@
+# Model B: ResNet + Attention + GRU
+# 在Model A基础上添加空间注意力机制
+
+_base_: '../base.yaml'
+
+model:
+  type: 'attn_gru'
+  encoder:
+    type: 'resnet'
+    embed_size: 512
+    pretrained: true
+  decoder:
+    type: 'attn_gru'
+    hidden_size: 512
+    num_layers: 1
+    dropout: 0.5
+    attention_dim: 512
+  vocab_size: 10000
+
+training:
+  epochs: 30
+  batch_size: 32
+  learning_rate: 0.001
+  optimizer: 'adam'
+  scheduler: 'plateau'
+
+paths:
+  checkpoint_dir: 'checkpoints/attn_gru'
+  log_dir: 'logs/attn_gru'
+
+
