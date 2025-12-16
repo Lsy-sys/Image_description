@@ -17,6 +17,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from models import create_model_from_config, load_config
 from data.dataset import DeepFashionDataset
+from data.graph_dataset import GraphDataset
 from data.vocabulary import Vocabulary
 from data.transforms import ImageTransforms
 from modules import CrossEntropyLoss, create_optimizer, create_scheduler, MetricCalculator
@@ -63,26 +64,55 @@ def main():
     print("构建词汇表...")
     vocab = Vocabulary.from_captions(
         config['paths']['data_dir'],
-        min_freq=config['data']['min_freq']
+        min_freq=config['data']['min_freq'],
+        vocab_path=config['paths'].get('vocab_path')
     )
     vocab_size = len(vocab)
     print(f"词汇表大小: {vocab_size}")
     
     # 创建数据集
     print("创建数据集...")
-    transform = ImageTransforms(config['data']['image_size'], is_training=True)
-    train_dataset = DeepFashionDataset(
-        config['paths']['data_dir'],
-        split='train',
-        transform=transform.get_transforms(),
-        vocab=vocab
-    )
-    val_dataset = DeepFashionDataset(
-        config['paths']['data_dir'],
-        split='val',
-        transform=transform.get_transforms(),
-        vocab=vocab
-    )
+    model_type = config['model']['type']
+    
+    if model_type == 'graph_transformer':
+        # Graph-Transformer 使用 GraphDataset
+        feature_dir = config['paths'].get('feature_dir', 'data/features')
+        graph_dir = config['paths'].get('graph_dir', 'data/graphs')
+        default_num_nodes = config['model']['encoder'].get('num_nodes', 196)
+        default_node_feature_dim = config['model']['encoder'].get('node_feature_dim', 768)
+        train_dataset = GraphDataset(
+            data_dir=config['paths']['data_dir'],
+            feature_dir=feature_dir,
+            graph_dir=graph_dir,
+            split='train',
+            vocab=vocab,
+            default_num_nodes=default_num_nodes,
+            default_node_feature_dim=default_node_feature_dim,
+        )
+        val_dataset = GraphDataset(
+            data_dir=config['paths']['data_dir'],
+            feature_dir=feature_dir,
+            graph_dir=graph_dir,
+            split='val',
+            vocab=vocab,
+            default_num_nodes=default_num_nodes,
+            default_node_feature_dim=default_node_feature_dim,
+        )
+    else:
+        # 其他模型使用 DeepFashionDataset
+        transform = ImageTransforms(config['data']['image_size'], is_training=True)
+        train_dataset = DeepFashionDataset(
+            config['paths']['data_dir'],
+            split='train',
+            transform=transform.get_transforms(),
+            vocab=vocab
+        )
+        val_dataset = DeepFashionDataset(
+            config['paths']['data_dir'],
+            split='val',
+            transform=transform.get_transforms(),
+            vocab=vocab
+        )
     
     # 创建模型
     print("创建模型...")
@@ -144,5 +174,9 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+
+
+
 
 

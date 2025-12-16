@@ -53,17 +53,19 @@ class DeepFashionDataset(Dataset):
         
         # 加载文本描述
         text_path = os.path.join(self.data_dir, 'captions', f'{item_id}.json')
-        with open(text_path, 'r', encoding='utf-8') as f:
-            caption_data = json.load(f)
-        
-        # 处理多个描述
-        captions = caption_data.get('captions', [])
-        
-        # 随机选择一个caption进行训练
-        if captions:
-            caption = random.choice(captions)
+        if os.path.exists(text_path):
+            with open(text_path, 'r', encoding='utf-8') as f:
+                caption_data = json.load(f)
+            # 获取该图片所有的参考描述 (list of strings)
+            raw_captions = caption_data.get('captions', [])
+        else:
+            raw_captions = []
+
+        # 随机选择一个caption进行训练 (Tensor化)
+        if raw_captions:
+            caption_text = random.choice(raw_captions)
             if self.vocab:
-                caption_tokens = torch.tensor(self.vocab.encode(caption), dtype=torch.long)
+                caption_tokens = torch.tensor(self.vocab.encode(caption_text), dtype=torch.long)
             else:
                 caption_tokens = torch.tensor([], dtype=torch.long)
         else:
@@ -73,7 +75,13 @@ class DeepFashionDataset(Dataset):
             else:
                 caption_tokens = torch.tensor([], dtype=torch.long)
         
-        return image, caption_tokens
+        # 返回字典，包含原始描述以便评测
+        return {
+            'image': image,
+            'caption': caption_tokens,
+            'raw_captions': raw_captions,
+            'item_id': item_id
+        }
 
 
 class RegionDataset(Dataset):
@@ -108,53 +116,62 @@ class RegionDataset(Dataset):
         try:
             item_id = self.data_list[idx]
             
-            # 加载图像
+            # 1. 获取图像 (实际上Transformer模型可能需要预提取的特征，这里保留图像加载逻辑)
+            # 如果你有预提取的特征，应该在这里加载 .npy 文件
             image_path = os.path.join(self.data_dir, 'images', f'{item_id}.jpg')
             if not os.path.exists(image_path):
-                print(f"Warning: Image not found: {image_path}")
-                # 返回一个空白图像
-                image = Image.new('RGB', (224, 224), (0, 0, 0))
+                image = torch.zeros(3, 224, 224)
             else:
-                image = Image.open(image_path).convert('RGB')
-            
-            if self.transform:
-                image = self.transform(image)
+                # 这里简单处理，实际上 RegionDataset 通常配合预提取特征使用
+                # 为了不报错，我们返回一个占位符或真实图像
+                img = Image.open(image_path).convert('RGB')
+                # 这里可以根据需要加入 transform 逻辑
             
             # 加载文本描述
             text_path = os.path.join(self.data_dir, 'captions', f'{item_id}.json')
-            if not os.path.exists(text_path):
-                print(f"Warning: Caption not found: {text_path}")
-                captions = []
-            else:
+            if os.path.exists(text_path):
                 with open(text_path, 'r', encoding='utf-8') as f:
                     caption_data = json.load(f)
-                captions = caption_data.get('captions', [])
+                raw_captions = caption_data.get('captions', [])
+            else:
+                raw_captions = []
             
-            # 随机选择一个caption进行训练
-            if captions:
-                caption = random.choice(captions)
+            if raw_captions:
+                caption_text = random.choice(raw_captions)
                 if self.vocab:
-                    caption_tokens = torch.tensor(self.vocab.encode(caption), dtype=torch.long)
+                    caption_tokens = torch.tensor(self.vocab.encode(caption_text), dtype=torch.long)
                 else:
                     caption_tokens = torch.tensor([], dtype=torch.long)
             else:
-                # 如果没有caption，返回空序列
                 if self.vocab:
                     caption_tokens = torch.tensor([self.vocab.word2idx['<pad>']], dtype=torch.long)
                 else:
                     caption_tokens = torch.tensor([], dtype=torch.long)
             
-            # 确保返回的是tuple
-            result = (image, caption_tokens)
-            return result
+            # 尝试加载预提取的特征
+            feature_path = os.path.join(self.data_dir, 'features', f'{item_id}.npy')
+            if os.path.exists(feature_path):
+                regions = torch.from_numpy(np.load(feature_path)).float()
+            else:
+                # 没找到特征，返回零张量防止崩溃
+                regions = torch.zeros(36, 2048)
+
+            return {
+                'regions': regions,
+                'caption': caption_tokens,
+                'raw_captions': raw_captions,
+                'item_id': item_id
+            }
             
         except Exception as e:
             print(f"Error loading item {idx}: {e}")
-            # 返回默认值
             if self.vocab:
                 default_caption = torch.tensor([self.vocab.word2idx['<pad>']], dtype=torch.long)
             else:
                 default_caption = torch.tensor([], dtype=torch.long)
-            
-            default_image = torch.zeros(3, 224, 224)
-            return (default_image, default_caption)
+            return {
+                'regions': torch.zeros(36, 2048),
+                'caption': default_caption,
+                'raw_captions': [],
+                'item_id': "error"
+            }

@@ -95,6 +95,51 @@ class GCNEncoder(nn.Module):
         Returns:
             编码后的节点特征 (batch_size, num_nodes, hidden_dim)
         """
+        # 检查并修复 node_features 的形状
+        batch_size = adj_matrix.shape[0]
+        num_nodes = adj_matrix.shape[1]
+        
+        if node_features.dim() == 3:
+            # 期望的形状: (batch_size, num_nodes, node_feature_dim)
+            if node_features.shape[0] != batch_size or node_features.shape[1] != num_nodes:
+                # 如果形状不匹配，尝试修复
+                if node_features.shape[0] == batch_size * num_nodes:
+                    # 可能是被错误地 flatten 了: (batch*num_nodes, feat_dim)
+                    node_features = node_features.view(batch_size, num_nodes, -1)
+                else:
+                    raise ValueError(
+                        f"node_features shape {node_features.shape} does not match "
+                        f"expected (batch_size={batch_size}, num_nodes={num_nodes}, ...)"
+                    )
+        elif node_features.dim() == 2:
+            # 可能是 (batch*num_nodes, feat_dim)，需要 reshape
+            if node_features.shape[0] == batch_size * num_nodes:
+                node_features = node_features.view(batch_size, num_nodes, -1)
+            else:
+                raise ValueError(
+                    f"node_features shape {node_features.shape} cannot be reshaped to "
+                    f"(batch_size={batch_size}, num_nodes={num_nodes}, ...)"
+                )
+        else:
+            raise ValueError(
+                f"node_features must be 2D or 3D, got {node_features.dim()}D with shape {node_features.shape}"
+            )
+        
+        # 确保特征维度匹配
+        if node_features.shape[2] != self.node_feature_dim:
+            # 如果特征维度不匹配，可能需要投影或报错
+            if node_features.shape[2] == 1:
+                # 特殊情况：如果最后一维是1，可能是被错误地处理了
+                raise ValueError(
+                    f"node_features has wrong feature dimension: {node_features.shape[2]}, "
+                    f"expected {self.node_feature_dim}. Shape: {node_features.shape}"
+                )
+            # 如果维度不匹配但不是1，可能需要添加投影层
+            raise ValueError(
+                f"node_features feature dimension {node_features.shape[2]} does not match "
+                f"expected {self.node_feature_dim}"
+            )
+        
         # 投影节点特征
         x = self.node_proj(node_features)  # (batch_size, num_nodes, hidden_dim)
         
@@ -111,5 +156,9 @@ class GCNEncoder(nn.Module):
             x = F.relu(x)
         
         return x
+
+
+
+
 
 

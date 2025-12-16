@@ -7,7 +7,7 @@ model:
   type: 'region_transformer'
   encoder:
     type: 'faster_rcnn'
-    feature_dim: 2048
+    feature_dim: 512
     max_regions: 36
   decoder:
     type: 'transformer'
@@ -32,5 +32,6 @@ training:
 paths:
   checkpoint_dir: 'checkpoints/region_transformer'
   log_dir: 'logs/region_transformer'
+
 
 

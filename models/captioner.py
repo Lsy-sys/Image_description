@@ -28,6 +28,8 @@ class ImageCaptioner(nn.Module):
         self,
         images: Optional[torch.Tensor] = None,
         regions: Optional[torch.Tensor] = None,
+        node_features: Optional[torch.Tensor] = None,
+        adj_matrix: Optional[torch.Tensor] = None,
         captions: Optional[torch.Tensor] = None,
         **kwargs
     ) -> torch.Tensor:
@@ -43,13 +45,15 @@ class ImageCaptioner(nn.Module):
         Returns:
             logits: [batch_size, seq_len, vocab_size]
         """
-        # 编码视觉特征
+        # 编码视觉/图结构特征
         if images is not None:
             visual_features = self.encoder(images)
         elif regions is not None:
             visual_features = self.encoder(regions)
+        elif node_features is not None and adj_matrix is not None:
+            visual_features = self.encoder(node_features, adj_matrix)
         else:
-            raise ValueError("Either images or regions must be provided")
+            raise ValueError("Either images, regions or (node_features, adj_matrix) must be provided")
         
         # 解码生成文本
         if captions is not None:
@@ -65,6 +69,8 @@ class ImageCaptioner(nn.Module):
         self,
         images: Optional[torch.Tensor] = None,
         regions: Optional[torch.Tensor] = None,
+        node_features: Optional[torch.Tensor] = None,
+        adj_matrix: Optional[torch.Tensor] = None,
         vocab=None,
         max_length: int = 50,
         strategy: str = 'greedy',
@@ -93,13 +99,15 @@ class ImageCaptioner(nn.Module):
             sequences: [batch_size, seq_len] 生成的序列
             log_probs: [batch_size, seq_len] 对数概率（如果返回）
         """
-        # 编码视觉特征
+        # 编码视觉/图结构特征
         if images is not None:
             visual_features = self.encoder(images)
         elif regions is not None:
             visual_features = self.encoder(regions)
+        elif node_features is not None and adj_matrix is not None:
+            visual_features = self.encoder(node_features, adj_matrix)
         else:
-            raise ValueError("Either images or regions must be provided")
+            raise ValueError("Either images, regions or (node_features, adj_matrix) must be provided")
         
         # 使用解码器生成
         return self.decoder.generate(
@@ -132,5 +140,6 @@ class ImageCaptioner(nn.Module):
             return self.encoder(regions)
         else:
             raise ValueError("Either images or regions must be provided")
+
 
 

@@ -39,12 +39,23 @@ class MultiHeadAttention(nn.Module):
         scores = torch.matmul(Q, K.transpose(-2, -1)) / self.scale
         
         if mask is not None:
+            # 支持两种 mask：
+            # 1) additive mask（float，常见于因果掩码：允许位置为 0，禁止位置为 -inf）
+            # 2) binary mask（bool/int，允许位置为 1/True，禁止位置为 0/False）
             if mask.dim() == 2:
-                mask = mask.unsqueeze(1).unsqueeze(1)
+                # (seq, seq) -> (1, 1, seq, seq)
+                mask = mask.unsqueeze(0).unsqueeze(0)
             elif mask.dim() == 3:
+                # (batch, seq, seq) -> (batch, 1, seq, seq)
                 mask = mask.unsqueeze(1)
-            mask = mask.expand(-1, self.num_heads, -1, -1)
-            scores = scores.masked_fill(mask == 0, -1e9)
+            # 现在 mask 应可 broadcast 到 (batch, heads, seq_q, seq_k)
+            if mask.dtype == torch.bool or torch.is_floating_point(mask) is False:
+                # binary mask：0/False 为屏蔽
+                mask = mask.expand(batch_size, self.num_heads, -1, -1)
+                scores = scores.masked_fill(mask == 0, -1e9)
+            else:
+                # additive mask：直接相加（例如 0 或 -inf）
+                scores = scores + mask
         
         attention_weights = F.softmax(scores, dim=-1)
         attention_weights = self.dropout(attention_weights)
@@ -73,13 +84,20 @@ class PositionalEncoding(nn.Module):
         self.register_buffer('pe', pe)
     
     def forward(self, x):
-        # x: (batch_size, seq_len, d_model) 或 (seq_len, batch_size, d_model)
-        if x.dim() == 3 and x.size(0) != self.pe.size(0):
-            # (batch_size, seq_len, d_model)
-            return x + self.pe[:x.size(1), :].unsqueeze(0).transpose(0, 1)
-        else:
-            # (seq_len, batch_size, d_model)
-            return x + self.pe[:x.size(0), :]
+        """
+        位置编码前向
+
+        当前项目中，所有调用都会在传入前先将张量变换为
+        形状 (seq_len, batch_size, d_model)，比如：
+
+            x = x.transpose(0, 1)  # (seq_len, batch, d_model)
+            x = self.pos_encoding(x)
+
+        因此这里按标准Transformer实现，始终认为第 0 维是 seq_len。
+        """
+        # x: (seq_len, batch_size, d_model)
+        seq_len = x.size(0)
+        return x + self.pe[:seq_len, :]
 
 
 class AttentionLayer(nn.Module):
@@ -116,5 +134,6 @@ class AttentionLayer(nn.Module):
         attn_features = torch.bmm(alpha.unsqueeze(1), features)  # (batch_size, 1, embed_size)
         
         return attn_features, alpha
+
 
 

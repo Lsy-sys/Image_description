@@ -16,6 +16,9 @@
     
     <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+    <!-- Chart.js for Training Monitor -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
     
     <!-- Custom Styles -->
     <link rel="stylesheet" href="styles.css">
@@ -28,87 +31,145 @@
             <p class="hero-subtitle">Neural Network Powered Image Captioning</p>
         </div>
         <div id="lottie-bg" class="lottie-background"></div>
+
+        <!-- Main Navigation -->
+        <nav class="main-nav">
+            <button class="nav-item active" data-target="main">Workbench</button>
+            <button class="nav-item" data-target="xray">X-Ray Vision</button>
+            <button class="nav-item" data-target="monitor">Training Monitor</button>
+        </nav>
     </header>
 
-    <!-- Main Workbench -->
-    <main class="workbench-container">
-        <!-- Input Zone (Left) -->
-        <section class="glass-card input-zone animate__animated animate__fadeInLeft">
-            <h2 class="section-title">📤 Input Zone</h2>
-            <div class="upload-area" id="uploadArea">
-                <div class="upload-border">
-                    <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                        <polyline points="17 8 12 3 7 8"></polyline>
-                        <line x1="12" y1="3" x2="12" y2="15"></line>
-                    </svg>
-                    <p class="upload-text">Drag & Drop Image Here</p>
-                    <p class="upload-hint">or click to browse</p>
+    <!-- Cockpit Layout -->
+    <main class="cockpit" id="mainSection">
+        <!-- Viewport (Top Layer) -->
+        <section class="viewport animate__animated animate__fadeIn">
+            <!-- Input Zone -->
+            <div class="holo-card input-zone">
+                <div class="zone-header">
+                    <div class="corner tl"></div>
+                    <div class="corner tr"></div>
+                    <div class="zone-title">Input Zone · 全息影像舱</div>
+                    <div class="corner bl"></div>
+                    <div class="corner br"></div>
                 </div>
-                <input type="file" id="imageInput" accept="image/*" hidden>
+                <div class="upload-area tall" id="uploadArea">
+                    <div class="upload-overlay">
+                        <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="17 8 12 3 7 8"></polyline>
+                            <line x1="12" y1="3" x2="12" y2="15"></line>
+                        </svg>
+                        <p class="upload-text">Drag & Drop Image Here</p>
+                        <p class="upload-hint">or click to browse</p>
+                    </div>
+                    <input type="file" id="imageInput" accept="image/*" hidden>
+                    <div id="imagePreview" class="image-preview hidden">
+                        <img id="previewImg" alt="Preview">
+                        <div class="scanning-overlay" id="scanningOverlay">
+                            <div class="scan-line"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div id="imagePreview" class="image-preview hidden">
-                <img id="previewImg" alt="Preview">
-                <div class="scanning-overlay" id="scanningOverlay">
-                    <div class="scan-line"></div>
+
+            <!-- Output Zone -->
+            <div class="holo-card output-zone">
+                <div class="zone-header">
+                    <div class="status-dot online"></div>
+                    <div class="zone-title mono">System Log · Generated Caption</div>
+                </div>
+
+                <div class="caption-terminal" id="captionDisplay">
+                    <p class="placeholder-text">Generated caption will appear here...</p>
+                </div>
+
+                <div class="stats-deck">
+                    <div class="stat-card">
+                        <div class="stat-label">BLEU-4</div>
+                        <div class="stat-value" id="bleuScore">0.0000</div>
+                        <div class="sparkline" id="bleuSpark"></div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">CIDEr</div>
+                        <div class="stat-ring">
+                            <svg viewBox="0 0 36 36">
+                                <path class="ring-bg" d="M18 2.0845a 15.9155 15.9155 0 0 1 0 31.831
+                                                         a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                <path class="ring-fill" id="ciderRing" stroke-dasharray="0,100"
+                                      d="M18 2.0845a 15.9155 15.9155 0 0 1 0 31.831
+                                         a 15.9155 15.9155 0 0 1 0 -31.831" />
+                            </svg>
+                            <span id="ciderScore" class="stat-value">0.0000</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">ROUGE-L</div>
+                        <div class="stat-value" id="rougeScore">0.0000</div>
+                        <div class="sparkline" id="rougeSpark"></div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Control Panel (Center) -->
-        <section class="glass-card control-panel animate__animated animate__fadeInUp">
-            <h2 class="section-title">⚙️ Control Panel</h2>
-            
-            <!-- Model Switcher -->
-            <div class="control-group">
-                <label class="control-label">Model Switcher</label>
-                <div class="model-switcher">
-                    <button class="model-btn active" data-model="cnn_gru" title="Model A: CNN+GRU (基线模型)">CNN+GRU</button>
-                    <button class="model-btn" data-model="attn_gru" title="Model B: Attn-GRU (带注意力)">Attn-GRU</button>
-                    <button class="model-btn" data-model="region_trans" title="Model C: Region-Transformer (主力)">Region-Trans</button>
-                    <button class="model-btn" data-model="vit_trans" title="Model D: ViT-Transformer">ViT-Trans</button>
-                    <button class="model-btn" data-model="graph_trans" title="Model E: Graph-Transformer">Graph-Trans</button>
+        <!-- Dashboard (Bottom Layer) -->
+        <section class="dashboard animate__animated animate__fadeInUp">
+            <div class="dash-left">
+                <div class="dash-title">Model Architecture</div>
+                <div class="model-cards" id="modelCards">
+                    <button class="model-card active" data-model="cnn_gru">
+                        <span class="model-name">CNN+GRU</span>
+                        <span class="model-desc">Baseline</span>
+                        <span class="glow-bar"></span>
+                    </button>
+                    <button class="model-card" data-model="attn_gru">
+                        <span class="model-name">Attn-GRU</span>
+                        <span class="model-desc">Attention</span>
+                        <span class="glow-bar"></span>
+                    </button>
+                    <button class="model-card" data-model="region_trans">
+                        <span class="model-name">Region-Trans</span>
+                        <span class="model-desc">Main</span>
+                        <span class="glow-bar"></span>
+                    </button>
+                    <button class="model-card" data-model="vit_trans">
+                        <span class="model-name">ViT-Trans</span>
+                        <span class="model-desc">ViT</span>
+                        <span class="glow-bar"></span>
+                    </button>
+                    <button class="model-card" data-model="graph_trans">
+                        <span class="model-name">Graph-Trans</span>
+                        <span class="model-desc">GCN</span>
+                        <span class="glow-bar"></span>
+                    </button>
                 </div>
             </div>
 
-            <!-- Strategy Knob -->
-            <div class="control-group">
-                <label class="control-label">Decoding Strategy</label>
-                <div class="strategy-knob">
-                    <input type="range" id="strategySlider" min="0" max="2" value="0" class="slider">
-                    <div class="strategy-labels">
+            <div class="dash-center">
+                <div class="dash-title">Decoding Parameter</div>
+                <div class="strategy-slider">
+                    <div class="slider-scale">
                         <span>Greedy</span>
                         <span>Beam</span>
                         <span>Sampling</span>
                     </div>
-                </div>
-            </div>
-
-            <!-- Generate Button -->
-            <button id="generateBtn" class="generate-button" disabled>
-                <span class="btn-glow"></span>
-                <span class="btn-text">Generate Caption</span>
-            </button>
-        </section>
-
-        <!-- Output Zone (Right) -->
-        <section class="glass-card output-zone animate__animated animate__fadeInRight">
-            <h2 class="section-title">📝 Output Zone</h2>
-            
-            <!-- Caption Display -->
-            <div class="caption-display" id="captionDisplay">
-                <p class="placeholder-text">Generated caption will appear here...</p>
-            </div>
-
-            <!-- Live Metrics -->
-            <div class="metrics-bar">
-                <div class="metric-item">
-                    <span class="metric-label">CIDEr Score</span>
-                    <div class="metric-value" id="ciderScore">0.0000</div>
-                    <div class="progress-bar">
-                        <div class="progress-fill" id="ciderProgress"></div>
+                    <input type="range" id="strategySlider" min="0" max="2" value="0" class="slider">
+                    <div class="sampling-params hidden" id="samplingParams">
+                        <label>Top-k
+                            <input type="number" id="topKInput" min="1" max="20" value="5">
+                        </label>
+                        <label>Temperature
+                            <input type="number" id="tempInput" step="0.1" min="0.1" max="2.0" value="1.0">
+                        </label>
                     </div>
                 </div>
+            </div>
+
+            <div class="dash-right">
+                <button id="generateBtn" class="generate-button" disabled>
+                    <span class="btn-glow"></span>
+                    <span class="btn-text">Generate</span>
+                </button>
             </div>
         </section>
     </main>

@@ -211,11 +211,12 @@ class TransformerDecoder(nn.Module):
             generated.append(predicted)
             
             # 更新解码器输入
+            # next_embed: (batch, 1, d_model)
             next_embed = self.embedding(predicted.unsqueeze(1)) * math.sqrt(self.d_model)
-            next_embed = next_embed.transpose(0, 1)
-            pos = self.pos_encoding.pe[step+1:step+2, :].unsqueeze(1)
+            # pos_encoding.pe: (max_len, 1, d_model) -> 取当前位置后扩展到 batch
+            pos = self.pos_encoding.pe[step + 1: step + 2]          # (1, 1, d_model)
+            pos = pos.permute(1, 0, 2).expand(batch_size, 1, -1)    # (batch, 1, d_model)
             next_embed = next_embed + pos
-            next_embed = next_embed.transpose(0, 1)
             decoder_input = torch.cat([decoder_input, next_embed], dim=1)
             
             # 检查EOS
@@ -236,5 +237,10 @@ class TransformerDecoder(nn.Module):
         mask = torch.triu(torch.ones(sz, sz), diagonal=1)
         mask = mask.masked_fill(mask == 1, float('-inf'))
         return mask
+
+
+
+
+
 
 

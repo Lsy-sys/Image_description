@@ -1,40 +1,22 @@
-# 基础配置 (路径, seed, vocab等)
-# 所有模型配置都会继承这个基础配置
+# 项目基础配置（所有模型通用）
+# 各模型配置文件通过 `_base_` 继承此文件，并覆盖差异项
 
-# 路径配置
 paths:
+  # DeepFashion-MultiModal 数据集根目录（包含 train_list.txt / val_list.txt / captions 等）
   data_dir: 'data/DeepFashion-MultiModal'
-  checkpoint_dir: 'checkpoints'
-  log_dir: 'logs'
-  vocab_path: 'data/vocab.json'
-  feature_dir: 'data/features'  # 预提取的特征文件目录
-  graph_dir: 'data/graphs'      # 图结构数据目录
 
-# 数据配置
+  # Model E (Graph-Transformer) 额外依赖的预处理目录
+  # 注意：Graph-Transformer 建议使用 ViT patch 级节点特征（196x768），默认存这里
+  feature_dir: 'data/vit_features'
+  graph_dir: 'data/graphs'
+
 data:
+  # 图像输入尺寸（非图模型会用到 transforms）
   image_size: 224
-  max_caption_length: 50
+  # 构建词表时的最小词频
   min_freq: 5
-  num_workers: 4
-  pin_memory: true
 
-# 训练通用配置
-training:
-  epochs: 30
-  batch_size: 32
-  learning_rate: 0.001
-  optimizer: 'adam'
-  weight_decay: 1e-4
-  grad_clip: 5.0
-  save_every: 5
-  validate_every: 1
-  early_stopping_patience: 10
-
-# 其他配置
 misc:
   seed: 42
-  device: 'auto'  # 'auto', 'cuda', 'cpu'
-  num_gpus: 1
-  mixed_precision: false
 
 

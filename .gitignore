@@ -1,8 +1,14 @@
-# 忽略数据集图片文件
-data/DeepFashion-MultiModal/images/
-
 
 # Python缓存文件
 __pycache__/
 *.py[cod]
 *$py.class
+
+data/DeepFashion-MultiModal/captions/
+data/DeepFashion-MultiModal/images/
+data/features/
+checkpoints/
+results_evaluation/
+
+#模型文件
+*.pth

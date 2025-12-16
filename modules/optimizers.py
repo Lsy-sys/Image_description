@@ -30,8 +30,9 @@ def create_optimizer(
             - momentum: (for SGD) 0.9
     """
     optimizer_type = config.get('type', 'adam').lower()
-    lr = config.get('lr', 0.001)
-    weight_decay = config.get('weight_decay', 0.0)
+    # 保障数值型
+    lr = float(config.get('lr', 0.001))
+    weight_decay = float(config.get('weight_decay', 0.0))
     
     params = [p for p in model.parameters() if p.requires_grad]
     
@@ -107,5 +108,6 @@ def create_scheduler(
         scheduler = None
     
     return scheduler
+
 
 

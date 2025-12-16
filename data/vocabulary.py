@@ -207,3 +207,33 @@ class Vocabulary:
     def eos_idx(self):
         """EOS标记的索引"""
         return self.word2idx[self.EOS_TOKEN]
+
+    # -------- 新增便捷构建方法 --------
+    @classmethod
+    def from_captions(cls, data_dir: str, min_freq: int = 5, vocab_path: str = None):
+        """
+        从数据集目录构建并返回 Vocabulary 实例。
+        Args:
+            data_dir: 数据集根目录（需包含 train/val/test 列表和 captions 目录）
+            min_freq: 最小词频阈值
+            vocab_path: 可选，若提供则在构建后自动保存
+        """
+        vocab = cls(min_freq=min_freq)
+        vocab.build_vocab_from_dataset(data_dir)
+        if vocab_path:
+            vocab.save(vocab_path)
+        return vocab
+
+    @classmethod
+    def load(cls, filepath: str):
+        """
+        从文件加载 Vocabulary 实例
+        """
+        vocab = cls()
+        with open(filepath, 'r', encoding='utf-8') as f:
+            vocab_data = json.load(f)
+        vocab.word2idx = vocab_data['word2idx']
+        vocab.idx2word = {int(k): v for k, v in vocab_data['idx2word'].items()}
+        vocab.word_freq = Counter(vocab_data['word_freq'])
+        vocab.min_freq = vocab_data['min_freq']
+        return vocab

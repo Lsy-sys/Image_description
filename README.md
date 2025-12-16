@@ -66,11 +66,12 @@ DeepFashion-Captioning/
 │   ├── inference.py           # 推理入口
 │   ├── evaluate.py            # 评估入口
 │   └── ...                   # 其他工具脚本
-├── api/                        # API服务（待实现）
+├── api/                        # API服务
 │   └── server.py             # FastAPI服务
-├── web/                        # 前端（待实现）
-│   ├── index.html
-│   └── ...
+├── web/                        # 前端（可视化工作台）
+│   ├── index.html             # DeepFashion AI Workbench 主页面 + 导航
+│   ├── styles.css             # 赛博朋克暗色系UI
+│   └── js/main.js             # 前端交互逻辑（模型选择、X-Ray、Training Monitor等）
 └── checkpoints/                 # 模型检查点
 ```
 
@@ -115,6 +116,19 @@ python scripts/train.py --config configs/models/3_region_trans.yaml
 python scripts/train.py --config configs/models/4_vit_trans.yaml
 
 # Model E: Graph-Transformer (图卷积网络)
+# 采用 ViT patch tokens 作为图节点特征（推荐、最省事，不依赖检测器）
+# 约定：
+# - node_features: (196, 768)  # 14x14 patches
+# - adj_matrix:    (196, 196)  # patch 网格邻接
+# - 默认特征目录：data/vit_features（已在 configs/base.yaml 配好）
+#
+# 1) 预提取 ViT patch 节点特征（保存到 data/vit_features）
+python data/preprocess_vit_patches.py --data_dir data/DeepFashion-MultiModal --output_dir data/vit_features --split all
+
+# 2) 构建 patch 网格图结构（保存到 data/graphs）
+python data/build_graphs.py --data_dir data/DeepFashion-MultiModal --output_dir data/graphs --graph_type spatial --split all --node_type vit_patches
+
+# 3) 使用 GCN + Transformer 训练 Model E
 python scripts/train.py --config configs/models/5_graph_trans.yaml
 
 # 使用RL微调（需要先完成XE训练）
@@ -127,6 +141,9 @@ python scripts/train.py --config configs/models/3_region_trans.yaml --strategy r
 ```bash
 # 使用训练好的模型进行推理
 python scripts/inference.py --image path/to/image.jpg --config configs/models/1_cnn_gru.yaml
+
+# Model E（Graph-Transformer）使用 item_id 推理（读取 data/vit_features 与 data/graphs 的 .npy）
+python scripts/inference.py --config configs/models/5_graph_trans.yaml --item_id "WOMEN-Tees_Tanks-id_00003315-01_3_back"
 ```
 
 ### 5. 模型评估
@@ -135,6 +152,22 @@ python scripts/inference.py --image path/to/image.jpg --config configs/models/1_
 # 评估模型性能
 python scripts/evaluate.py --config configs/models/1_cnn_gru.yaml --checkpoint checkpoints/cnn_gru/best_model.pth
 ```
+
+### 6. 启动后端与前端可视化
+
+```bash
+# 启动FastAPI后端（提供 /api/predict、/api/attention、/api/training_log 等接口）
+uvicorn api.server:app --reload --host 0.0.0.0 --port 8000
+
+# 在本地启动前端静态服务器（推荐）
+cd web
+python -m http.server 5500
+```
+
+然后在浏览器中访问：
+
+- 工作台页面：`http://127.0.0.1:5500/index.html`
+- 后端Swagger文档：`http://127.0.0.1:8000/docs`
 
 ## 📊 五大核心实验
 
@@ -172,6 +205,11 @@ python analysis/plot_rl_dynamics.py
 ```
 - 对比XE vs RL训练
 - 分析CIDEr vs BLEU作为奖励的效果
+- 依赖训练产生的 `training_log.json` 与参考语料进行曲线与TF-IDF分析
+
+> 说明：训练期间，`BaseTrainer` 会在每个epoch结束后自动将
+> `epochs / train_loss / val_loss` 写入对应模型日志目录（例如 `logs/region_transformer/training_log.json`），
+> 前端的 **Training Monitor** 与本脚本都会复用这份日志。
 
 ## ⚙️ 配置说明
 
@@ -225,6 +263,12 @@ scheduler:
 3. **统一接口**：所有模型使用`ImageCaptioner`统一接口
 4. **组件化**：Losses、Optimizers、Metrics独立模块
 5. **可扩展**：易于添加新模型、新实验、新功能
+
+## 🖥️ 前端 Workbench 功能概览
+
+- **Workbench 主页面**：上传服饰图片、选择5种模型架构、切换解码策略（Greedy / Beam / Sampling），实时查看生成描述与 BLEU / CIDEr / ROUGE 指标动画。
+- **X-Ray Vision 页面**：点击生成句子中的单词，在原图上叠加注意力热力图，实现“单词级聚焦区域”可视化（通过 `/api/attention` 获取热力图）。
+- **Training Monitor 页面**：基于 `training_log.json` 绘制 XE / RL 训练损失随 Epoch 变化的折线图，支持鼠标悬停查看精确数值。
 
 ## 📝 使用Model Factory
 
