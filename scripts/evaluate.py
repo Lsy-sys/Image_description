@@ -79,6 +79,9 @@ def generate_captions(model, data_loader, vocab, device, model_type):
     
     print(f"开始生成描述 (Model Type: {model_type})...")
     
+    printed_samples = 0
+    max_print = 5
+    
     with torch.no_grad():
         for batch in tqdm(data_loader, desc='Evaluating'):
             if batch is None:
@@ -114,10 +117,21 @@ def generate_captions(model, data_loader, vocab, device, model_type):
             
             if generated is None:
                 continue
-
-            for i in range(generated.size(0)):
+            
+            batch_size = generated.size(0)
+            for i in range(batch_size):
                 caption_str = vocab.decode(generated[i].tolist())
                 all_candidates.append(caption_str.split())
+                
+                # 打印前若干条样本的生成结果，便于快速检查模型行为
+                if printed_samples < max_print:
+                    print("\n" + "-" * 40)
+                    print(f"[Sample {printed_samples + 1}] Generated:")
+                    print(caption_str)
+                    print("References:")
+                    for ref in batch_refs[i]:
+                        print("  -", ref)
+                    printed_samples += 1
             
             for refs in batch_refs:
                 ref_tokens = [ref.split() for ref in refs]
