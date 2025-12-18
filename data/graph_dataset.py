@@ -57,9 +57,22 @@ class GraphDataset(Dataset):
             adj_path = os.path.join(self.graph_dir, f"{item_id}_spatial.npy")
             if not os.path.exists(adj_path):
                 raise FileNotFoundError(f"Adjacency matrix not found: {adj_path}")
-            adj_np = np.load(adj_path)  # (num_nodes, num_nodes)
+            adj_np = np.load(adj_path)  # (num_nodes, num_nodes)，旧版可能是 36x36，新版是 196x196
             adj_matrix = torch.from_numpy(adj_np).float()
+
+            # --- 统一邻接矩阵形状：全部对齐到 default_num_nodes x default_num_nodes ---
+            if adj_matrix.dim() != 2 or adj_matrix.shape[0] != adj_matrix.shape[1]:
+                raise ValueError(f"Unexpected adj_matrix shape: {adj_matrix.shape}, expected square (N,N)")
+
             num_nodes = adj_matrix.shape[0]
+            target_nodes = self.default_num_nodes
+            if num_nodes != target_nodes:
+                # 兼容旧的 36x36 图：截断或零填充到 target_nodes x target_nodes
+                new_adj = torch.zeros(target_nodes, target_nodes, dtype=adj_matrix.dtype)
+                copy_n = min(num_nodes, target_nodes)
+                new_adj[:copy_n, :copy_n] = adj_matrix[:copy_n, :copy_n]
+                adj_matrix = new_adj
+                num_nodes = target_nodes
             
             # 节点特征
             node_path = os.path.join(self.feature_dir, f"{item_id}.npy")
