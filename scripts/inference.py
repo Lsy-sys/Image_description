@@ -32,18 +32,36 @@ def _resolve_device(device: str) -> torch.device:
 
 
 def _load_vocab(config: dict) -> Vocabulary:
-    # 兼容：如果配置里提供 vocab_path，则优先复用；否则从 captions 现建
-    vocab_path = config.get('paths', {}).get('vocab_path')
-    if vocab_path and os.path.exists(vocab_path):
-        return Vocabulary.load(vocab_path)
-
+    """加载词汇表（优先从文件加载，不存在则构建）"""
+    # 优先尝试默认路径
+    default_vocab_path = 'data/vocab.json'
+    config_vocab_path = config.get('paths', {}).get('vocab_path')
+    
+    # 按优先级尝试加载：默认路径 -> 配置路径
+    vocab_path = None
+    if os.path.exists(default_vocab_path):
+        vocab_path = default_vocab_path
+        print(f"从默认路径加载词汇表: {vocab_path}")
+    elif config_vocab_path and os.path.exists(config_vocab_path):
+        vocab_path = config_vocab_path
+        print(f"从配置路径加载词汇表: {vocab_path}")
+    
+    if vocab_path:
+        vocab = Vocabulary.load(vocab_path)
+        print(f"词汇表大小: {len(vocab)}")
+        return vocab
+    
+    # 如果都不存在，从数据集构建
+    print(f"词汇表文件不存在，从数据集构建...")
     data_dir = config['paths']['data_dir']
     min_freq = config.get('data', {}).get('min_freq', 5)
     vocab = Vocabulary.from_captions(data_dir, min_freq=min_freq)
-
-    if vocab_path:
-        os.makedirs(os.path.dirname(vocab_path) or '.', exist_ok=True)
-        vocab.save(vocab_path)
+    
+    # 保存到默认路径
+    save_path = default_vocab_path
+    os.makedirs(os.path.dirname(save_path) or '.', exist_ok=True)
+    vocab.save(save_path)
+    print(f"词汇表已构建并保存到: {save_path}")
     return vocab
 
 

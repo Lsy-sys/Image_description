@@ -213,15 +213,32 @@ class Vocabulary:
     def from_captions(cls, data_dir: str, min_freq: int = 5, vocab_path: str = None):
         """
         从数据集目录构建并返回 Vocabulary 实例。
+        如果 vocab_path 存在，则直接加载，避免重复构建。
         Args:
             data_dir: 数据集根目录（需包含 train/val/test 列表和 captions 目录）
-            min_freq: 最小词频阈值
-            vocab_path: 可选，若提供则在构建后自动保存
+            min_freq: 最小词频阈值（仅在需要构建时使用）
+            vocab_path: 词表文件路径，如果文件存在则直接加载，否则构建后保存
         """
+        import os
+        
+        # 如果提供了 vocab_path 且文件存在，直接加载
+        if vocab_path and os.path.exists(vocab_path):
+            print(f"从文件加载词汇表: {vocab_path}")
+            vocab = cls.load(vocab_path)
+            print(f"词汇表大小: {len(vocab)}")
+            return vocab
+        
+        # 否则，从数据集构建
+        print("从数据集构建词汇表...")
         vocab = cls(min_freq=min_freq)
         vocab.build_vocab_from_dataset(data_dir)
+        
+        # 如果提供了 vocab_path，保存构建好的词表
         if vocab_path:
+            os.makedirs(os.path.dirname(vocab_path), exist_ok=True)
             vocab.save(vocab_path)
+            print(f"词汇表已保存到: {vocab_path}")
+        
         return vocab
 
     @classmethod

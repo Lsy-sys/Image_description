@@ -60,15 +60,27 @@ def main():
     
     print(f"使用设备: {device}")
     
-    # 加载数据
-    print("构建词汇表...")
-    vocab = Vocabulary.from_captions(
-        config['paths']['data_dir'],
-        min_freq=config['data']['min_freq'],
-        vocab_path=config['paths'].get('vocab_path')
-    )
+    # 加载词汇表（优先从文件加载，不存在则构建）
+    vocab_path = config['paths'].get('vocab_path', 'data/vocab.json')
+    if os.path.exists(vocab_path):
+        print(f"从文件加载词汇表: {vocab_path}")
+        vocab = Vocabulary.load(vocab_path)
+        print(f"词汇表大小: {len(vocab)} (min_freq={vocab.min_freq})")
+        # 检查 min_freq 是否匹配（如果不匹配，给出警告）
+        config_min_freq = config['data'].get('min_freq', 5)
+        if vocab.min_freq != config_min_freq:
+            print(f"警告: 配置中的 min_freq={config_min_freq} 与已加载词表的 min_freq={vocab.min_freq} 不一致")
+            print(f"      如需重新构建词表，请删除 {vocab_path} 后重新训练")
+    else:
+        print(f"词汇表文件不存在，从数据集构建...")
+        vocab = Vocabulary.from_captions(
+            config['paths']['data_dir'],
+            min_freq=config['data']['min_freq'],
+            vocab_path=vocab_path
+        )
+        print(f"词汇表已构建并保存到: {vocab_path}")
+    
     vocab_size = len(vocab)
-    print(f"词汇表大小: {vocab_size}")
     
     # 创建数据集
     print("创建数据集...")

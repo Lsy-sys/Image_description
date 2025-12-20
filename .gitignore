@@ -10,5 +10,5 @@ data/features/
 checkpoints/
 results_evaluation/
 
-#模型文件
+#所有的模型文件
 *.pth

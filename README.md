@@ -140,7 +140,18 @@ python scripts/train.py --config configs/models/3_region_trans.yaml --strategy r
 
 ```bash
 # 使用训练好的模型进行推理
-python scripts/inference.py --image path/to/image.jpg --config configs/models/1_cnn_gru.yaml
+# Model A: CNN+GRU (基线模型)
+python scripts/inference.py --image data\DeepFashion-MultiModal\images\MEN-Denim-id_00000080-01_7_additional.jpg --config configs/models/1_cnn_gru.yaml --checkpoint checkpoints/cnn_gru/best_model.pth
+
+# Model B: Attn-GRU (带空间注意力)
+python scripts/inference.py --image data\DeepFashion-MultiModal\images\MEN-Denim-id_00000080-01_7_additional.jpg --config configs/models/2_attn_gru.yaml --checkpoint checkpoints/attn_gru/best_model.pth
+
+# Model C: Region-Transformer (主力模型)
+python scripts/inference.py --image data\DeepFashion-MultiModal\images\MEN-Denim-id_00000080-01_7_additional.jpg --config configs/models/3_region_trans.yaml --checkpoint checkpoints/region_transformer/best_model.pth
+
+# Model D: ViT-Transformer (Vision Transformer)
+python scripts/inference.py --image data\DeepFashion-MultiModal\images\MEN-Denim-id_00000080-01_7_additional.jpg --config configs/models/4_vit_trans.yaml --checkpoint checkpoints/vit_transformer/best_model.pth
+
 
 # Model E（Graph-Transformer）使用 item_id 推理（读取 data/vit_features 与 data/graphs 的 .npy）
 python scripts/inference.py --config configs/models/5_graph_trans.yaml --item_id "WOMEN-Tees_Tanks-id_00003315-01_3_back"
@@ -150,7 +161,17 @@ python scripts/inference.py --config configs/models/5_graph_trans.yaml --item_id
 
 ```bash
 # 评估模型性能
+# Model A: CNN+GRU (基线模型)
 python scripts/evaluate.py --config configs/models/1_cnn_gru.yaml --checkpoint checkpoints/cnn_gru/best_model.pth
+# Model B: Attn-GRU (带空间注意力)
+python scripts/evaluate.py --config configs/models/2_attn_gru.yaml --checkpoint checkpoints/attn_gru/best_model.pth
+# Model C: Region-Transformer (主力模型)
+python scripts/evaluate.py --config configs/models/3_region_trans.yaml --checkpoint checkpoints/region_transformer/best_model.pth
+# Model D: ViT-Transformer (Vision Transformer)
+python scripts/evaluate.py --config configs/models/4_vit_trans.yaml --checkpoint checkpoints/vit_transformer/best_model.pth
+
+# Model E（Graph-Transformer）评估
+python scripts/evaluate.py --config configs/models/5_graph_trans.yaml --item_id "WOMEN-Tees_Tanks-id_00003315-01_3_back"
 ```
 
 ### 6. 启动后端与前端可视化
