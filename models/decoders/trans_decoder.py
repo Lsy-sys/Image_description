@@ -86,8 +86,10 @@ class TransformerDecoder(nn.Module):
             for _ in range(num_decoder_layers)
         ])
         
-        # 输出层
+        # 输出层（使用Xavier初始化，避免偏向某个token）
         self.output_projection = nn.Linear(d_model, vocab_size)
+        nn.init.xavier_uniform_(self.output_projection.weight)
+        nn.init.zeros_(self.output_projection.bias)
         self.dropout = nn.Dropout(dropout)
     
     def forward(self, visual_features, captions=None, tgt_mask=None, src_mask=None):
@@ -119,6 +121,11 @@ class TransformerDecoder(nn.Module):
             x = self.pos_encoding(x)
             x = x.transpose(0, 1)  # (batch_size, seq_len, d_model)
             x = self.dropout(x)
+            
+            # 如果没有提供tgt_mask，自动生成因果掩码（防止信息泄露）
+            if tgt_mask is None:
+                seq_len = captions.size(1)
+                tgt_mask = self._generate_square_subsequent_mask(seq_len).to(captions.device)
             
             # 通过解码器层
             for layer in self.decoder_layers:
@@ -189,6 +196,14 @@ class TransformerDecoder(nn.Module):
             # 输出投影
             logits = self.output_projection(x[:, -1, :]) / temperature  # (batch_size, vocab_size)
             
+            # 抑制特殊token的logits（防止过早生成EOS或生成PAD/SOS）
+            if vocab is not None:
+                pad_idx = vocab.word2idx.get('<pad>', 0)
+                sos_idx = vocab.word2idx.get('<sos>', 1)
+                # 在生成阶段，抑制PAD和SOS的logits（但允许EOS，因为它是正常的结束标记）
+                logits[:, pad_idx] = float('-inf')
+                logits[:, sos_idx] = float('-inf')
+            
             if strategy == 'sampling':
                 probs = F.softmax(logits, dim=-1)
                 if top_k > 0:
@@ -219,8 +234,8 @@ class TransformerDecoder(nn.Module):
             next_embed = next_embed + pos
             decoder_input = torch.cat([decoder_input, next_embed], dim=1)
             
-            # 检查EOS
-            eos_idx = vocab.word2idx.get('<eos>', 2)
+            # 检查EOS（修复：EOS索引应该是3，不是2）
+            eos_idx = vocab.word2idx.get('<eos>', 3)  # 默认值改为3
             if (predicted == eos_idx).all():
                 break
         

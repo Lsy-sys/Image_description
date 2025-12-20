@@ -81,6 +81,30 @@ def generate_captions(model, data_loader, vocab, device, model_type):
     
     printed_samples = 0
     max_print = 5
+    # default behavior: print first encountered samples
+    sample_method = getattr(data_loader, 'sample_method', 'sequential')
+    sample_set = None
+    if sample_method == 'random_unique':
+        # data_loader.dataset should exist
+        try:
+            import random
+            n = getattr(data_loader, 'sample_n', 5)
+            ds = data_loader.dataset
+            total = len(ds)
+            indices = random.sample(range(total), min(n, total))
+            # collect item ids for chosen indices (if dataset provides item_id)
+            chosen_ids = set()
+            for idx in indices:
+                item = ds[idx]
+                iid = item.get('item_id') or item.get('item_ids') or None
+                if isinstance(iid, list):
+                    iid = iid[0] if iid else None
+                if iid is not None:
+                    chosen_ids.add(iid)
+            sample_set = chosen_ids
+            print(f"随机选择要打印的 item_ids (最多 {n}):", sample_set)
+        except Exception:
+            sample_set = None
     
     with torch.no_grad():
         for batch in tqdm(data_loader, desc='Evaluating'):
@@ -124,7 +148,22 @@ def generate_captions(model, data_loader, vocab, device, model_type):
                 all_candidates.append(caption_str.split())
                 
                 # 打印前若干条样本的生成结果，便于快速检查模型行为
-                if printed_samples < max_print:
+                do_print = False
+                if sample_set:
+                    # check item id in this batch
+                    item_ids = batch.get('item_ids') or batch.get('item_id') or []
+                    try:
+                        cur_id = item_ids[i]
+                    except Exception:
+                        cur_id = None
+                    if cur_id in sample_set:
+                        do_print = True
+                        sample_set.discard(cur_id)
+                else:
+                    if printed_samples < max_print:
+                        do_print = True
+
+                if do_print:
                     print("\n" + "-" * 40)
                     print(f"[Sample {printed_samples + 1}] Generated:")
                     print(caption_str)
@@ -201,7 +240,6 @@ def main():
     parser.add_argument('--data_dir', type=str, default='data/DeepFashion-MultiModal', help='数据目录')
     parser.add_argument('--split', type=str, default='test', help='评测数据集 (val 或 test)')
     parser.add_argument('--device', type=str, default='auto', help='运行设备')
-    
     args = parser.parse_args()
     
     # 1. 设置设备
@@ -244,6 +282,46 @@ def main():
         )
         from data.utils import collate_fn
     
+    # 先随机抽取 5 个不同样本，立即生成并打印（便于快速检查），然后再进行完整评测
+    try:
+        import random
+        n_print = 5
+        total = len(dataset)
+        indices = random.sample(range(total), min(n_print, total))
+        print(f"马上打印 {len(indices)} 个随机样本的生成结果与参考：", indices)
+        with torch.no_grad():
+            for idx in indices:
+                item = dataset[idx]
+                item_id = item.get('item_id') or item.get('item_ids') or f"idx_{idx}"
+                print("\n" + "=" * 60)
+                print(f"Item index: {idx}, item_id: {item_id}")
+                refs = item.get('raw_captions', [])
+                try:
+                    if model_type == 'graph_transformer':
+                        node = item['node_features'].unsqueeze(0).to(device)
+                        adj = item['adj_matrix'].unsqueeze(0).to(device)
+                        seq, _ = model.generate(node_features=node, adj_matrix=adj, vocab=vocab, max_length=50)
+                    else:
+                        if 'image' in item and item['image'] is not None:
+                            img = item['image'].unsqueeze(0).to(device)
+                            seq, _ = model.generate(images=img, vocab=vocab, max_length=50)
+                        elif 'regions' in item and item['regions'] is not None:
+                            reg = item['regions'].unsqueeze(0).to(device)
+                            seq, _ = model.generate(regions=reg, vocab=vocab, max_length=50)
+                        else:
+                            print("无法找到视觉输入，跳过")
+                            continue
+                    gen = vocab.decode(seq[0].tolist())
+                    print("Generated:")
+                    print(" ", gen)
+                    print("References:")
+                    for r in refs:
+                        print("  -", r)
+                except Exception as e:
+                    print("生成失败:", e)
+    except Exception as e:
+        print("即时打印样本时出错:", e)
+
     data_loader = create_data_loader(
         dataset=dataset,
         batch_size=config['training'].get('batch_size', 32),
@@ -251,6 +329,9 @@ def main():
         num_workers=config['data'].get('num_workers', 4),
         collate_fn=collate_fn
     )
+    # 固定打印 5 个随机唯一样本用于检查（不作为 CLI 可选项）
+    setattr(data_loader, 'sample_method', 'random_unique')
+    setattr(data_loader, 'sample_n', 5)
     
     # 4. 生成与计算
     candidates, references = generate_captions(model, data_loader, vocab, device, model_type)
