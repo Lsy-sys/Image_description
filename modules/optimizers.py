@@ -29,10 +29,17 @@ def create_optimizer(
             - betas: (for Adam) [0.9, 0.999]
             - momentum: (for SGD) 0.9
     """
-    optimizer_type = config.get('type', 'adam').lower()
-    # 保障数值型
-    lr = float(config.get('lr', 0.001))
-    weight_decay = float(config.get('weight_decay', 0.0))
+    # 支持两类配置键名：'type' 或向后兼容的 'optimizer'
+    if isinstance(config, dict):
+        optimizer_type = str(config.get('type') or config.get('optimizer') or 'adam').lower()
+        # 支持 'lr' 或向后兼容的 'learning_rate'
+        lr = float(config.get('lr') or config.get('learning_rate') or 0.001)
+        weight_decay = float(config.get('weight_decay', 0.0))
+    else:
+        # 如果传入的是字符串或其他类型，退回到默认
+        optimizer_type = str(config).lower() if config else 'adam'
+        lr = 0.001
+        weight_decay = 0.0
     
     params = [p for p in model.parameters() if p.requires_grad]
     
@@ -96,17 +103,17 @@ def create_scheduler(
         # Warmup + Cosine Annealing
         warmup_steps = config.get('warmup_steps', 1000)
         T_max = config.get('T_max', num_training_steps or 10000)
-        
+
         def lr_lambda(current_step):
             if current_step < warmup_steps:
                 return float(current_step) / float(max(1, warmup_steps))
             progress = float(current_step - warmup_steps) / float(max(1, T_max - warmup_steps))
             return max(0.0, 0.5 * (1.0 + torch.cos(torch.tensor(progress * 3.141592653589793))))
-        
+
         scheduler = LambdaLR(optimizer, lr_lambda)
     else:
         scheduler = None
-    
+
     return scheduler
 
 

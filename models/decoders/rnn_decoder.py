@@ -6,6 +6,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 from typing import Optional, Tuple
+from torch.nn.utils.rnn import pack_padded_sequence
 from ..layers.attention import AttentionLayer
 
 
@@ -44,24 +45,26 @@ class GRUDecoder(nn.Module):
             输出logits (batch_size, seq_len, vocab_size)
         """
         batch_size = features.size(0)
-        
+
         # 词嵌入
         embeddings = self.embed(captions)  # (batch_size, seq_len, embed_size)
-        
-        # 将图像特征与词嵌入结合
-        if embeddings.size(1) > 0:
+
+        if lengths is not None:
+            # 使用 pack_padded_sequence 处理变长序列（训练时）
+            packed = pack_padded_sequence(embeddings, lengths, batch_first=True, enforce_sorted=True)
+            # 使用 features 作为初始隐藏状态 h0 (1, batch, hidden_size)
+            h0 = features.unsqueeze(0)
+            packed_outputs, _ = self.gru(packed, h0)  # packed sequence
+            # packed_outputs.data: (sum(lengths), hidden_size)
+            outputs = self.linear(self.dropout(packed_outputs.data))  # (sum_lengths, vocab_size)
+            return outputs
+        else:
+            # 推理/简单前向（不使用 pack）
             image_features = features.unsqueeze(1).expand(-1, embeddings.size(1), -1)
             gru_input = embeddings + image_features
-        else:
-            gru_input = embeddings
-        
-        # GRU前向传播
-        gru_output, _ = self.gru(gru_input)  # (batch_size, seq_len, hidden_size)
-        
-        # 输出层
-        output = self.linear(self.dropout(gru_output))  # (batch_size, seq_len, vocab_size)
-        
-        return output
+            gru_output, _ = self.gru(gru_input)  # (batch_size, seq_len, hidden_size)
+            output = self.linear(self.dropout(gru_output))  # (batch_size, seq_len, vocab_size)
+            return output
     
     def generate(
         self,

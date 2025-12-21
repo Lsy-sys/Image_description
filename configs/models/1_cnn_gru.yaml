@@ -21,7 +21,13 @@ training:
   batch_size: 32
   learning_rate: 0.001
   optimizer: 'adam'
-  scheduler: 'plateau'
+  scheduler:
+    type: 'plateau'
+    mode: 'min'
+    factor: 0.5
+    patience: 5
+    min_lr: 1e-6
+  grad_clip: 1.0
 
 paths:
   checkpoint_dir: 'checkpoints/cnn_gru'

@@ -152,11 +152,16 @@ def main():
             label_smoothing=strategy_config.get('loss', {}).get('label_smoothing', 0.0)
         )
     
-    # 创建优化器和调度器
-    optimizer = create_optimizer(model, strategy_config.get('optimizer', config['training']))
+    # 创建优化器和调度器（先打印实际传入的配置以便调试）
+    optimizer_config = strategy_config.get('optimizer') or config['training']
+    # scheduler 只取子字典（支持 strategy 中覆盖或 model training 下的 scheduler 字段）
+    scheduler_config = strategy_config.get('scheduler') or config['training'].get('scheduler', {})
+    print(f"[CONFIG CHECK] optimizer_config: {optimizer_config}")
+    print(f"[CONFIG CHECK] scheduler_config: {scheduler_config}")
+    optimizer = create_optimizer(model, optimizer_config)
     scheduler = create_scheduler(
         optimizer,
-        strategy_config.get('scheduler', {}),
+        scheduler_config,
         num_training_steps=len(train_dataset) // config['training']['batch_size'] * config['training']['epochs']
     )
     

@@ -71,11 +71,12 @@ def load_model_and_vocab(checkpoint_path, config_path, device):
     return model, vocab, config
 
 
-def generate_captions(model, data_loader, vocab, device, model_type):
+def generate_captions(model, data_loader, vocab, device, model_type, length_penalty: float = 1.0, min_length: int = 0):
     """生成描述"""
     model.eval()
     all_candidates = []
     all_references = []
+    printed_samples_info = []
     
     print(f"开始生成描述 (Model Type: {model_type})...")
     
@@ -121,22 +122,34 @@ def generate_captions(model, data_loader, vocab, device, model_type):
                     node_features=node_features,
                     adj_matrix=adj_matrix,
                     vocab=vocab,
-                    max_length=50
+                    max_length=50,
+                    strategy='beam_search',
+                    beam_size=3,
+                    no_repeat_ngram_size=0,
+                    length_penalty=length_penalty
                 )
             else:
                 if 'images' in batch and batch['images'] is not None:
                     images = batch['images'].to(device)
                     generated, _ = model.generate(
-                        images=images, 
-                        vocab=vocab, 
-                        max_length=50
+                        images=images,
+                        vocab=vocab,
+                        max_length=50,
+                        strategy='beam_search',
+                        beam_size=3,
+                        no_repeat_ngram_size=0,
+                        length_penalty=length_penalty
                     )
                 elif 'regions' in batch and batch['regions'] is not None:
                     regions = batch['regions'].to(device)
                     generated, _ = model.generate(
-                        regions=regions, 
-                        vocab=vocab, 
-                        max_length=50
+                        regions=regions,
+                        vocab=vocab,
+                        max_length=50,
+                        strategy='beam_search',
+                        beam_size=3,
+                        no_repeat_ngram_size=0,
+                        length_penalty=length_penalty
                     )
             
             if generated is None:
@@ -170,13 +183,19 @@ def generate_captions(model, data_loader, vocab, device, model_type):
                     print("References:")
                     for ref in batch_refs[i]:
                         print("  -", ref)
+                    # 保存将要写入日志的示例信息
+                    printed_samples_info.append({
+                        'sample_index': printed_samples + 1,
+                        'generated': caption_str,
+                        'references': batch_refs[i]
+                    })
                     printed_samples += 1
             
             for refs in batch_refs:
                 ref_tokens = [ref.split() for ref in refs]
                 all_references.append(ref_tokens)
     
-    return all_candidates, all_references
+    return all_candidates, all_references, printed_samples_info
 
 
 def save_results(results, args, config, num_samples):
@@ -240,6 +259,9 @@ def main():
     parser.add_argument('--data_dir', type=str, default='data/DeepFashion-MultiModal', help='数据目录')
     parser.add_argument('--split', type=str, default='test', help='评测数据集 (val 或 test)')
     parser.add_argument('--device', type=str, default='auto', help='运行设备')
+    parser.add_argument('--length_penalty', type=float, default=1.0, help='Beam search length penalty (alpha)')
+    parser.add_argument('--min_length', type=int, default=15, help='最小生成长度（词数），强制模型多说话')
+    parser.add_argument('--batch_size', type=int, default=64, help='评测 batch size（增大以提升评测速度）')
     args = parser.parse_args()
     
     # 1. 设置设备
@@ -252,6 +274,8 @@ def main():
     # 2. 加载模型
     try:
         model, vocab, config = load_model_and_vocab(args.checkpoint, args.config, device)
+        # Set eval mode to ensure BatchNorm/Dropout behave correctly for single-sample inference
+        model.eval()
     except Exception as e:
         print(f"❌ 加载模型失败: {e}")
         return
@@ -300,14 +324,42 @@ def main():
                     if model_type == 'graph_transformer':
                         node = item['node_features'].unsqueeze(0).to(device)
                         adj = item['adj_matrix'].unsqueeze(0).to(device)
-                        seq, _ = model.generate(node_features=node, adj_matrix=adj, vocab=vocab, max_length=50)
+                        seq, _ = model.generate(
+                            node_features=node,
+                            adj_matrix=adj,
+                            vocab=vocab,
+                            max_length=50,
+                            strategy='beam_search',
+                            beam_size=3,
+                            no_repeat_ngram_size=0,
+                            min_length=args.min_length,
+                            length_penalty=args.length_penalty
+                        )
                     else:
                         if 'image' in item and item['image'] is not None:
                             img = item['image'].unsqueeze(0).to(device)
-                            seq, _ = model.generate(images=img, vocab=vocab, max_length=50)
+                            seq, _ = model.generate(
+                                images=img,
+                                vocab=vocab,
+                                max_length=50,
+                                strategy='beam_search',
+                                beam_size=3,
+                                no_repeat_ngram_size=0,
+                                min_length=args.min_length,
+                                length_penalty=args.length_penalty
+                            )
                         elif 'regions' in item and item['regions'] is not None:
                             reg = item['regions'].unsqueeze(0).to(device)
-                            seq, _ = model.generate(regions=reg, vocab=vocab, max_length=50)
+                            seq, _ = model.generate(
+                                regions=reg,
+                                vocab=vocab,
+                                max_length=50,
+                                strategy='beam_search',
+                                beam_size=3,
+                                no_repeat_ngram_size=0,
+                                min_length=args.min_length,
+                                length_penalty=args.length_penalty
+                            )
                         else:
                             print("无法找到视觉输入，跳过")
                             continue
@@ -324,7 +376,7 @@ def main():
 
     data_loader = create_data_loader(
         dataset=dataset,
-        batch_size=config['training'].get('batch_size', 32),
+        batch_size=getattr(args, 'batch_size', config['training'].get('batch_size', 32)),
         shuffle=False,
         num_workers=config['data'].get('num_workers', 4),
         collate_fn=collate_fn
@@ -334,7 +386,7 @@ def main():
     setattr(data_loader, 'sample_n', 5)
     
     # 4. 生成与计算
-    candidates, references = generate_captions(model, data_loader, vocab, device, model_type)
+    candidates, references, printed_info = generate_captions(model, data_loader, vocab, device, model_type, length_penalty=args.length_penalty, min_length=args.min_length)
     
     if not candidates:
         print("❌ 警告: 未生成任何描述，请检查数据加载或模型状态")
@@ -358,6 +410,39 @@ def main():
     print("=" * 40)
     print(f"💾 结果已保存至: {save_path}")
     print("=" * 40)
+    # 额外：把评测摘要和打印的示例保存到 evaluation log（便于后续查看）
+    try:
+        ckpt_name = os.path.basename(args.checkpoint)
+        if ckpt_name.endswith('.pth'):
+            ckpt_name = ckpt_name[:-4]
+        log_dir = config.get('paths', {}).get('log_dir', 'logs')
+        os.makedirs(log_dir, exist_ok=True)
+        eval_log_path = os.path.join(log_dir, f"evaluation_{ckpt_name}_{args.split}.log")
+        with open(eval_log_path, 'a', encoding='utf-8') as lf:
+            lf.write("=" * 80 + "\n")
+            lf.write(f"Timestamp: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
+            lf.write(f"Checkpoint: {args.checkpoint}\n")
+            lf.write(f"Config: {args.config}\n")
+            lf.write("Summary Metrics:\n")
+            for metric, values in results.items():
+                if isinstance(values, dict) and 'mean' in values:
+                    lf.write(f"  {metric}: {values['mean']:.4f}\n")
+                else:
+                    lf.write(f"  {metric}: {values}\n")
+            lf.write(f"Saved JSON results: {save_path}\n")
+            lf.write("\nPrinted Samples:\n")
+            for si in printed_info:
+                lf.write("-" * 40 + "\n")
+                lf.write(f"[Sample {si.get('sample_index')}]\n")
+                lf.write("Generated:\n")
+                lf.write(si.get('generated', '') + "\n")
+                lf.write("References:\n")
+                for r in si.get('references', []):
+                    lf.write("  - " + r + "\n")
+            lf.write("\n\n")
+        print(f"🔖 Evaluation log appended to: {eval_log_path}")
+    except Exception as e:
+        print("写入 evaluation log 时出错:", e)
 
 
 if __name__ == '__main__':

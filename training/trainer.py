@@ -106,6 +106,7 @@ class BaseTrainer:
         self.model.train()
         total_loss = 0
         num_batches = len(self.train_loader)
+        valid_batches = 0
         
         pbar = tqdm(self.train_loader, desc=f'Epoch {self.current_epoch+1}')
         
@@ -129,6 +130,10 @@ class BaseTrainer:
             
             # 准备输入和目标 (Teacher Forcing)
             input_seqs, target_seqs = prepare_teacher_forcing_batch(batch, self.vocab)
+            # 如果没有有效的 captions，跳过该 batch（避免影响平均值）
+            if input_seqs.numel() == 0 or target_seqs.numel() == 0:
+                pbar.set_postfix({'loss': 'skipped_empty'})
+                continue
             input_seqs = input_seqs.to(self.device)
             target_seqs = target_seqs.to(self.device)
             
@@ -148,7 +153,14 @@ class BaseTrainer:
                     outputs = self.model(regions=regions, captions=input_seqs)
             
             # 计算损失
-            loss = self.loss_fn(outputs, target_seqs)
+            try:
+                loss = self.loss_fn(outputs, target_seqs)
+            except Exception as e:
+                # debug 输出并跳过该 batch
+                print("Loss computation error on batch", batch_idx, ":", e)
+                print("outputs.shape:", getattr(outputs, 'shape', None))
+                print("target_seqs.shape:", target_seqs.shape)
+                continue
             
             # 反向传播
             loss.backward()
@@ -160,12 +172,43 @@ class BaseTrainer:
             
             self.optimizer.step()
             
-            total_loss += loss.item()
+            # 如果使用按-step 的调度器（如 LambdaLR / CosineAnnealingLR 带 step 语义），在每个 step 后更新
+            if self.scheduler and not isinstance(self.scheduler, optim.lr_scheduler.ReduceLROnPlateau):
+                if isinstance(self.scheduler, (optim.lr_scheduler.LambdaLR, optim.lr_scheduler.CosineAnnealingLR)):
+                    try:
+                        self.scheduler.step()
+                    except Exception:
+                        # 如果调度器不支持 per-step，忽略错误（保留兼容性）
+                        pass
+            # 在训练开始的前若干 step 打印当前学习率以验证 warmup（只在第 0 个 epoch）
+            if self.current_epoch == 0 and batch_idx < 10:
+                try:
+                    current_lr = self.optimizer.param_groups[0].get('lr', None)
+                    print(f"[LR CHECK] epoch={self.current_epoch} step={batch_idx} lr={current_lr:.8f}")
+                except Exception:
+                    pass
             
-            # 更新进度条
+            total_loss += loss.item()
+            valid_batches += 1
+
+            # 更新进度条（展示当前 batch loss）
             pbar.set_postfix({'loss': f'{loss.item():.4f}'})
+
+            # 首几个 batch 打印 debug 信息，帮助检查 shapes / optimizer 配置
+            if batch_idx < 3:
+                try:
+                    print(f"[DEBUG] batch {batch_idx}: images {None if 'images' not in locals() else images.shape}, "
+                          f"input_seqs {input_seqs.shape}, target_seqs {target_seqs.shape}, outputs {getattr(outputs, 'shape', None)}")
+                    print(f"[DEBUG] num params total {sum(p.numel() for p in self.model.parameters())}, "
+                          f"num params in optimizer {sum(p.numel() for g in self.optimizer.param_groups for p in g['params'])}")
+                except Exception:
+                    pass
         
-        avg_loss = total_loss / num_batches
+        # 平均只对有效 batch 取平均，避免空 batch 干扰
+        if valid_batches == 0:
+            avg_loss = float('inf')
+        else:
+            avg_loss = total_loss / valid_batches
         self.train_losses.append(avg_loss)
         
         return avg_loss
@@ -175,6 +218,7 @@ class BaseTrainer:
         self.model.eval()
         total_loss = 0
         num_batches = len(self.val_loader)
+        valid_batches = 0
         
         with torch.no_grad():
             for batch in tqdm(self.val_loader, desc='Validation'):
@@ -214,10 +258,20 @@ class BaseTrainer:
                         outputs = self.model(regions=regions, captions=input_seqs)
                 
                 # 计算损失
-                loss = self.loss_fn(outputs, target_seqs)
+                try:
+                    loss = self.loss_fn(outputs, target_seqs)
+                except Exception as e:
+                    print("Validation loss computation error:", e)
+                    print("outputs.shape:", getattr(outputs, 'shape', None))
+                    print("target_seqs.shape:", target_seqs.shape)
+                    continue
                 total_loss += loss.item()
+                valid_batches += 1
         
-        avg_loss = total_loss / num_batches
+        if valid_batches == 0:
+            avg_loss = float('inf')
+        else:
+            avg_loss = total_loss / valid_batches
         self.val_losses.append(avg_loss)
         
         return avg_loss
@@ -237,12 +291,9 @@ class BaseTrainer:
             # 验证
             val_loss = self.validate_epoch()
             
-            # 学习率调度
-            if self.scheduler:
-                if isinstance(self.scheduler, optim.lr_scheduler.ReduceLROnPlateau):
-                    self.scheduler.step(val_loss)
-                else:
-                    self.scheduler.step()
+            # 学习率调度：只在 epoch 末对 ReduceLROnPlateau 做基于 epoch 的更新
+            if self.scheduler and isinstance(self.scheduler, optim.lr_scheduler.ReduceLROnPlateau):
+                self.scheduler.step(val_loss)
             
             # 记录日志
             self.training_log["epochs"].append(epoch + 1)

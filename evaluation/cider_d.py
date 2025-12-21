@@ -162,7 +162,8 @@ class CiderD:
         # 计算最终分数
         cider_d_score = avg_cider * length_penalty
         
-        return cider_d_score
+        # 返回原始 CIDEr-D 分数（不放大）
+        return float(cider_d_score)
     
     def compute_batch_cider_d(self, candidates, references_list):
         """

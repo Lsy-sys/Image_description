@@ -193,6 +193,7 @@ def main():
     parser.add_argument('--temperature', type=float, default=1.0, help='采样温度')
     parser.add_argument('--top_k', type=int, default=5, help='top-k 采样')
     parser.add_argument('--top_p', type=float, default=0.9, help='top-p 采样')
+    parser.add_argument('--no_repeat_ngram_size', type=int, default=2, help='禁止重复 n-gram 的 n 大小（0 表示不启用）')
     args = parser.parse_args()
 
     config = load_config(args.config)
@@ -235,6 +236,7 @@ def main():
                 temperature=args.temperature,
                 top_k=args.top_k,
                 top_p=args.top_p
+                , no_repeat_ngram_size=args.no_repeat_ngram_size
             )
         else:
             if not args.image:
@@ -251,6 +253,7 @@ def main():
                 temperature=args.temperature,
                 top_k=args.top_k,
                 top_p=args.top_p
+                , no_repeat_ngram_size=args.no_repeat_ngram_size
             )
 
     caption = _decode_sequence(sequences[0].cpu(), vocab)

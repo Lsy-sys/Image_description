@@ -21,12 +21,13 @@ model:
   vocab_size: 10000
 
 training:
-  epochs: 30
+  epochs: 15
   batch_size: 16
   learning_rate: 0.0001
   optimizer: 'adamw'
-  scheduler: 'cosine'
-  warmup_steps: 1000
+  scheduler:
+    type: 'warmup_cosine'
+    warmup_steps: 1000
   grad_clip: 1.0
 
 paths:
