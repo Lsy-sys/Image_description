@@ -6,6 +6,7 @@ import json
 import pickle
 from collections import Counter
 import numpy as np
+import re
 
 
 class Vocabulary:
@@ -102,8 +103,16 @@ class Vocabulary:
     
     def _tokenize(self, text):
         """简单的分词"""
-        # 这里可以使用更复杂的分词方法
-        return text.lower().split()
+        # 基于正则的简易分词并清洗标点：
+        # - 小写化
+        # - 提取字母/数字序列，保留常见缩写的撇号（如 don't）
+        # 这可以避免将 "skirt."、"skirt," 等视为不同词。
+        if not isinstance(text, str):
+            return []
+        text_lower = text.lower()
+        # 匹配字母数字序列，允许中间带撇号或连字符
+        tokens = re.findall(r"[a-z0-9]+(?:['-][a-z0-9]+)*", text_lower)
+        return tokens
     
     def encode(self, text, max_length=None):
         """
