@@ -123,8 +123,7 @@ def generate_captions(model, data_loader, vocab, device, model_type, length_pena
                     adj_matrix=adj_matrix,
                     vocab=vocab,
                     max_length=50,
-                    strategy='beam_search',
-                    beam_size=3,
+                    strategy='greedy',
                     no_repeat_ngram_size=0,
                     length_penalty=length_penalty
                 )
@@ -135,8 +134,7 @@ def generate_captions(model, data_loader, vocab, device, model_type, length_pena
                         images=images,
                         vocab=vocab,
                         max_length=50,
-                        strategy='beam_search',
-                        beam_size=3,
+                        strategy='greedy',
                         no_repeat_ngram_size=0,
                         length_penalty=length_penalty
                     )
@@ -146,8 +144,7 @@ def generate_captions(model, data_loader, vocab, device, model_type, length_pena
                         regions=regions,
                         vocab=vocab,
                         max_length=50,
-                        strategy='beam_search',
-                        beam_size=3,
+                        strategy='greedy',
                         no_repeat_ngram_size=0,
                         length_penalty=length_penalty
                     )
@@ -329,8 +326,7 @@ def main():
                             adj_matrix=adj,
                             vocab=vocab,
                             max_length=50,
-                            strategy='beam_search',
-                            beam_size=3,
+                            strategy='greedy',
                             no_repeat_ngram_size=0,
                             min_length=args.min_length,
                             length_penalty=args.length_penalty
@@ -342,8 +338,7 @@ def main():
                                 images=img,
                                 vocab=vocab,
                                 max_length=50,
-                                strategy='beam_search',
-                                beam_size=3,
+                                strategy='greedy',
                                 no_repeat_ngram_size=0,
                                 min_length=args.min_length,
                                 length_penalty=args.length_penalty
@@ -354,8 +349,7 @@ def main():
                                 regions=reg,
                                 vocab=vocab,
                                 max_length=50,
-                                strategy='beam_search',
-                                beam_size=3,
+                                strategy='greedy',
                                 no_repeat_ngram_size=0,
                                 min_length=args.min_length,
                                 length_penalty=args.length_penalty
