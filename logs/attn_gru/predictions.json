@@ -1,0 +1,1352 @@
+[
+  {
+    "image_id": 0,
+    "prediction": "a woman wearing a",
+    "references": [
+      "a woman wearing a white blouse",
+      "the woman wearing the white blouse",
+      "a woman wearing a white blouse ."
+    ]
+  },
+  {
+    "image_id": 1,
+    "prediction": "a person showcasing a",
+    "references": [
+      "a person showcasing a red skirt",
+      "the person showcasing the red skirt",
+      "a person showcasing a red skirt ."
+    ]
+  },
+  {
+    "image_id": 2,
+    "prediction": "a lady in a white",
+    "references": [
+      "a lady posing in a white jacket",
+      "the lady posing in the white jacket",
+      "a lady posing in a white jacket ."
+    ]
+  },
+  {
+    "image_id": 3,
+    "prediction": "a person dressed in a green",
+    "references": [
+      "a person dressed in a green skirt",
+      "the person dressed in the green skirt",
+      "a person dressed in a green skirt ."
+    ]
+  },
+  {
+    "image_id": 4,
+    "prediction": "a lady dressed in a",
+    "references": [
+      "a lady dressed in a black jeans",
+      "the lady dressed in the black jeans",
+      "a lady dressed in a black jeans ."
+    ]
+  },
+  {
+    "image_id": 5,
+    "prediction": "a woman showcasing a white",
+    "references": [
+      "a woman showcasing a white skirt",
+      "the woman showcasing the white skirt",
+      "a woman showcasing a white skirt ."
+    ]
+  },
+  {
+    "image_id": 6,
+    "prediction": "a model dressed in a green",
+    "references": [
+      "a model dressed in a green blouse",
+      "the model dressed in the green blouse",
+      "a model dressed in a green blouse ."
+    ]
+  },
+  {
+    "image_id": 7,
+    "prediction": "a person showcasing a",
+    "references": [
+      "a person showcasing a white t-shirt",
+      "the person showcasing the white t-shirt",
+      "a person showcasing a white t-shirt ."
+    ]
+  },
+  {
+    "image_id": 8,
+    "prediction": "a model showcasing a pink",
+    "references": [
+      "a model showcasing a pink skirt",
+      "the model showcasing the pink skirt",
+      "a model showcasing a pink skirt ."
+    ]
+  },
+  {
+    "image_id": 9,
+    "prediction": "a lady in a yellow",
+    "references": [
+      "a lady posing in a yellow jeans",
+      "the lady posing in the yellow jeans",
+      "a lady posing in a yellow jeans ."
+    ]
+  },
+  {
+    "image_id": 10,
+    "prediction": "a dressed in a black",
+    "references": [
+      "a woman dressed in a black skirt",
+      "the woman dressed in the black skirt",
+      "a woman dressed in a black skirt ."
+    ]
+  },
+  {
+    "image_id": 11,
+    "prediction": "a person wearing a",
+    "references": [
+      "a person wearing a green blouse",
+      "the person wearing the green blouse",
+      "a person wearing a green blouse ."
+    ]
+  },
+  {
+    "image_id": 12,
+    "prediction": "a woman posing in a pink",
+    "references": [
+      "a woman posing in a pink jeans",
+      "the woman posing in the pink jeans",
+      "a woman posing in a pink jeans ."
+    ]
+  },
+  {
+    "image_id": 13,
+    "prediction": "a model posing in a",
+    "references": [
+      "a model posing in a red dress",
+      "the model posing in the red dress",
+      "a model posing in a red dress ."
+    ]
+  },
+  {
+    "image_id": 14,
+    "prediction": "a person showcasing a green",
+    "references": [
+      "a person showcasing a green skirt",
+      "the person showcasing the green skirt",
+      "a person showcasing a green skirt ."
+    ]
+  },
+  {
+    "image_id": 15,
+    "prediction": "a woman showcasing a pink",
+    "references": [
+      "a woman showcasing a pink skirt",
+      "the woman showcasing the pink skirt",
+      "a woman showcasing a pink skirt ."
+    ]
+  },
+  {
+    "image_id": 16,
+    "prediction": "a lady showcasing a",
+    "references": [
+      "a lady showcasing a pink skirt",
+      "the lady showcasing the pink skirt",
+      "a lady showcasing a pink skirt ."
+    ]
+  },
+  {
+    "image_id": 17,
+    "prediction": "a lady posing in a green",
+    "references": [
+      "a lady posing in a green t-shirt",
+      "the lady posing in the green t-shirt",
+      "a lady posing in a green t-shirt ."
+    ]
+  },
+  {
+    "image_id": 18,
+    "prediction": "a lady showcasing a black",
+    "references": [
+      "a lady showcasing a black t-shirt",
+      "the lady showcasing the black t-shirt",
+      "a lady showcasing a black t-shirt ."
+    ]
+  },
+  {
+    "image_id": 19,
+    "prediction": "a person posing in a",
+    "references": [
+      "a person posing in a blue blouse",
+      "the person posing in the blue blouse",
+      "a person posing in a blue blouse ."
+    ]
+  },
+  {
+    "image_id": 20,
+    "prediction": "a woman in a yellow",
+    "references": [
+      "a woman dressed in a yellow dress",
+      "the woman dressed in the yellow dress",
+      "a woman dressed in a yellow dress ."
+    ]
+  },
+  {
+    "image_id": 21,
+    "prediction": "a person posing in a",
+    "references": [
+      "a person posing in a blue t-shirt",
+      "the person posing in the blue t-shirt",
+      "a person posing in a blue t-shirt ."
+    ]
+  },
+  {
+    "image_id": 22,
+    "prediction": "a person posing in a beige",
+    "references": [
+      "a person posing in a beige jacket",
+      "the person posing in the beige jacket",
+      "a person posing in a beige jacket ."
+    ]
+  },
+  {
+    "image_id": 23,
+    "prediction": "a person dressed in a",
+    "references": [
+      "a person dressed in a pink jeans",
+      "the person dressed in the pink jeans",
+      "a person dressed in a pink jeans ."
+    ]
+  },
+  {
+    "image_id": 24,
+    "prediction": "a lady posing in a black",
+    "references": [
+      "a lady posing in a black jeans",
+      "the lady posing in the black jeans",
+      "a lady posing in a black jeans ."
+    ]
+  },
+  {
+    "image_id": 25,
+    "prediction": "a model showcasing a",
+    "references": [
+      "a model showcasing a blue blouse",
+      "the model showcasing the blue blouse",
+      "a model showcasing a blue blouse ."
+    ]
+  },
+  {
+    "image_id": 26,
+    "prediction": "a model wearing a yellow",
+    "references": [
+      "a model wearing a yellow t-shirt",
+      "the model wearing the yellow t-shirt",
+      "a model wearing a yellow t-shirt ."
+    ]
+  },
+  {
+    "image_id": 27,
+    "prediction": "a person wearing a navy",
+    "references": [
+      "a person wearing a navy jeans",
+      "the person wearing the navy jeans",
+      "a person wearing a navy jeans ."
+    ]
+  },
+  {
+    "image_id": 28,
+    "prediction": "a woman dressed in a red",
+    "references": [
+      "a woman dressed in a red t-shirt",
+      "the woman dressed in the red t-shirt",
+      "a woman dressed in a red t-shirt ."
+    ]
+  },
+  {
+    "image_id": 29,
+    "prediction": "a woman showcasing a blue",
+    "references": [
+      "a woman showcasing a blue skirt",
+      "the woman showcasing the blue skirt",
+      "a woman showcasing a blue skirt ."
+    ]
+  },
+  {
+    "image_id": 30,
+    "prediction": "a dressed in a black",
+    "references": [
+      "a lady dressed in a black t-shirt",
+      "the lady dressed in the black t-shirt",
+      "a lady dressed in a black t-shirt ."
+    ]
+  },
+  {
+    "image_id": 31,
+    "prediction": "a person showcasing a yellow",
+    "references": [
+      "a person showcasing a yellow skirt",
+      "the person showcasing the yellow skirt",
+      "a person showcasing a yellow skirt ."
+    ]
+  },
+  {
+    "image_id": 32,
+    "prediction": "a woman posing in a beige",
+    "references": [
+      "a woman posing in a beige jacket",
+      "the woman posing in the beige jacket",
+      "a woman posing in a beige jacket ."
+    ]
+  },
+  {
+    "image_id": 33,
+    "prediction": "a person showcasing a red",
+    "references": [
+      "a person showcasing a red jacket",
+      "the person showcasing the red jacket",
+      "a person showcasing a red jacket ."
+    ]
+  },
+  {
+    "image_id": 34,
+    "prediction": "a woman showcasing a blue",
+    "references": [
+      "a woman showcasing a blue t-shirt",
+      "the woman showcasing the blue t-shirt",
+      "a woman showcasing a blue t-shirt ."
+    ]
+  },
+  {
+    "image_id": 35,
+    "prediction": "a woman showcasing a pink",
+    "references": [
+      "a woman showcasing a pink jeans",
+      "the woman showcasing the pink jeans",
+      "a woman showcasing a pink jeans ."
+    ]
+  },
+  {
+    "image_id": 36,
+    "prediction": "a woman posing in a",
+    "references": [
+      "a woman posing in a pink dress",
+      "the woman posing in the pink dress",
+      "a woman posing in a pink dress ."
+    ]
+  },
+  {
+    "image_id": 37,
+    "prediction": "a woman showcasing a pink",
+    "references": [
+      "a woman showcasing a pink dress",
+      "the woman showcasing the pink dress",
+      "a woman showcasing a pink dress ."
+    ]
+  },
+  {
+    "image_id": 38,
+    "prediction": "a person dressed in a",
+    "references": [
+      "a person dressed in a green jeans",
+      "the person dressed in the green jeans",
+      "a person dressed in a green jeans ."
+    ]
+  },
+  {
+    "image_id": 39,
+    "prediction": "a model posing in a",
+    "references": [
+      "a model posing in a black blouse",
+      "the model posing in the black blouse",
+      "a model posing in a black blouse ."
+    ]
+  },
+  {
+    "image_id": 40,
+    "prediction": "a lady showcasing a pink",
+    "references": [
+      "a lady showcasing a pink skirt",
+      "the lady showcasing the pink skirt",
+      "a lady showcasing a pink skirt ."
+    ]
+  },
+  {
+    "image_id": 41,
+    "prediction": "a person wearing a navy",
+    "references": [
+      "a person wearing a navy skirt",
+      "the person wearing the navy skirt",
+      "a person wearing a navy skirt ."
+    ]
+  },
+  {
+    "image_id": 42,
+    "prediction": "a lady wearing a green",
+    "references": [
+      "a lady wearing a green jeans",
+      "the lady wearing the green jeans",
+      "a lady wearing a green jeans ."
+    ]
+  },
+  {
+    "image_id": 43,
+    "prediction": "a lady showcasing a",
+    "references": [
+      "a lady showcasing a green blouse",
+      "the lady showcasing the green blouse",
+      "a lady showcasing a green blouse ."
+    ]
+  },
+  {
+    "image_id": 44,
+    "prediction": "a lady posing in a",
+    "references": [
+      "a lady posing in a blue jeans",
+      "the lady posing in the blue jeans",
+      "a lady posing in a blue jeans ."
+    ]
+  },
+  {
+    "image_id": 45,
+    "prediction": "a woman posing in a",
+    "references": [
+      "a woman posing in a navy jacket",
+      "the woman posing in the navy jacket",
+      "a woman posing in a navy jacket ."
+    ]
+  },
+  {
+    "image_id": 46,
+    "prediction": "a person wearing a",
+    "references": [
+      "a person wearing a pink jacket",
+      "the person wearing the pink jacket",
+      "a person wearing a pink jacket ."
+    ]
+  },
+  {
+    "image_id": 47,
+    "prediction": "a person dressed in a white",
+    "references": [
+      "a person dressed in a white blouse",
+      "the person dressed in the white blouse",
+      "a person dressed in a white blouse ."
+    ]
+  },
+  {
+    "image_id": 48,
+    "prediction": "a model wearing a pink",
+    "references": [
+      "a model wearing a pink jeans",
+      "the model wearing the pink jeans",
+      "a model wearing a pink jeans ."
+    ]
+  },
+  {
+    "image_id": 49,
+    "prediction": "a woman dressed in a black",
+    "references": [
+      "a woman dressed in a black jacket",
+      "the woman dressed in the black jacket",
+      "a woman dressed in a black jacket ."
+    ]
+  },
+  {
+    "image_id": 50,
+    "prediction": "a model dressed in a stylish v-neck t-shirt matching",
+    "references": [
+      "a model dressed in a stylish v-neck beige t-shirt matching with black t-shirt standing against a white background",
+      "the model dressed in the stylish v-neck beige t-shirt matching with black t-shirt standing against the white background",
+      "a model dressed in a stylish v-neck beige t-shirt matching with black t-shirt standing against a white background ."
+    ]
+  },
+  {
+    "image_id": 51,
+    "prediction": "a lady dressed in a stylish denim navy t-shirt matching",
+    "references": [
+      "a lady dressed in a stylish denim navy t-shirt matching with black t-shirt standing against a white background",
+      "the lady dressed in the stylish denim navy t-shirt matching with black t-shirt standing against the white background",
+      "a lady dressed in a stylish denim navy t-shirt matching with black t-shirt standing against a white background ."
+    ]
+  },
+  {
+    "image_id": 52,
+    "prediction": "a model posing in a stylish leather beige dress",
+    "references": [
+      "a model posing in a stylish leather beige dress matching with yellow t-shirt standing against a park",
+      "the model posing in the stylish leather beige dress matching with yellow t-shirt standing against the park",
+      "a model posing in a stylish leather beige dress matching with yellow t-shirt standing against a park ."
+    ]
+  },
+  {
+    "image_id": 53,
+    "prediction": "a woman posing in a stylish denim red t-shirt matching",
+    "references": [
+      "a woman posing in a stylish denim red t-shirt matching with navy t-shirt standing against a white background",
+      "the woman posing in the stylish denim red t-shirt matching with navy t-shirt standing against the white background",
+      "a woman posing in a stylish denim red t-shirt matching with navy t-shirt standing against a white background ."
+    ]
+  },
+  {
+    "image_id": 54,
+    "prediction": "a lady wearing a stylish lace pink jeans matching with",
+    "references": [
+      "a lady wearing a stylish lace pink jeans matching with pink blouse standing against a grey wall",
+      "the lady wearing the stylish lace pink jeans matching with pink blouse standing against the grey wall",
+      "a lady wearing a stylish lace pink jeans matching with pink blouse standing against a grey wall ."
+    ]
+  },
+  {
+    "image_id": 55,
+    "prediction": "a person wearing a stylish leather green jeans matching with",
+    "references": [
+      "a person wearing a stylish leather green jeans matching with pink jeans standing against a white background",
+      "the person wearing the stylish leather green jeans matching with pink jeans standing against the white background",
+      "a person wearing a stylish leather green jeans matching with pink jeans standing against a white background ."
+    ]
+  },
+  {
+    "image_id": 56,
+    "prediction": "a model dressed in a stylish sleeveless navy jacket matching",
+    "references": [
+      "a model dressed in a stylish sleeveless navy jacket matching with blue dress standing against a white background",
+      "the model dressed in the stylish sleeveless navy jacket matching with blue dress standing against the white background",
+      "a model dressed in a stylish sleeveless navy jacket matching with blue dress standing against a white background ."
+    ]
+  },
+  {
+    "image_id": 57,
+    "prediction": "a person showcasing a stylish floral blue jeans matching",
+    "references": [
+      "a person showcasing a stylish floral blue jeans matching with beige t-shirt standing against a street",
+      "the person showcasing the stylish floral blue jeans matching with beige t-shirt standing against the street",
+      "a person showcasing a stylish floral blue jeans matching with beige t-shirt standing against a street ."
+    ]
+  },
+  {
+    "image_id": 58,
+    "prediction": "a woman dressed in a stylish sleeveless green jeans matching",
+    "references": [
+      "a woman dressed in a stylish sleeveless green jeans matching with yellow t-shirt standing against a white background",
+      "the woman dressed in the stylish sleeveless green jeans matching with yellow t-shirt standing against the white background",
+      "a woman dressed in a stylish sleeveless green jeans matching with yellow t-shirt standing against a white background ."
+    ]
+  },
+  {
+    "image_id": 59,
+    "prediction": "a lady dressed in a stylish printed white dress",
+    "references": [
+      "a lady dressed in a stylish printed white dress matching with pink blouse standing against a park",
+      "the lady dressed in the stylish printed white dress matching with pink blouse standing against the park",
+      "a lady dressed in a stylish printed white dress matching with pink blouse standing against a park ."
+    ]
+  },
+  {
+    "image_id": 60,
+    "prediction": "a model dressed in stylish floral navy jeans matching",
+    "references": [
+      "a model dressed in a stylish floral navy jeans matching with navy jeans standing against a white background",
+      "the model dressed in the stylish floral navy jeans matching with navy jeans standing against the white background",
+      "a model dressed in a stylish floral navy jeans matching with navy jeans standing against a white background ."
+    ]
+  },
+  {
+    "image_id": 61,
+    "prediction": "a woman in a stylish striped green jeans matching",
+    "references": [
+      "a woman posing in a stylish striped green jeans matching with green jacket standing against a street",
+      "the woman posing in the stylish striped green jeans matching with green jacket standing against the street",
+      "a woman posing in a stylish striped green jeans matching with green jacket standing against a street ."
+    ]
+  },
+  {
+    "image_id": 62,
+    "prediction": "a woman dressed in a stylish v-neck navy blouse matching",
+    "references": [
+      "a woman dressed in a stylish v-neck navy blouse matching with white t-shirt standing against a park",
+      "the woman dressed in the stylish v-neck navy blouse matching with white t-shirt standing against the park",
+      "a woman dressed in a stylish v-neck navy blouse matching with white t-shirt standing against a park ."
+    ]
+  },
+  {
+    "image_id": 63,
+    "prediction": "a lady posing in a stylish floral green t-shirt matching",
+    "references": [
+      "a lady posing in a stylish floral green t-shirt matching with beige t-shirt standing against a white background",
+      "the lady posing in the stylish floral green t-shirt matching with beige t-shirt standing against the white background",
+      "a lady posing in a stylish floral green t-shirt matching with beige t-shirt standing against a white background ."
+    ]
+  },
+  {
+    "image_id": 64,
+    "prediction": "a woman posing in a stylish denim white jacket",
+    "references": [
+      "a woman posing in a stylish denim white jacket matching with navy dress standing against a studio",
+      "the woman posing in the stylish denim white jacket matching with navy dress standing against the studio",
+      "a woman posing in a stylish denim white jacket matching with navy dress standing against a studio ."
+    ]
+  },
+  {
+    "image_id": 65,
+    "prediction": "a person wearing a stylish striped black jeans matching",
+    "references": [
+      "a person wearing a stylish striped black jeans matching with beige jacket standing against a street",
+      "the person wearing the stylish striped black jeans matching with beige jacket standing against the street",
+      "a person wearing a stylish striped black jeans matching with beige jacket standing against a street ."
+    ]
+  },
+  {
+    "image_id": 66,
+    "prediction": "a lady wearing a stylish striped pink jeans matching",
+    "references": [
+      "a lady wearing a stylish striped pink jeans matching with white t-shirt standing against a street",
+      "the lady wearing the stylish striped pink jeans matching with white t-shirt standing against the street",
+      "a lady wearing a stylish striped pink jeans matching with white t-shirt standing against a street ."
+    ]
+  },
+  {
+    "image_id": 67,
+    "prediction": "a person showcasing a stylish denim red t-shirt matching with",
+    "references": [
+      "a person showcasing a stylish denim red t-shirt matching with green t-shirt standing against a studio",
+      "the person showcasing the stylish denim red t-shirt matching with green t-shirt standing against the studio",
+      "a person showcasing a stylish denim red t-shirt matching with green t-shirt standing against a studio ."
+    ]
+  },
+  {
+    "image_id": 68,
+    "prediction": "a woman wearing a stylish lace beige jacket matching",
+    "references": [
+      "a woman wearing a stylish lace beige jacket matching with white t-shirt standing against a white background",
+      "the woman wearing the stylish lace beige jacket matching with white t-shirt standing against the white background",
+      "a woman wearing a stylish lace beige jacket matching with white t-shirt standing against a white background ."
+    ]
+  },
+  {
+    "image_id": 69,
+    "prediction": "a model dressed in a stylish sleeveless navy dress matching",
+    "references": [
+      "a model dressed in a stylish sleeveless navy dress matching with green t-shirt standing against a white background",
+      "the model dressed in the stylish sleeveless navy dress matching with green t-shirt standing against the white background",
+      "a model dressed in a stylish sleeveless navy dress matching with green t-shirt standing against a white background ."
+    ]
+  },
+  {
+    "image_id": 70,
+    "prediction": "a person showcasing a chiffon red t-shirt matching",
+    "references": [
+      "a person showcasing a stylish chiffon red t-shirt matching with beige jeans standing against a street",
+      "the person showcasing the stylish chiffon red t-shirt matching with beige jeans standing against the street",
+      "a person showcasing a stylish chiffon red t-shirt matching with beige jeans standing against a street ."
+    ]
+  },
+  {
+    "image_id": 71,
+    "prediction": "a lady posing in a stylish lace pink skirt",
+    "references": [
+      "a lady posing in a stylish lace pink skirt matching with yellow dress standing against a studio",
+      "the lady posing in the stylish lace pink skirt matching with yellow dress standing against the studio",
+      "a lady posing in a stylish lace pink skirt matching with yellow dress standing against a studio ."
+    ]
+  },
+  {
+    "image_id": 72,
+    "prediction": "a woman dressed in a stylish printed navy blouse",
+    "references": [
+      "a woman dressed in a stylish printed navy blouse matching with yellow t-shirt standing against a street",
+      "the woman dressed in the stylish printed navy blouse matching with yellow t-shirt standing against the street",
+      "a woman dressed in a stylish printed navy blouse matching with yellow t-shirt standing against a street ."
+    ]
+  },
+  {
+    "image_id": 73,
+    "prediction": "a woman wearing a stylish chiffon blue skirt matching",
+    "references": [
+      "a woman wearing a stylish chiffon blue skirt matching with navy dress standing against a grey wall",
+      "the woman wearing the stylish chiffon blue skirt matching with navy dress standing against the grey wall",
+      "a woman wearing a stylish chiffon blue skirt matching with navy dress standing against a grey wall ."
+    ]
+  },
+  {
+    "image_id": 74,
+    "prediction": "a model showcasing a stylish pink blouse matching",
+    "references": [
+      "a model showcasing a stylish chiffon pink blouse matching with green jacket standing against a street",
+      "the model showcasing the stylish chiffon pink blouse matching with green jacket standing against the street",
+      "a model showcasing a stylish chiffon pink blouse matching with green jacket standing against a street ."
+    ]
+  },
+  {
+    "image_id": 75,
+    "prediction": "a model wearing a stylish leather pink jeans matching",
+    "references": [
+      "a model wearing a stylish leather pink jeans matching with white skirt standing against a street",
+      "the model wearing the stylish leather pink jeans matching with white skirt standing against the street",
+      "a model wearing a stylish leather pink jeans matching with white skirt standing against a street ."
+    ]
+  },
+  {
+    "image_id": 76,
+    "prediction": "a model showcasing a stylish floral red blouse matching with",
+    "references": [
+      "a model showcasing a stylish floral red blouse matching with black jeans standing against a white background",
+      "the model showcasing the stylish floral red blouse matching with black jeans standing against the white background",
+      "a model showcasing a stylish floral red blouse matching with black jeans standing against a white background ."
+    ]
+  },
+  {
+    "image_id": 77,
+    "prediction": "a model posing in a stylish leather black blouse matching",
+    "references": [
+      "a model posing in a stylish leather black blouse matching with green skirt standing against a street",
+      "the model posing in the stylish leather black blouse matching with green skirt standing against the street",
+      "a model posing in a stylish leather black blouse matching with green skirt standing against a street ."
+    ]
+  },
+  {
+    "image_id": 78,
+    "prediction": "a person posing in a stylish printed red jeans matching",
+    "references": [
+      "a person posing in a stylish printed red jeans matching with white skirt standing against a street",
+      "the person posing in the stylish printed red jeans matching with white skirt standing against the street",
+      "a person posing in a stylish printed red jeans matching with white skirt standing against a street ."
+    ]
+  },
+  {
+    "image_id": 79,
+    "prediction": "a woman dressed in a stylish floral blue dress matching with",
+    "references": [
+      "a woman dressed in a stylish floral blue dress matching with yellow skirt standing against a white background",
+      "the woman dressed in the stylish floral blue dress matching with yellow skirt standing against the white background",
+      "a woman dressed in a stylish floral blue dress matching with yellow skirt standing against a white background ."
+    ]
+  },
+  {
+    "image_id": 80,
+    "prediction": "a lady showcasing a stylish sleeveless navy skirt matching",
+    "references": [
+      "a lady showcasing a stylish sleeveless navy skirt matching with beige jeans standing against a studio",
+      "the lady showcasing the stylish sleeveless navy skirt matching with beige jeans standing against the studio",
+      "a lady showcasing a stylish sleeveless navy skirt matching with beige jeans standing against a studio ."
+    ]
+  },
+  {
+    "image_id": 81,
+    "prediction": "a lady dressed in a stylish sleeveless black dress matching with",
+    "references": [
+      "a lady dressed in a stylish sleeveless black dress matching with pink jeans standing against a white background",
+      "the lady dressed in the stylish sleeveless black dress matching with pink jeans standing against the white background",
+      "a lady dressed in a stylish sleeveless black dress matching with pink jeans standing against a white background ."
+    ]
+  },
+  {
+    "image_id": 82,
+    "prediction": "a person showcasing a stylish chiffon navy jeans matching",
+    "references": [
+      "a person showcasing a stylish chiffon navy jeans matching with pink jacket standing against a white background",
+      "the person showcasing the stylish chiffon navy jeans matching with pink jacket standing against the white background",
+      "a person showcasing a stylish chiffon navy jeans matching with pink jacket standing against a white background ."
+    ]
+  },
+  {
+    "image_id": 83,
+    "prediction": "a model dressed in a stylish printed pink jeans matching",
+    "references": [
+      "a model dressed in a stylish printed pink jeans matching with navy blouse standing against a white background",
+      "the model dressed in the stylish printed pink jeans matching with navy blouse standing against the white background",
+      "a model dressed in a stylish printed pink jeans matching with navy blouse standing against a white background ."
+    ]
+  },
+  {
+    "image_id": 84,
+    "prediction": "a woman in a stylish floral blue dress",
+    "references": [
+      "a woman posing in a stylish floral blue dress matching with white dress standing against a park",
+      "the woman posing in the stylish floral blue dress matching with white dress standing against the park",
+      "a woman posing in a stylish floral blue dress matching with white dress standing against a park ."
+    ]
+  },
+  {
+    "image_id": 85,
+    "prediction": "a woman posing in a stylish lace black jacket matching",
+    "references": [
+      "a woman posing in a stylish lace black jacket matching with white t-shirt standing against a grey wall",
+      "the woman posing in the stylish lace black jacket matching with white t-shirt standing against the grey wall",
+      "a woman posing in a stylish lace black jacket matching with white t-shirt standing against a grey wall ."
+    ]
+  },
+  {
+    "image_id": 86,
+    "prediction": "a woman posing in a stylish v-neck red dress matching",
+    "references": [
+      "a woman posing in a stylish v-neck red dress matching with blue jacket standing against a grey wall",
+      "the woman posing in the stylish v-neck red dress matching with blue jacket standing against the grey wall",
+      "a woman posing in a stylish v-neck red dress matching with blue jacket standing against a grey wall ."
+    ]
+  },
+  {
+    "image_id": 87,
+    "prediction": "a showcasing a stylish v-neck red blouse matching",
+    "references": [
+      "a lady showcasing a stylish v-neck red blouse matching with beige dress standing against a grey wall",
+      "the lady showcasing the stylish v-neck red blouse matching with beige dress standing against the grey wall",
+      "a lady showcasing a stylish v-neck red blouse matching with beige dress standing against a grey wall ."
+    ]
+  },
+  {
+    "image_id": 88,
+    "prediction": "a model showcasing a stylish denim yellow skirt matching with",
+    "references": [
+      "a model showcasing a stylish denim yellow skirt matching with white jeans standing against a white background",
+      "the model showcasing the stylish denim yellow skirt matching with white jeans standing against the white background",
+      "a model showcasing a stylish denim yellow skirt matching with white jeans standing against a white background ."
+    ]
+  },
+  {
+    "image_id": 89,
+    "prediction": "a woman posing in a stylish chiffon blue skirt",
+    "references": [
+      "a woman posing in a stylish chiffon blue skirt matching with black blouse standing against a street",
+      "the woman posing in the stylish chiffon blue skirt matching with black blouse standing against the street",
+      "a woman posing in a stylish chiffon blue skirt matching with black blouse standing against a street ."
+    ]
+  },
+  {
+    "image_id": 90,
+    "prediction": "a woman dressed in a stylish chiffon red jeans matching",
+    "references": [
+      "a woman dressed in a stylish chiffon red jeans matching with pink jacket standing against a park",
+      "the woman dressed in the stylish chiffon red jeans matching with pink jacket standing against the park",
+      "a woman dressed in a stylish chiffon red jeans matching with pink jacket standing against a park ."
+    ]
+  },
+  {
+    "image_id": 91,
+    "prediction": "a model wearing a stylish striped pink skirt matching",
+    "references": [
+      "a model wearing a stylish striped pink skirt matching with black jacket standing against a park",
+      "the model wearing the stylish striped pink skirt matching with black jacket standing against the park",
+      "a model wearing a stylish striped pink skirt matching with black jacket standing against a park ."
+    ]
+  },
+  {
+    "image_id": 92,
+    "prediction": "a model wearing a stylish lace white t-shirt matching",
+    "references": [
+      "a model wearing a stylish lace white t-shirt matching with black t-shirt standing against a street",
+      "the model wearing the stylish lace white t-shirt matching with black t-shirt standing against the street",
+      "a model wearing a stylish lace white t-shirt matching with black t-shirt standing against a street ."
+    ]
+  },
+  {
+    "image_id": 93,
+    "prediction": "a person dressed in a stylish chiffon green jeans matching",
+    "references": [
+      "a person dressed in a stylish chiffon green jeans matching with pink jeans standing against a studio",
+      "the person dressed in the stylish chiffon green jeans matching with pink jeans standing against the studio",
+      "a person dressed in a stylish chiffon green jeans matching with pink jeans standing against a studio ."
+    ]
+  },
+  {
+    "image_id": 94,
+    "prediction": "a person posing in a stylish lace navy jeans matching with",
+    "references": [
+      "a person posing in a stylish lace navy jeans matching with red skirt standing against a grey wall",
+      "the person posing in the stylish lace navy jeans matching with red skirt standing against the grey wall",
+      "a person posing in a stylish lace navy jeans matching with red skirt standing against a grey wall ."
+    ]
+  },
+  {
+    "image_id": 95,
+    "prediction": "a lady wearing a stylish printed black blouse matching",
+    "references": [
+      "a lady wearing a stylish printed black blouse matching with red jeans standing against a street",
+      "the lady wearing the stylish printed black blouse matching with red jeans standing against the street",
+      "a lady wearing a stylish printed black blouse matching with red jeans standing against a street ."
+    ]
+  },
+  {
+    "image_id": 96,
+    "prediction": "a model dressed in a stylish chiffon red skirt matching",
+    "references": [
+      "a model dressed in a stylish chiffon red skirt matching with yellow jacket standing against a street",
+      "the model dressed in the stylish chiffon red skirt matching with yellow jacket standing against the street",
+      "a model dressed in a stylish chiffon red skirt matching with yellow jacket standing against a street ."
+    ]
+  },
+  {
+    "image_id": 97,
+    "prediction": "a person wearing a stylish leather yellow blouse matching",
+    "references": [
+      "a person wearing a stylish leather yellow blouse matching with white skirt standing against a studio",
+      "the person wearing the stylish leather yellow blouse matching with white skirt standing against the studio",
+      "a person wearing a stylish leather yellow blouse matching with white skirt standing against a studio ."
+    ]
+  },
+  {
+    "image_id": 98,
+    "prediction": "a person wearing a stylish chiffon beige jacket matching",
+    "references": [
+      "a person wearing a stylish chiffon beige jacket matching with white blouse standing against a park",
+      "the person wearing the stylish chiffon beige jacket matching with white blouse standing against the park",
+      "a person wearing a stylish chiffon beige jacket matching with white blouse standing against a park ."
+    ]
+  },
+  {
+    "image_id": 99,
+    "prediction": "a wearing a stylish denim white dress matching",
+    "references": [
+      "a person wearing a stylish denim white dress matching with red jacket standing against a street",
+      "the person wearing the stylish denim white dress matching with red jacket standing against the street",
+      "a person wearing a stylish denim white dress matching with red jacket standing against a street ."
+    ]
+  },
+  {
+    "image_id": 100,
+    "prediction": "full body shot of a woman showcasing a fashionable floral red jacket paired with",
+    "references": [
+      "full body shot of a woman showcasing a fashionable floral red jacket paired with printed blouse featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring grey wall in the distance",
+      "full body shot of the woman showcasing the fashionable floral red jacket paired with printed blouse featuring intricate embroidery details and the modern cut while looking directly at the camerthe with the confident expression against the blurring grey wall in the distance",
+      "full body shot of a woman showcasing a fashionable floral red jacket paired with printed blouse featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring grey wall in the distance ."
+    ]
+  },
+  {
+    "image_id": 101,
+    "prediction": "full body shot of a lady wearing a fashionable sleeveless white dress paired with leather",
+    "references": [
+      "full body shot of a lady wearing a fashionable sleeveless white dress paired with leather t-shirt featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring grey wall in the distance",
+      "full body shot of the lady wearing the fashionable sleeveless white dress paired with leather t-shirt featuring intricate embroidery details and the modern cut while looking directly at the camerthe with the confident expression against the blurring grey wall in the distance",
+      "full body shot of a lady wearing a fashionable sleeveless white dress paired with leather t-shirt featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring grey wall in the distance ."
+    ]
+  },
+  {
+    "image_id": 102,
+    "prediction": "full body shot of a woman wearing a fashionable sleeveless blue skirt paired with",
+    "references": [
+      "full body shot of a woman wearing a fashionable sleeveless blue skirt paired with floral skirt featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring street in the distance",
+      "full body shot of the woman wearing the fashionable sleeveless blue skirt paired with floral skirt featuring intricate embroidery details and the modern cut while looking directly at the camerthe with the confident expression against the blurring street in the distance",
+      "full body shot of a woman wearing a fashionable sleeveless blue skirt paired with floral skirt featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring street in the distance ."
+    ]
+  },
+  {
+    "image_id": 103,
+    "prediction": "full body shot of a model posing in a fashionable striped white skirt paired",
+    "references": [
+      "full body shot of a model posing in a fashionable striped white skirt paired with chiffon skirt featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring studio in the distance",
+      "full body shot of the model posing in the fashionable striped white skirt paired with chiffon skirt featuring intricate embroidery details and the modern cut while looking directly at the camerthe with the confident expression against the blurring studio in the distance",
+      "full body shot of a model posing in a fashionable striped white skirt paired with chiffon skirt featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring studio in the distance ."
+    ]
+  },
+  {
+    "image_id": 104,
+    "prediction": "full body shot of a wearing a fashionable printed white blouse paired with",
+    "references": [
+      "full body shot of a person wearing a fashionable printed white blouse paired with denim jeans featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring street in the distance",
+      "full body shot of the person wearing the fashionable printed white blouse paired with denim jeans featuring intricate embroidery details and the modern cut while looking directly at the camerthe with the confident expression against the blurring street in the distance",
+      "full body shot of a person wearing a fashionable printed white blouse paired with denim jeans featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring street in the distance ."
+    ]
+  },
+  {
+    "image_id": 105,
+    "prediction": "full body shot of a woman dressed in a fashionable lace yellow blouse paired",
+    "references": [
+      "full body shot of a woman dressed in a fashionable lace yellow blouse paired with lace jacket featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring street in the distance",
+      "full body shot of the woman dressed in the fashionable lace yellow blouse paired with lace jacket featuring intricate embroidery details and the modern cut while looking directly at the camerthe with the confident expression against the blurring street in the distance",
+      "full body shot of a woman dressed in a fashionable lace yellow blouse paired with lace jacket featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring street in the distance ."
+    ]
+  },
+  {
+    "image_id": 106,
+    "prediction": "full body shot of a lady dressed in a fashionable floral navy blouse",
+    "references": [
+      "full body shot of a lady dressed in a fashionable floral navy blouse paired with denim dress featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring street in the distance",
+      "full body shot of the lady dressed in the fashionable floral navy blouse paired with denim dress featuring intricate embroidery details and the modern cut while looking directly at the camerthe with the confident expression against the blurring street in the distance",
+      "full body shot of a lady dressed in a fashionable floral navy blouse paired with denim dress featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring street in the distance ."
+    ]
+  },
+  {
+    "image_id": 107,
+    "prediction": "full body shot of a person dressed in a striped black jeans paired",
+    "references": [
+      "full body shot of a person dressed in a fashionable striped black jeans paired with chiffon skirt featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring white background in the distance",
+      "full body shot of the person dressed in the fashionable striped black jeans paired with chiffon skirt featuring intricate embroidery details and the modern cut while looking directly at the camerthe with the confident expression against the blurring white background in the distance",
+      "full body shot of a person dressed in a fashionable striped black jeans paired with chiffon skirt featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring white background in the distance ."
+    ]
+  },
+  {
+    "image_id": 108,
+    "prediction": "full body shot of a lady showcasing a fashionable chiffon green blouse paired with",
+    "references": [
+      "full body shot of a lady showcasing a fashionable chiffon green blouse paired with chiffon jacket featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring street in the distance",
+      "full body shot of the lady showcasing the fashionable chiffon green blouse paired with chiffon jacket featuring intricate embroidery details and the modern cut while looking directly at the camerthe with the confident expression against the blurring street in the distance",
+      "full body shot of a lady showcasing a fashionable chiffon green blouse paired with chiffon jacket featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring street in the distance ."
+    ]
+  },
+  {
+    "image_id": 109,
+    "prediction": "full body shot of a lady posing in a fashionable yellow t-shirt paired with",
+    "references": [
+      "full body shot of a lady posing in a fashionable v-neck yellow t-shirt paired with sleeveless t-shirt featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring studio in the distance",
+      "full body shot of the lady posing in the fashionable v-neck yellow t-shirt paired with sleeveless t-shirt featuring intricate embroidery details and the modern cut while looking directly at the camerthe with the confident expression against the blurring studio in the distance",
+      "full body shot of a lady posing in a fashionable v-neck yellow t-shirt paired with sleeveless t-shirt featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring studio in the distance ."
+    ]
+  },
+  {
+    "image_id": 110,
+    "prediction": "full body shot of a woman wearing a fashionable sleeveless red blouse paired with",
+    "references": [
+      "full body shot of a woman wearing a fashionable sleeveless red blouse paired with sleeveless dress featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring street in the distance",
+      "full body shot of the woman wearing the fashionable sleeveless red blouse paired with sleeveless dress featuring intricate embroidery details and the modern cut while looking directly at the camerthe with the confident expression against the blurring street in the distance",
+      "full body shot of a woman wearing a fashionable sleeveless red blouse paired with sleeveless dress featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring street in the distance ."
+    ]
+  },
+  {
+    "image_id": 111,
+    "prediction": "full body shot of a model dressed in a fashionable striped blue t-shirt paired with",
+    "references": [
+      "full body shot of a model dressed in a fashionable striped blue t-shirt paired with denim jacket featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring studio in the distance",
+      "full body shot of the model dressed in the fashionable striped blue t-shirt paired with denim jacket featuring intricate embroidery details and the modern cut while looking directly at the camerthe with the confident expression against the blurring studio in the distance",
+      "full body shot of a model dressed in a fashionable striped blue t-shirt paired with denim jacket featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring studio in the distance ."
+    ]
+  },
+  {
+    "image_id": 112,
+    "prediction": "full body shot of a lady dressed in a fashionable floral pink skirt paired",
+    "references": [
+      "full body shot of a lady dressed in a fashionable floral pink skirt paired with floral dress featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring park in the distance",
+      "full body shot of the lady dressed in the fashionable floral pink skirt paired with floral dress featuring intricate embroidery details and the modern cut while looking directly at the camerthe with the confident expression against the blurring park in the distance",
+      "full body shot of a lady dressed in a fashionable floral pink skirt paired with floral dress featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring park in the distance ."
+    ]
+  },
+  {
+    "image_id": 113,
+    "prediction": "full body shot of a model showcasing a fashionable printed white dress paired with",
+    "references": [
+      "full body shot of a model showcasing a fashionable printed white dress paired with chiffon jeans featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring street in the distance",
+      "full body shot of the model showcasing the fashionable printed white dress paired with chiffon jeans featuring intricate embroidery details and the modern cut while looking directly at the camerthe with the confident expression against the blurring street in the distance",
+      "full body shot of a model showcasing a fashionable printed white dress paired with chiffon jeans featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring street in the distance ."
+    ]
+  },
+  {
+    "image_id": 114,
+    "prediction": "full body shot of a model dressed in a fashionable sleeveless black jeans paired with",
+    "references": [
+      "full body shot of a model dressed in a fashionable sleeveless black jeans paired with chiffon skirt featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring grey wall in the distance",
+      "full body shot of the model dressed in the fashionable sleeveless black jeans paired with chiffon skirt featuring intricate embroidery details and the modern cut while looking directly at the camerthe with the confident expression against the blurring grey wall in the distance",
+      "full body shot of a model dressed in a fashionable sleeveless black jeans paired with chiffon skirt featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring grey wall in the distance ."
+    ]
+  },
+  {
+    "image_id": 115,
+    "prediction": "full body shot of a lady wearing a fashionable chiffon green dress paired",
+    "references": [
+      "full body shot of a lady wearing a fashionable chiffon green dress paired with chiffon t-shirt featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring studio in the distance",
+      "full body shot of the lady wearing the fashionable chiffon green dress paired with chiffon t-shirt featuring intricate embroidery details and the modern cut while looking directly at the camerthe with the confident expression against the blurring studio in the distance",
+      "full body shot of a lady wearing a fashionable chiffon green dress paired with chiffon t-shirt featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring studio in the distance ."
+    ]
+  },
+  {
+    "image_id": 116,
+    "prediction": "full body shot of a woman posing in a fashionable denim green dress paired with",
+    "references": [
+      "full body shot of a woman posing in a fashionable denim green dress paired with printed blouse featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring grey wall in the distance",
+      "full body shot of the woman posing in the fashionable denim green dress paired with printed blouse featuring intricate embroidery details and the modern cut while looking directly at the camerthe with the confident expression against the blurring grey wall in the distance",
+      "full body shot of a woman posing in a fashionable denim green dress paired with printed blouse featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring grey wall in the distance ."
+    ]
+  },
+  {
+    "image_id": 117,
+    "prediction": "full body shot of a lady wearing a fashionable printed blue skirt paired with sleeveless",
+    "references": [
+      "full body shot of a lady wearing a fashionable printed blue skirt paired with sleeveless skirt featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring white background in the distance",
+      "full body shot of the lady wearing the fashionable printed blue skirt paired with sleeveless skirt featuring intricate embroidery details and the modern cut while looking directly at the camerthe with the confident expression against the blurring white background in the distance",
+      "full body shot of a lady wearing a fashionable printed blue skirt paired with sleeveless skirt featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring white background in the distance ."
+    ]
+  },
+  {
+    "image_id": 118,
+    "prediction": "full body shot of a woman posing in a fashionable sleeveless blue t-shirt paired",
+    "references": [
+      "full body shot of a woman posing in a fashionable sleeveless blue t-shirt paired with v-neck jacket featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring park in the distance",
+      "full body shot of the woman posing in the fashionable sleeveless blue t-shirt paired with v-neck jacket featuring intricate embroidery details and the modern cut while looking directly at the camerthe with the confident expression against the blurring park in the distance",
+      "full body shot of a woman posing in a fashionable sleeveless blue t-shirt paired with v-neck jacket featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring park in the distance ."
+    ]
+  },
+  {
+    "image_id": 119,
+    "prediction": "full body shot a person wearing a fashionable chiffon black t-shirt paired with",
+    "references": [
+      "full body shot of a person wearing a fashionable chiffon black t-shirt paired with lace skirt featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring park in the distance",
+      "full body shot of the person wearing the fashionable chiffon black t-shirt paired with lace skirt featuring intricate embroidery details and the modern cut while looking directly at the camerthe with the confident expression against the blurring park in the distance",
+      "full body shot of a person wearing a fashionable chiffon black t-shirt paired with lace skirt featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring park in the distance ."
+    ]
+  },
+  {
+    "image_id": 120,
+    "prediction": "full body shot of a woman dressed in a fashionable sleeveless yellow paired",
+    "references": [
+      "full body shot of a woman dressed in a fashionable sleeveless yellow dress paired with striped skirt featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring white background in the distance",
+      "full body shot of the woman dressed in the fashionable sleeveless yellow dress paired with striped skirt featuring intricate embroidery details and the modern cut while looking directly at the camerthe with the confident expression against the blurring white background in the distance",
+      "full body shot of a woman dressed in a fashionable sleeveless yellow dress paired with striped skirt featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring white background in the distance ."
+    ]
+  },
+  {
+    "image_id": 121,
+    "prediction": "full body shot of a person wearing a fashionable v-neck yellow t-shirt paired",
+    "references": [
+      "full body shot of a person wearing a fashionable v-neck yellow t-shirt paired with denim jeans featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring park in the distance",
+      "full body shot of the person wearing the fashionable v-neck yellow t-shirt paired with denim jeans featuring intricate embroidery details and the modern cut while looking directly at the camerthe with the confident expression against the blurring park in the distance",
+      "full body shot of a person wearing a fashionable v-neck yellow t-shirt paired with denim jeans featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring park in the distance ."
+    ]
+  },
+  {
+    "image_id": 122,
+    "prediction": "full body shot of a person showcasing a fashionable striped green jacket paired with",
+    "references": [
+      "full body shot of a person showcasing a fashionable striped green jacket paired with v-neck jeans featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring white background in the distance",
+      "full body shot of the person showcasing the fashionable striped green jacket paired with v-neck jeans featuring intricate embroidery details and the modern cut while looking directly at the camerthe with the confident expression against the blurring white background in the distance",
+      "full body shot of a person showcasing a fashionable striped green jacket paired with v-neck jeans featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring white background in the distance ."
+    ]
+  },
+  {
+    "image_id": 123,
+    "prediction": "full body shot of a woman posing in a fashionable chiffon green jacket paired",
+    "references": [
+      "full body shot of a woman posing in a fashionable chiffon green jacket paired with printed blouse featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring white background in the distance",
+      "full body shot of the woman posing in the fashionable chiffon green jacket paired with printed blouse featuring intricate embroidery details and the modern cut while looking directly at the camerthe with the confident expression against the blurring white background in the distance",
+      "full body shot of a woman posing in a fashionable chiffon green jacket paired with printed blouse featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring white background in the distance ."
+    ]
+  },
+  {
+    "image_id": 124,
+    "prediction": "full body shot of a lady showcasing a fashionable v-neck yellow t-shirt paired with",
+    "references": [
+      "full body shot of a lady showcasing a fashionable v-neck yellow t-shirt paired with v-neck t-shirt featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring grey wall in the distance",
+      "full body shot of the lady showcasing the fashionable v-neck yellow t-shirt paired with v-neck t-shirt featuring intricate embroidery details and the modern cut while looking directly at the camerthe with the confident expression against the blurring grey wall in the distance",
+      "full body shot of a lady showcasing a fashionable v-neck yellow t-shirt paired with v-neck t-shirt featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring grey wall in the distance ."
+    ]
+  },
+  {
+    "image_id": 125,
+    "prediction": "full body shot of a model dressed in a fashionable striped white jeans paired",
+    "references": [
+      "full body shot of a model dressed in a fashionable striped white jeans paired with lace jeans featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring studio in the distance",
+      "full body shot of the model dressed in the fashionable striped white jeans paired with lace jeans featuring intricate embroidery details and the modern cut while looking directly at the camerthe with the confident expression against the blurring studio in the distance",
+      "full body shot of a model dressed in a fashionable striped white jeans paired with lace jeans featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring studio in the distance ."
+    ]
+  },
+  {
+    "image_id": 126,
+    "prediction": "full body shot of a model posing in fashionable denim red jacket paired",
+    "references": [
+      "full body shot of a model posing in a fashionable denim red jacket paired with chiffon jacket featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring white background in the distance",
+      "full body shot of the model posing in the fashionable denim red jacket paired with chiffon jacket featuring intricate embroidery details and the modern cut while looking directly at the camerthe with the confident expression against the blurring white background in the distance",
+      "full body shot of a model posing in a fashionable denim red jacket paired with chiffon jacket featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring white background in the distance ."
+    ]
+  },
+  {
+    "image_id": 127,
+    "prediction": "full body shot of a lady dressed in a fashionable printed white dress paired",
+    "references": [
+      "full body shot of a lady dressed in a fashionable printed white dress paired with sleeveless blouse featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring grey wall in the distance",
+      "full body shot of the lady dressed in the fashionable printed white dress paired with sleeveless blouse featuring intricate embroidery details and the modern cut while looking directly at the camerthe with the confident expression against the blurring grey wall in the distance",
+      "full body shot of a lady dressed in a fashionable printed white dress paired with sleeveless blouse featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring grey wall in the distance ."
+    ]
+  },
+  {
+    "image_id": 128,
+    "prediction": "full body shot of a woman wearing a fashionable printed white blouse paired with",
+    "references": [
+      "full body shot of a woman wearing a fashionable printed white blouse paired with lace t-shirt featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring park in the distance",
+      "full body shot of the woman wearing the fashionable printed white blouse paired with lace t-shirt featuring intricate embroidery details and the modern cut while looking directly at the camerthe with the confident expression against the blurring park in the distance",
+      "full body shot of a woman wearing a fashionable printed white blouse paired with lace t-shirt featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring park in the distance ."
+    ]
+  },
+  {
+    "image_id": 129,
+    "prediction": "full body shot of a model wearing a fashionable printed black dress paired with lace",
+    "references": [
+      "full body shot of a model wearing a fashionable printed black dress paired with lace jacket featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring street in the distance",
+      "full body shot of the model wearing the fashionable printed black dress paired with lace jacket featuring intricate embroidery details and the modern cut while looking directly at the camerthe with the confident expression against the blurring street in the distance",
+      "full body shot of a model wearing a fashionable printed black dress paired with lace jacket featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring street in the distance ."
+    ]
+  },
+  {
+    "image_id": 130,
+    "prediction": "full body shot of a dressed in a fashionable denim pink t-shirt paired with",
+    "references": [
+      "full body shot of a lady dressed in a fashionable denim pink t-shirt paired with printed dress featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring studio in the distance",
+      "full body shot of the lady dressed in the fashionable denim pink t-shirt paired with printed dress featuring intricate embroidery details and the modern cut while looking directly at the camerthe with the confident expression against the blurring studio in the distance",
+      "full body shot of a lady dressed in a fashionable denim pink t-shirt paired with printed dress featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring studio in the distance ."
+    ]
+  },
+  {
+    "image_id": 131,
+    "prediction": "full body shot of a lady showcasing a fashionable leather green skirt paired with",
+    "references": [
+      "full body shot of a lady showcasing a fashionable leather green skirt paired with chiffon jeans featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring grey wall in the distance",
+      "full body shot of the lady showcasing the fashionable leather green skirt paired with chiffon jeans featuring intricate embroidery details and the modern cut while looking directly at the camerthe with the confident expression against the blurring grey wall in the distance",
+      "full body shot of a lady showcasing a fashionable leather green skirt paired with chiffon jeans featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring grey wall in the distance ."
+    ]
+  },
+  {
+    "image_id": 132,
+    "prediction": "full body shot of a person wearing a fashionable printed green jeans paired",
+    "references": [
+      "full body shot of a person wearing a fashionable printed green jeans paired with floral jeans featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring street in the distance",
+      "full body shot of the person wearing the fashionable printed green jeans paired with floral jeans featuring intricate embroidery details and the modern cut while looking directly at the camerthe with the confident expression against the blurring street in the distance",
+      "full body shot of a person wearing a fashionable printed green jeans paired with floral jeans featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring street in the distance ."
+    ]
+  },
+  {
+    "image_id": 133,
+    "prediction": "full body shot of a lady showcasing a fashionable v-neck green blouse paired",
+    "references": [
+      "full body shot of a lady showcasing a fashionable v-neck green blouse paired with printed skirt featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring studio in the distance",
+      "full body shot of the lady showcasing the fashionable v-neck green blouse paired with printed skirt featuring intricate embroidery details and the modern cut while looking directly at the camerthe with the confident expression against the blurring studio in the distance",
+      "full body shot of a lady showcasing a fashionable v-neck green blouse paired with printed skirt featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring studio in the distance ."
+    ]
+  },
+  {
+    "image_id": 134,
+    "prediction": "full body shot of a model showcasing a fashionable sleeveless pink skirt paired with",
+    "references": [
+      "full body shot of a model showcasing a fashionable sleeveless pink skirt paired with denim t-shirt featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring park in the distance",
+      "full body shot of the model showcasing the fashionable sleeveless pink skirt paired with denim t-shirt featuring intricate embroidery details and the modern cut while looking directly at the camerthe with the confident expression against the blurring park in the distance",
+      "full body shot of a model showcasing a fashionable sleeveless pink skirt paired with denim t-shirt featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring park in the distance ."
+    ]
+  },
+  {
+    "image_id": 135,
+    "prediction": "full body shot of a lady dressed in a fashionable striped red skirt paired",
+    "references": [
+      "full body shot of a lady dressed in a fashionable striped red skirt paired with floral blouse featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring studio in the distance",
+      "full body shot of the lady dressed in the fashionable striped red skirt paired with floral blouse featuring intricate embroidery details and the modern cut while looking directly at the camerthe with the confident expression against the blurring studio in the distance",
+      "full body shot of a lady dressed in a fashionable striped red skirt paired with floral blouse featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring studio in the distance ."
+    ]
+  },
+  {
+    "image_id": 136,
+    "prediction": "full body shot of a model posing in a fashionable lace beige dress paired with",
+    "references": [
+      "full body shot of a model posing in a fashionable lace beige dress paired with chiffon blouse featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring white background in the distance",
+      "full body shot of the model posing in the fashionable lace beige dress paired with chiffon blouse featuring intricate embroidery details and the modern cut while looking directly at the camerthe with the confident expression against the blurring white background in the distance",
+      "full body shot of a model posing in a fashionable lace beige dress paired with chiffon blouse featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring white background in the distance ."
+    ]
+  },
+  {
+    "image_id": 137,
+    "prediction": "full shot of a person showcasing a fashionable floral pink t-shirt paired with",
+    "references": [
+      "full body shot of a person showcasing a fashionable floral pink t-shirt paired with striped jacket featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring studio in the distance",
+      "full body shot of the person showcasing the fashionable floral pink t-shirt paired with striped jacket featuring intricate embroidery details and the modern cut while looking directly at the camerthe with the confident expression against the blurring studio in the distance",
+      "full body shot of a person showcasing a fashionable floral pink t-shirt paired with striped jacket featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring studio in the distance ."
+    ]
+  },
+  {
+    "image_id": 138,
+    "prediction": "full body shot of a person dressed in a fashionable striped navy t-shirt paired",
+    "references": [
+      "full body shot of a person dressed in a fashionable striped navy t-shirt paired with printed dress featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring grey wall in the distance",
+      "full body shot of the person dressed in the fashionable striped navy t-shirt paired with printed dress featuring intricate embroidery details and the modern cut while looking directly at the camerthe with the confident expression against the blurring grey wall in the distance",
+      "full body shot of a person dressed in a fashionable striped navy t-shirt paired with printed dress featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring grey wall in the distance ."
+    ]
+  },
+  {
+    "image_id": 139,
+    "prediction": "full body shot of a model showcasing a fashionable printed white dress paired with",
+    "references": [
+      "full body shot of a model showcasing a fashionable printed white dress paired with lace blouse featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring park in the distance",
+      "full body shot of the model showcasing the fashionable printed white dress paired with lace blouse featuring intricate embroidery details and the modern cut while looking directly at the camerthe with the confident expression against the blurring park in the distance",
+      "full body shot of a model showcasing a fashionable printed white dress paired with lace blouse featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring park in the distance ."
+    ]
+  },
+  {
+    "image_id": 140,
+    "prediction": "full body shot of a dressed in a fashionable v-neck yellow t-shirt paired with",
+    "references": [
+      "full body shot of a person dressed in a fashionable v-neck yellow t-shirt paired with leather blouse featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring grey wall in the distance",
+      "full body shot of the person dressed in the fashionable v-neck yellow t-shirt paired with leather blouse featuring intricate embroidery details and the modern cut while looking directly at the camerthe with the confident expression against the blurring grey wall in the distance",
+      "full body shot of a person dressed in a fashionable v-neck yellow t-shirt paired with leather blouse featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring grey wall in the distance ."
+    ]
+  },
+  {
+    "image_id": 141,
+    "prediction": "full body shot a model dressed in a fashionable leather beige skirt paired",
+    "references": [
+      "full body shot of a model dressed in a fashionable leather beige skirt paired with lace skirt featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring grey wall in the distance",
+      "full body shot of the model dressed in the fashionable leather beige skirt paired with lace skirt featuring intricate embroidery details and the modern cut while looking directly at the camerthe with the confident expression against the blurring grey wall in the distance",
+      "full body shot of a model dressed in a fashionable leather beige skirt paired with lace skirt featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring grey wall in the distance ."
+    ]
+  },
+  {
+    "image_id": 142,
+    "prediction": "full body shot of a lady dressed a fashionable denim green t-shirt paired",
+    "references": [
+      "full body shot of a lady dressed in a fashionable denim green t-shirt paired with striped skirt featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring street in the distance",
+      "full body shot of the lady dressed in the fashionable denim green t-shirt paired with striped skirt featuring intricate embroidery details and the modern cut while looking directly at the camerthe with the confident expression against the blurring street in the distance",
+      "full body shot of a lady dressed in a fashionable denim green t-shirt paired with striped skirt featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring street in the distance ."
+    ]
+  },
+  {
+    "image_id": 143,
+    "prediction": "full body shot of a lady dressed in a fashionable sleeveless red jacket paired with",
+    "references": [
+      "full body shot of a lady dressed in a fashionable sleeveless red jacket paired with chiffon t-shirt featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring studio in the distance",
+      "full body shot of the lady dressed in the fashionable sleeveless red jacket paired with chiffon t-shirt featuring intricate embroidery details and the modern cut while looking directly at the camerthe with the confident expression against the blurring studio in the distance",
+      "full body shot of a lady dressed in a fashionable sleeveless red jacket paired with chiffon t-shirt featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring studio in the distance ."
+    ]
+  },
+  {
+    "image_id": 144,
+    "prediction": "full body shot of a model showcasing a fashionable lace pink jeans paired with",
+    "references": [
+      "full body shot of a model showcasing a fashionable lace pink jeans paired with lace blouse featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring street in the distance",
+      "full body shot of the model showcasing the fashionable lace pink jeans paired with lace blouse featuring intricate embroidery details and the modern cut while looking directly at the camerthe with the confident expression against the blurring street in the distance",
+      "full body shot of a model showcasing a fashionable lace pink jeans paired with lace blouse featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring street in the distance ."
+    ]
+  },
+  {
+    "image_id": 145,
+    "prediction": "full body shot of lady dressed in a fashionable floral white blouse paired",
+    "references": [
+      "full body shot of a lady dressed in a fashionable floral white blouse paired with striped jacket featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring park in the distance",
+      "full body shot of the lady dressed in the fashionable floral white blouse paired with striped jacket featuring intricate embroidery details and the modern cut while looking directly at the camerthe with the confident expression against the blurring park in the distance",
+      "full body shot of a lady dressed in a fashionable floral white blouse paired with striped jacket featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring park in the distance ."
+    ]
+  },
+  {
+    "image_id": 146,
+    "prediction": "full body shot of a lady dressed in a fashionable sleeveless black dress paired with",
+    "references": [
+      "full body shot of a lady dressed in a fashionable sleeveless black dress paired with sleeveless skirt featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring street in the distance",
+      "full body shot of the lady dressed in the fashionable sleeveless black dress paired with sleeveless skirt featuring intricate embroidery details and the modern cut while looking directly at the camerthe with the confident expression against the blurring street in the distance",
+      "full body shot of a lady dressed in a fashionable sleeveless black dress paired with sleeveless skirt featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring street in the distance ."
+    ]
+  },
+  {
+    "image_id": 147,
+    "prediction": "full body shot of a lady posing in a fashionable leather beige t-shirt paired with",
+    "references": [
+      "full body shot of a lady posing in a fashionable leather beige t-shirt paired with denim dress featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring grey wall in the distance",
+      "full body shot of the lady posing in the fashionable leather beige t-shirt paired with denim dress featuring intricate embroidery details and the modern cut while looking directly at the camerthe with the confident expression against the blurring grey wall in the distance",
+      "full body shot of a lady posing in a fashionable leather beige t-shirt paired with denim dress featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring grey wall in the distance ."
+    ]
+  },
+  {
+    "image_id": 148,
+    "prediction": "full body shot of a person wearing a fashionable chiffon green blouse with",
+    "references": [
+      "full body shot of a person wearing a fashionable chiffon green blouse paired with striped t-shirt featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring street in the distance",
+      "full body shot of the person wearing the fashionable chiffon green blouse paired with striped t-shirt featuring intricate embroidery details and the modern cut while looking directly at the camerthe with the confident expression against the blurring street in the distance",
+      "full body shot of a person wearing a fashionable chiffon green blouse paired with striped t-shirt featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring street in the distance ."
+    ]
+  },
+  {
+    "image_id": 149,
+    "prediction": "full body shot of a lady showcasing a fashionable v-neck green t-shirt paired",
+    "references": [
+      "full body shot of a lady showcasing a fashionable v-neck green t-shirt paired with leather blouse featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring white background in the distance",
+      "full body shot of the lady showcasing the fashionable v-neck green t-shirt paired with leather blouse featuring intricate embroidery details and the modern cut while looking directly at the camerthe with the confident expression against the blurring white background in the distance",
+      "full body shot of a lady showcasing a fashionable v-neck green t-shirt paired with leather blouse featuring intricate embroidery details and a modern cut while looking directly at the camera with a confident expression against a blurring white background in the distance ."
+    ]
+  }
+]

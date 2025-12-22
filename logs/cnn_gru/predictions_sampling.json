@@ -1,0 +1,4002 @@
+[
+  {
+    "image_id": 0,
+    "prediction": "a woman wearing a printed black dress"
+  },
+  {
+    "image_id": 1,
+    "prediction": "this model is showcasing a floral jacket with lace design and holding a bag"
+  },
+  {
+    "image_id": 2,
+    "prediction": "a stylish lady in a black shirt standing against a wall and holding a bag"
+  },
+  {
+    "image_id": 3,
+    "prediction": "close up of a printed shorts in floral"
+  },
+  {
+    "image_id": 4,
+    "prediction": "a woman wearing a printed blue dress"
+  },
+  {
+    "image_id": 5,
+    "prediction": "this model is showcasing a blue jacket with sleeveless design"
+  },
+  {
+    "image_id": 6,
+    "prediction": "a stylish lady in a black blouse standing against a wall and holding a bag"
+  },
+  {
+    "image_id": 7,
+    "prediction": "close up of a printed jacket in floral"
+  },
+  {
+    "image_id": 8,
+    "prediction": "a woman wearing a denim black blouse"
+  },
+  {
+    "image_id": 9,
+    "prediction": "this model is showcasing a floral jeans with v-neck design and holding a bag"
+  },
+  {
+    "image_id": 10,
+    "prediction": "a stylish lady in a white skirt standing against a wall"
+  },
+  {
+    "image_id": 11,
+    "prediction": "close up of a v-neck blouse in pink"
+  },
+  {
+    "image_id": 12,
+    "prediction": "a woman wearing a printed pink blouse"
+  },
+  {
+    "image_id": 13,
+    "prediction": "this model is showcasing a black t-shirt with denim design and holding a bag"
+  },
+  {
+    "image_id": 14,
+    "prediction": "a stylish lady in a black tank top standing against a wall"
+  },
+  {
+    "image_id": 15,
+    "prediction": "close up of a printed jeans in black"
+  },
+  {
+    "image_id": 16,
+    "prediction": "a woman wearing a v-neck white dress"
+  },
+  {
+    "image_id": 17,
+    "prediction": "this model is showcasing a red shorts with denim design and holding a bag"
+  },
+  {
+    "image_id": 18,
+    "prediction": "a stylish lady in a pink tank top standing against a wall"
+  },
+  {
+    "image_id": 19,
+    "prediction": "close up of a sleeveless jacket in beige"
+  },
+  {
+    "image_id": 20,
+    "prediction": "a woman wearing a v-neck pink tank top and holding a bag"
+  },
+  {
+    "image_id": 21,
+    "prediction": "this model is showcasing a white jacket with v-neck design and holding a bag"
+  },
+  {
+    "image_id": 22,
+    "prediction": "a stylish lady in a blue shirt standing against a wall and holding a bag"
+  },
+  {
+    "image_id": 23,
+    "prediction": "close up of a sleeveless blouse in pink and holding a bag"
+  },
+  {
+    "image_id": 24,
+    "prediction": "a woman wearing a printed black blouse"
+  },
+  {
+    "image_id": 25,
+    "prediction": "this model is showcasing a red shirt with lace design"
+  },
+  {
+    "image_id": 26,
+    "prediction": "a stylish lady in a floral tank top standing against a wall and holding a bag"
+  },
+  {
+    "image_id": 27,
+    "prediction": "close up of a denim jacket in pink"
+  },
+  {
+    "image_id": 28,
+    "prediction": "a woman wearing a lace white dress"
+  },
+  {
+    "image_id": 29,
+    "prediction": "this model is showcasing a pink shorts with v-neck design"
+  },
+  {
+    "image_id": 30,
+    "prediction": "a stylish lady in a black shirt standing against a wall and holding a bag"
+  },
+  {
+    "image_id": 31,
+    "prediction": "close up of a denim skirt in striped and holding a bag"
+  },
+  {
+    "image_id": 32,
+    "prediction": "a woman wearing a lace beige shorts"
+  },
+  {
+    "image_id": 33,
+    "prediction": "this model is showcasing a beige tank top with printed design"
+  },
+  {
+    "image_id": 34,
+    "prediction": "a stylish lady in a pink jacket standing against a wall"
+  },
+  {
+    "image_id": 35,
+    "prediction": "close up of a printed dress in grey and holding a bag"
+  },
+  {
+    "image_id": 36,
+    "prediction": "a woman wearing a sleeveless white tank top"
+  },
+  {
+    "image_id": 37,
+    "prediction": "this model is showcasing a black t-shirt with sleeveless design"
+  },
+  {
+    "image_id": 38,
+    "prediction": "a stylish lady in a floral shirt standing against a wall"
+  },
+  {
+    "image_id": 39,
+    "prediction": "close up of a printed shirt in beige"
+  },
+  {
+    "image_id": 40,
+    "prediction": "a woman wearing a denim pink dress and holding a bag"
+  },
+  {
+    "image_id": 41,
+    "prediction": "this model is showcasing a black tank top with sleeveless design and holding a bag"
+  },
+  {
+    "image_id": 42,
+    "prediction": "a stylish lady in a floral dress standing against a wall and holding a bag"
+  },
+  {
+    "image_id": 43,
+    "prediction": "close up of a v-neck shorts in red"
+  },
+  {
+    "image_id": 44,
+    "prediction": "a woman wearing a sleeveless blue jeans"
+  },
+  {
+    "image_id": 45,
+    "prediction": "this model is showcasing a black dress with v-neck design and holding a bag"
+  },
+  {
+    "image_id": 46,
+    "prediction": "a stylish lady in a pink jeans standing against a wall and holding a bag"
+  },
+  {
+    "image_id": 47,
+    "prediction": "close up of a sleeveless jacket in black"
+  },
+  {
+    "image_id": 48,
+    "prediction": "a woman wearing a denim white jacket"
+  },
+  {
+    "image_id": 49,
+    "prediction": "this model is showcasing a grey jacket with v-neck design"
+  },
+  {
+    "image_id": 50,
+    "prediction": "a stylish lady in a floral skirt standing against a wall and holding a bag"
+  },
+  {
+    "image_id": 51,
+    "prediction": "close up of a v-neck jeans in black and holding a bag"
+  },
+  {
+    "image_id": 52,
+    "prediction": "a woman wearing a v-neck red tank top and holding a bag"
+  },
+  {
+    "image_id": 53,
+    "prediction": "this model is showcasing a striped tank top with printed design"
+  },
+  {
+    "image_id": 54,
+    "prediction": "a stylish lady in a black jacket standing against a wall"
+  },
+  {
+    "image_id": 55,
+    "prediction": "close up of a sleeveless t-shirt in floral"
+  },
+  {
+    "image_id": 56,
+    "prediction": "a woman wearing a denim black shorts"
+  },
+  {
+    "image_id": 57,
+    "prediction": "this model is showcasing a pink jacket with printed design"
+  },
+  {
+    "image_id": 58,
+    "prediction": "a stylish lady in a beige dress standing against a wall"
+  },
+  {
+    "image_id": 59,
+    "prediction": "close up of a denim jeans in grey and holding a bag"
+  },
+  {
+    "image_id": 60,
+    "prediction": "a woman wearing a lace black jeans"
+  },
+  {
+    "image_id": 61,
+    "prediction": "this model is showcasing a white shorts with v-neck design"
+  },
+  {
+    "image_id": 62,
+    "prediction": "a stylish lady in a black shorts standing against a wall and holding a bag"
+  },
+  {
+    "image_id": 63,
+    "prediction": "close up of a sleeveless t-shirt in black"
+  },
+  {
+    "image_id": 64,
+    "prediction": "a woman wearing a printed white t-shirt and holding a bag"
+  },
+  {
+    "image_id": 65,
+    "prediction": "this model is showcasing a black shirt with sleeveless design"
+  },
+  {
+    "image_id": 66,
+    "prediction": "a stylish lady in a pink skirt standing against a wall"
+  },
+  {
+    "image_id": 67,
+    "prediction": "close up of a printed dress in white and holding a bag"
+  },
+  {
+    "image_id": 68,
+    "prediction": "a woman wearing a lace grey jeans"
+  },
+  {
+    "image_id": 69,
+    "prediction": "this model is showcasing a pink shirt with v-neck design and holding a bag"
+  },
+  {
+    "image_id": 70,
+    "prediction": "a stylish lady in a pink dress standing against a wall"
+  },
+  {
+    "image_id": 71,
+    "prediction": "close up of a printed t-shirt in red and holding a bag"
+  },
+  {
+    "image_id": 72,
+    "prediction": "a woman wearing a v-neck pink jeans"
+  },
+  {
+    "image_id": 73,
+    "prediction": "this model is showcasing a black jacket with denim design"
+  },
+  {
+    "image_id": 74,
+    "prediction": "a stylish lady in a white skirt standing against a wall"
+  },
+  {
+    "image_id": 75,
+    "prediction": "close up of a printed skirt in red and holding a bag"
+  },
+  {
+    "image_id": 76,
+    "prediction": "a woman wearing a sleeveless floral skirt"
+  },
+  {
+    "image_id": 77,
+    "prediction": "this model is showcasing a blue t-shirt with lace design"
+  },
+  {
+    "image_id": 78,
+    "prediction": "a stylish lady in a grey dress standing against a wall"
+  },
+  {
+    "image_id": 79,
+    "prediction": "close up of a printed dress in striped"
+  },
+  {
+    "image_id": 80,
+    "prediction": "a woman wearing a denim pink shirt and holding a bag"
+  },
+  {
+    "image_id": 81,
+    "prediction": "this model is showcasing a grey skirt with printed design"
+  },
+  {
+    "image_id": 82,
+    "prediction": "a stylish lady in a pink dress standing against a wall"
+  },
+  {
+    "image_id": 83,
+    "prediction": "close up of a denim dress in grey and holding a bag"
+  },
+  {
+    "image_id": 84,
+    "prediction": "a woman wearing a printed black jacket"
+  },
+  {
+    "image_id": 85,
+    "prediction": "this model is showcasing a blue dress with sleeveless design"
+  },
+  {
+    "image_id": 86,
+    "prediction": "a stylish lady in a pink blouse standing against a wall"
+  },
+  {
+    "image_id": 87,
+    "prediction": "close up of a denim skirt in pink"
+  },
+  {
+    "image_id": 88,
+    "prediction": "a woman wearing a sleeveless striped t-shirt"
+  },
+  {
+    "image_id": 89,
+    "prediction": "this model is showcasing a beige jacket with v-neck design"
+  },
+  {
+    "image_id": 90,
+    "prediction": "a stylish lady in a grey shirt standing against a wall"
+  },
+  {
+    "image_id": 91,
+    "prediction": "close up of a printed shorts in pink"
+  },
+  {
+    "image_id": 92,
+    "prediction": "a woman wearing a lace floral jacket and holding a bag"
+  },
+  {
+    "image_id": 93,
+    "prediction": "this model is showcasing a white skirt with denim design"
+  },
+  {
+    "image_id": 94,
+    "prediction": "a stylish lady in a pink tank top standing against a wall"
+  },
+  {
+    "image_id": 95,
+    "prediction": "close up of a sleeveless skirt in floral"
+  },
+  {
+    "image_id": 96,
+    "prediction": "a woman wearing a lace grey jeans and holding a bag"
+  },
+  {
+    "image_id": 97,
+    "prediction": "this model is showcasing a red jeans with v-neck design and holding a bag"
+  },
+  {
+    "image_id": 98,
+    "prediction": "a stylish lady in a blue blouse standing against a wall"
+  },
+  {
+    "image_id": 99,
+    "prediction": "close up of a v-neck jeans in blue"
+  },
+  {
+    "image_id": 100,
+    "prediction": "a woman wearing a sleeveless blue jacket and holding a bag"
+  },
+  {
+    "image_id": 101,
+    "prediction": "this model is showcasing a white jacket with printed design and holding a bag"
+  },
+  {
+    "image_id": 102,
+    "prediction": "a stylish lady in a black jeans standing against a wall and holding a bag"
+  },
+  {
+    "image_id": 103,
+    "prediction": "close up of a printed jacket in pink"
+  },
+  {
+    "image_id": 104,
+    "prediction": "a woman wearing a sleeveless floral t-shirt and holding a bag"
+  },
+  {
+    "image_id": 105,
+    "prediction": "this model is showcasing a floral tank top with printed design"
+  },
+  {
+    "image_id": 106,
+    "prediction": "a stylish lady in a beige skirt standing against a wall"
+  },
+  {
+    "image_id": 107,
+    "prediction": "close up of a v-neck dress in black"
+  },
+  {
+    "image_id": 108,
+    "prediction": "a woman wearing a v-neck floral jeans"
+  },
+  {
+    "image_id": 109,
+    "prediction": "this model is showcasing a black shorts with lace design"
+  },
+  {
+    "image_id": 110,
+    "prediction": "a stylish lady in a beige skirt standing against a wall"
+  },
+  {
+    "image_id": 111,
+    "prediction": "close up of a printed t-shirt in black"
+  },
+  {
+    "image_id": 112,
+    "prediction": "a woman wearing a v-neck blue shorts"
+  },
+  {
+    "image_id": 113,
+    "prediction": "this model is showcasing a blue jacket with lace design"
+  },
+  {
+    "image_id": 114,
+    "prediction": "a stylish lady in a blue t-shirt standing against a wall"
+  },
+  {
+    "image_id": 115,
+    "prediction": "close up of a v-neck shorts in red and holding a bag"
+  },
+  {
+    "image_id": 116,
+    "prediction": "a woman wearing a printed red t-shirt"
+  },
+  {
+    "image_id": 117,
+    "prediction": "this model is showcasing a striped t-shirt with denim design"
+  },
+  {
+    "image_id": 118,
+    "prediction": "a stylish lady in a black jacket standing against a wall"
+  },
+  {
+    "image_id": 119,
+    "prediction": "close up of a v-neck shirt in blue and holding a bag"
+  },
+  {
+    "image_id": 120,
+    "prediction": "a woman wearing a printed black blouse and holding a bag"
+  },
+  {
+    "image_id": 121,
+    "prediction": "this model is showcasing a red blouse with lace design"
+  },
+  {
+    "image_id": 122,
+    "prediction": "a stylish lady in a black t-shirt standing against a wall and holding a bag"
+  },
+  {
+    "image_id": 123,
+    "prediction": "close up of a lace t-shirt in striped"
+  },
+  {
+    "image_id": 124,
+    "prediction": "a woman wearing a lace beige tank top"
+  },
+  {
+    "image_id": 125,
+    "prediction": "this model is showcasing a white tank top with lace design and holding a bag"
+  },
+  {
+    "image_id": 126,
+    "prediction": "a stylish lady in a red blouse standing against a wall and holding a bag"
+  },
+  {
+    "image_id": 127,
+    "prediction": "close up of a lace tank top in beige and holding a bag"
+  },
+  {
+    "image_id": 128,
+    "prediction": "a woman wearing a lace striped shorts and holding a bag"
+  },
+  {
+    "image_id": 129,
+    "prediction": "this model is showcasing a floral shorts with v-neck design and holding a bag"
+  },
+  {
+    "image_id": 130,
+    "prediction": "a stylish lady in a grey t-shirt standing against a wall"
+  },
+  {
+    "image_id": 131,
+    "prediction": "close up of a lace shirt in pink"
+  },
+  {
+    "image_id": 132,
+    "prediction": "a woman wearing a v-neck grey jacket"
+  },
+  {
+    "image_id": 133,
+    "prediction": "this model is showcasing a striped shorts with lace design"
+  },
+  {
+    "image_id": 134,
+    "prediction": "a stylish lady in a red blouse standing against a wall and holding a bag"
+  },
+  {
+    "image_id": 135,
+    "prediction": "close up of a denim jeans in floral"
+  },
+  {
+    "image_id": 136,
+    "prediction": "a woman wearing a v-neck grey dress and holding a bag"
+  },
+  {
+    "image_id": 137,
+    "prediction": "this model is showcasing a blue skirt with lace design"
+  },
+  {
+    "image_id": 138,
+    "prediction": "a stylish lady in a pink t-shirt standing against a wall"
+  },
+  {
+    "image_id": 139,
+    "prediction": "close up of a lace dress in blue and holding a bag"
+  },
+  {
+    "image_id": 140,
+    "prediction": "a woman wearing a sleeveless striped tank top"
+  },
+  {
+    "image_id": 141,
+    "prediction": "this model is showcasing a black shirt with sleeveless design"
+  },
+  {
+    "image_id": 142,
+    "prediction": "a stylish lady in a blue dress standing against a wall"
+  },
+  {
+    "image_id": 143,
+    "prediction": "close up of a denim jeans in pink"
+  },
+  {
+    "image_id": 144,
+    "prediction": "a woman wearing a lace grey tank top"
+  },
+  {
+    "image_id": 145,
+    "prediction": "this model is showcasing a floral jeans with v-neck design and holding a bag"
+  },
+  {
+    "image_id": 146,
+    "prediction": "a stylish lady in a grey shorts standing against a wall"
+  },
+  {
+    "image_id": 147,
+    "prediction": "close up of a v-neck jeans in blue"
+  },
+  {
+    "image_id": 148,
+    "prediction": "a woman wearing a printed beige jacket and holding a bag"
+  },
+  {
+    "image_id": 149,
+    "prediction": "this model is showcasing a red skirt with denim design"
+  },
+  {
+    "image_id": 150,
+    "prediction": "a stylish lady in a grey skirt standing against a wall"
+  },
+  {
+    "image_id": 151,
+    "prediction": "close up of a denim tank top in beige"
+  },
+  {
+    "image_id": 152,
+    "prediction": "a woman wearing a sleeveless grey shorts and holding a bag"
+  },
+  {
+    "image_id": 153,
+    "prediction": "this model is showcasing a blue shorts with printed design"
+  },
+  {
+    "image_id": 154,
+    "prediction": "a stylish lady in a pink dress standing against a wall and holding a bag"
+  },
+  {
+    "image_id": 155,
+    "prediction": "close up of a lace jacket in blue"
+  },
+  {
+    "image_id": 156,
+    "prediction": "a woman wearing a printed floral t-shirt"
+  },
+  {
+    "image_id": 157,
+    "prediction": "this model is showcasing a white tank top with printed design"
+  },
+  {
+    "image_id": 158,
+    "prediction": "a stylish lady in a red shorts standing against a wall"
+  },
+  {
+    "image_id": 159,
+    "prediction": "close up of a lace t-shirt in white and holding a bag"
+  },
+  {
+    "image_id": 160,
+    "prediction": "a woman wearing a denim black blouse and holding a bag"
+  },
+  {
+    "image_id": 161,
+    "prediction": "this model is showcasing a striped t-shirt with sleeveless design"
+  },
+  {
+    "image_id": 162,
+    "prediction": "a stylish lady in a white tank top standing against a wall"
+  },
+  {
+    "image_id": 163,
+    "prediction": "close up of a lace dress in blue"
+  },
+  {
+    "image_id": 164,
+    "prediction": "a woman wearing a printed black shirt and holding a bag"
+  },
+  {
+    "image_id": 165,
+    "prediction": "this model is showcasing a striped dress with denim design"
+  },
+  {
+    "image_id": 166,
+    "prediction": "a stylish lady in a red shirt standing against a wall"
+  },
+  {
+    "image_id": 167,
+    "prediction": "close up of a sleeveless blouse in beige"
+  },
+  {
+    "image_id": 168,
+    "prediction": "a woman wearing a sleeveless blue dress"
+  },
+  {
+    "image_id": 169,
+    "prediction": "this model is showcasing a red shorts with lace design"
+  },
+  {
+    "image_id": 170,
+    "prediction": "a stylish lady in a grey tank top standing against a wall"
+  },
+  {
+    "image_id": 171,
+    "prediction": "close up of a lace blouse in floral and holding a bag"
+  },
+  {
+    "image_id": 172,
+    "prediction": "a woman wearing a v-neck pink blouse and holding a bag"
+  },
+  {
+    "image_id": 173,
+    "prediction": "this model is showcasing a striped tank top with v-neck design"
+  },
+  {
+    "image_id": 174,
+    "prediction": "a stylish lady in a beige t-shirt standing against a wall"
+  },
+  {
+    "image_id": 175,
+    "prediction": "close up of a v-neck tank top in grey"
+  },
+  {
+    "image_id": 176,
+    "prediction": "a woman wearing a denim blue t-shirt"
+  },
+  {
+    "image_id": 177,
+    "prediction": "this model is showcasing a pink shorts with v-neck design"
+  },
+  {
+    "image_id": 178,
+    "prediction": "a stylish lady in a white shirt standing against a wall and holding a bag"
+  },
+  {
+    "image_id": 179,
+    "prediction": "close up of a printed t-shirt in beige"
+  },
+  {
+    "image_id": 180,
+    "prediction": "a woman wearing a denim floral jacket"
+  },
+  {
+    "image_id": 181,
+    "prediction": "this model is showcasing a blue jacket with denim design"
+  },
+  {
+    "image_id": 182,
+    "prediction": "a stylish lady in a blue dress standing against a wall and holding a bag"
+  },
+  {
+    "image_id": 183,
+    "prediction": "close up of a printed jacket in white"
+  },
+  {
+    "image_id": 184,
+    "prediction": "a woman wearing a printed beige tank top and holding a bag"
+  },
+  {
+    "image_id": 185,
+    "prediction": "this model is showcasing a pink blouse with lace design"
+  },
+  {
+    "image_id": 186,
+    "prediction": "a stylish lady in a striped skirt standing against a wall"
+  },
+  {
+    "image_id": 187,
+    "prediction": "close up of a sleeveless jacket in pink"
+  },
+  {
+    "image_id": 188,
+    "prediction": "a woman wearing a sleeveless floral shirt"
+  },
+  {
+    "image_id": 189,
+    "prediction": "this model is showcasing a white blouse with v-neck design"
+  },
+  {
+    "image_id": 190,
+    "prediction": "a stylish lady in a red tank top standing against a wall and holding a bag"
+  },
+  {
+    "image_id": 191,
+    "prediction": "close up of a lace shirt in grey"
+  },
+  {
+    "image_id": 192,
+    "prediction": "a woman wearing a printed white skirt"
+  },
+  {
+    "image_id": 193,
+    "prediction": "this model is showcasing a white shorts with printed design and holding a bag"
+  },
+  {
+    "image_id": 194,
+    "prediction": "a stylish lady in a floral blouse standing against a wall"
+  },
+  {
+    "image_id": 195,
+    "prediction": "close up of a printed blouse in striped"
+  },
+  {
+    "image_id": 196,
+    "prediction": "a woman wearing a lace striped shorts and holding a bag"
+  },
+  {
+    "image_id": 197,
+    "prediction": "this model is showcasing a red blouse with printed design"
+  },
+  {
+    "image_id": 198,
+    "prediction": "a stylish lady in a white jacket standing against a wall"
+  },
+  {
+    "image_id": 199,
+    "prediction": "close up of a lace t-shirt in striped and holding a bag"
+  },
+  {
+    "image_id": 200,
+    "prediction": "a woman wearing a printed pink jeans"
+  },
+  {
+    "image_id": 201,
+    "prediction": "this model is showcasing a red shorts with printed design and holding a bag"
+  },
+  {
+    "image_id": 202,
+    "prediction": "a stylish lady in a pink shirt standing against a wall"
+  },
+  {
+    "image_id": 203,
+    "prediction": "close up of a printed t-shirt in floral and holding a bag"
+  },
+  {
+    "image_id": 204,
+    "prediction": "a woman wearing a sleeveless grey jacket"
+  },
+  {
+    "image_id": 205,
+    "prediction": "this model is showcasing a blue skirt with v-neck design and holding a bag"
+  },
+  {
+    "image_id": 206,
+    "prediction": "a stylish lady in a striped jeans standing against a wall"
+  },
+  {
+    "image_id": 207,
+    "prediction": "close up of a v-neck shirt in beige"
+  },
+  {
+    "image_id": 208,
+    "prediction": "a woman wearing a denim white jeans"
+  },
+  {
+    "image_id": 209,
+    "prediction": "this model is showcasing a black blouse with printed design and holding a bag"
+  },
+  {
+    "image_id": 210,
+    "prediction": "a stylish lady in a white tank top standing against a wall"
+  },
+  {
+    "image_id": 211,
+    "prediction": "close up of a printed shorts in white"
+  },
+  {
+    "image_id": 212,
+    "prediction": "a woman wearing a lace black tank top and holding a bag"
+  },
+  {
+    "image_id": 213,
+    "prediction": "this model is showcasing a striped t-shirt with sleeveless design"
+  },
+  {
+    "image_id": 214,
+    "prediction": "a stylish lady in a black dress standing against a wall"
+  },
+  {
+    "image_id": 215,
+    "prediction": "close up of a denim shorts in grey and holding a bag"
+  },
+  {
+    "image_id": 216,
+    "prediction": "a woman wearing a sleeveless grey tank top"
+  },
+  {
+    "image_id": 217,
+    "prediction": "this model is showcasing a floral shirt with denim design and holding a bag"
+  },
+  {
+    "image_id": 218,
+    "prediction": "a stylish lady in a grey shirt standing against a wall"
+  },
+  {
+    "image_id": 219,
+    "prediction": "close up of a denim tank top in blue"
+  },
+  {
+    "image_id": 220,
+    "prediction": "a woman wearing a sleeveless striped shirt"
+  },
+  {
+    "image_id": 221,
+    "prediction": "this model is showcasing a white tank top with sleeveless design"
+  },
+  {
+    "image_id": 222,
+    "prediction": "a stylish lady in a pink jacket standing against a wall"
+  },
+  {
+    "image_id": 223,
+    "prediction": "close up of a v-neck jeans in beige"
+  },
+  {
+    "image_id": 224,
+    "prediction": "a woman wearing a lace black t-shirt"
+  },
+  {
+    "image_id": 225,
+    "prediction": "this model is showcasing a floral tank top with denim design"
+  },
+  {
+    "image_id": 226,
+    "prediction": "a stylish lady in a grey shirt standing against a wall"
+  },
+  {
+    "image_id": 227,
+    "prediction": "close up of a lace t-shirt in pink"
+  },
+  {
+    "image_id": 228,
+    "prediction": "a woman wearing a sleeveless floral skirt"
+  },
+  {
+    "image_id": 229,
+    "prediction": "this model is showcasing a grey skirt with denim design and holding a bag"
+  },
+  {
+    "image_id": 230,
+    "prediction": "a stylish lady in a floral shorts standing against a wall"
+  },
+  {
+    "image_id": 231,
+    "prediction": "close up of a denim blouse in striped"
+  },
+  {
+    "image_id": 232,
+    "prediction": "a woman wearing a denim black blouse"
+  },
+  {
+    "image_id": 233,
+    "prediction": "this model is showcasing a striped shirt with sleeveless design"
+  },
+  {
+    "image_id": 234,
+    "prediction": "a stylish lady in a red jeans standing against a wall"
+  },
+  {
+    "image_id": 235,
+    "prediction": "close up of a sleeveless jeans in red and holding a bag"
+  },
+  {
+    "image_id": 236,
+    "prediction": "a woman wearing a v-neck red skirt"
+  },
+  {
+    "image_id": 237,
+    "prediction": "this model is showcasing a floral shorts with lace design and holding a bag"
+  },
+  {
+    "image_id": 238,
+    "prediction": "a stylish lady in a grey shirt standing against a wall"
+  },
+  {
+    "image_id": 239,
+    "prediction": "close up of a denim t-shirt in grey"
+  },
+  {
+    "image_id": 240,
+    "prediction": "a woman wearing a printed grey jacket"
+  },
+  {
+    "image_id": 241,
+    "prediction": "this model is showcasing a floral jeans with sleeveless design and holding a bag"
+  },
+  {
+    "image_id": 242,
+    "prediction": "a stylish lady in a grey dress standing against a wall and holding a bag"
+  },
+  {
+    "image_id": 243,
+    "prediction": "close up of a lace shorts in striped"
+  },
+  {
+    "image_id": 244,
+    "prediction": "a woman wearing a lace white shorts"
+  },
+  {
+    "image_id": 245,
+    "prediction": "this model is showcasing a red jeans with denim design"
+  },
+  {
+    "image_id": 246,
+    "prediction": "a stylish lady in a pink jacket standing against a wall"
+  },
+  {
+    "image_id": 247,
+    "prediction": "close up of a lace jacket in striped and holding a bag"
+  },
+  {
+    "image_id": 248,
+    "prediction": "a woman wearing a sleeveless pink shorts"
+  },
+  {
+    "image_id": 249,
+    "prediction": "this model is showcasing a grey shirt with denim design"
+  },
+  {
+    "image_id": 250,
+    "prediction": "a stylish lady in a white skirt standing against a wall"
+  },
+  {
+    "image_id": 251,
+    "prediction": "close up of a sleeveless tank top in black"
+  },
+  {
+    "image_id": 252,
+    "prediction": "a woman wearing a denim floral skirt"
+  },
+  {
+    "image_id": 253,
+    "prediction": "this model is showcasing a blue shorts with sleeveless design"
+  },
+  {
+    "image_id": 254,
+    "prediction": "a stylish lady in a blue dress standing against a wall and holding a bag"
+  },
+  {
+    "image_id": 255,
+    "prediction": "close up of a printed shorts in white"
+  },
+  {
+    "image_id": 256,
+    "prediction": "a woman wearing a lace beige blouse and holding a bag"
+  },
+  {
+    "image_id": 257,
+    "prediction": "this model is showcasing a red jacket with printed design"
+  },
+  {
+    "image_id": 258,
+    "prediction": "a stylish lady in a white shirt standing against a wall"
+  },
+  {
+    "image_id": 259,
+    "prediction": "close up of a denim blouse in beige"
+  },
+  {
+    "image_id": 260,
+    "prediction": "a woman wearing a sleeveless blue blouse and holding a bag"
+  },
+  {
+    "image_id": 261,
+    "prediction": "this model is showcasing a striped t-shirt with sleeveless design"
+  },
+  {
+    "image_id": 262,
+    "prediction": "a stylish lady in a black shirt standing against a wall and holding a bag"
+  },
+  {
+    "image_id": 263,
+    "prediction": "close up of a lace shorts in striped"
+  },
+  {
+    "image_id": 264,
+    "prediction": "a woman wearing a lace pink blouse"
+  },
+  {
+    "image_id": 265,
+    "prediction": "this model is showcasing a black shorts with sleeveless design"
+  },
+  {
+    "image_id": 266,
+    "prediction": "a stylish lady in a grey shirt standing against a wall"
+  },
+  {
+    "image_id": 267,
+    "prediction": "close up of a v-neck shirt in black"
+  },
+  {
+    "image_id": 268,
+    "prediction": "a woman wearing a printed white shirt"
+  },
+  {
+    "image_id": 269,
+    "prediction": "this model is showcasing a red shirt with printed design"
+  },
+  {
+    "image_id": 270,
+    "prediction": "a stylish lady in a red jeans standing against a wall"
+  },
+  {
+    "image_id": 271,
+    "prediction": "close up of a v-neck skirt in grey and holding a bag"
+  },
+  {
+    "image_id": 272,
+    "prediction": "a woman wearing a lace pink shorts"
+  },
+  {
+    "image_id": 273,
+    "prediction": "this model is showcasing a black skirt with sleeveless design"
+  },
+  {
+    "image_id": 274,
+    "prediction": "a stylish lady in a white skirt standing against a wall"
+  },
+  {
+    "image_id": 275,
+    "prediction": "close up of a sleeveless tank top in striped"
+  },
+  {
+    "image_id": 276,
+    "prediction": "a woman wearing a v-neck grey skirt and holding a bag"
+  },
+  {
+    "image_id": 277,
+    "prediction": "this model is showcasing a pink blouse with denim design"
+  },
+  {
+    "image_id": 278,
+    "prediction": "a stylish lady in a pink shorts standing against a wall"
+  },
+  {
+    "image_id": 279,
+    "prediction": "close up of a lace shorts in floral"
+  },
+  {
+    "image_id": 280,
+    "prediction": "a woman wearing a printed white blouse"
+  },
+  {
+    "image_id": 281,
+    "prediction": "this model is showcasing a floral skirt with lace design"
+  },
+  {
+    "image_id": 282,
+    "prediction": "a stylish lady in a striped tank top standing against a wall"
+  },
+  {
+    "image_id": 283,
+    "prediction": "close up of a printed blouse in striped and holding a bag"
+  },
+  {
+    "image_id": 284,
+    "prediction": "a woman wearing a denim red t-shirt"
+  },
+  {
+    "image_id": 285,
+    "prediction": "this model is showcasing a floral shirt with v-neck design and holding a bag"
+  },
+  {
+    "image_id": 286,
+    "prediction": "a stylish lady in a white jacket standing against a wall"
+  },
+  {
+    "image_id": 287,
+    "prediction": "close up of a lace blouse in black and holding a bag"
+  },
+  {
+    "image_id": 288,
+    "prediction": "a woman wearing a lace grey t-shirt"
+  },
+  {
+    "image_id": 289,
+    "prediction": "this model is showcasing a striped tank top with lace design and holding a bag"
+  },
+  {
+    "image_id": 290,
+    "prediction": "a stylish lady in a red shorts standing against a wall and holding a bag"
+  },
+  {
+    "image_id": 291,
+    "prediction": "close up of a denim blouse in striped and holding a bag"
+  },
+  {
+    "image_id": 292,
+    "prediction": "a woman wearing a lace black tank top and holding a bag"
+  },
+  {
+    "image_id": 293,
+    "prediction": "this model is showcasing a floral skirt with v-neck design"
+  },
+  {
+    "image_id": 294,
+    "prediction": "a stylish lady in a black blouse standing against a wall"
+  },
+  {
+    "image_id": 295,
+    "prediction": "close up of a v-neck shirt in beige and holding a bag"
+  },
+  {
+    "image_id": 296,
+    "prediction": "a woman wearing a printed striped tank top"
+  },
+  {
+    "image_id": 297,
+    "prediction": "this model is showcasing a pink t-shirt with printed design"
+  },
+  {
+    "image_id": 298,
+    "prediction": "a stylish lady in a pink t-shirt standing against a wall and holding a bag"
+  },
+  {
+    "image_id": 299,
+    "prediction": "close up of a denim shorts in floral and holding a bag"
+  },
+  {
+    "image_id": 300,
+    "prediction": "a woman wearing a v-neck blue tank top"
+  },
+  {
+    "image_id": 301,
+    "prediction": "this model is showcasing a red skirt with denim design"
+  },
+  {
+    "image_id": 302,
+    "prediction": "a stylish lady in a beige skirt standing against a wall"
+  },
+  {
+    "image_id": 303,
+    "prediction": "close up of a sleeveless jeans in pink and holding a bag"
+  },
+  {
+    "image_id": 304,
+    "prediction": "a woman wearing a lace striped shorts"
+  },
+  {
+    "image_id": 305,
+    "prediction": "this model is showcasing a blue tank top with lace design"
+  },
+  {
+    "image_id": 306,
+    "prediction": "a stylish lady in a pink shorts standing against a wall"
+  },
+  {
+    "image_id": 307,
+    "prediction": "close up of a sleeveless skirt in red and holding a bag"
+  },
+  {
+    "image_id": 308,
+    "prediction": "a woman wearing a denim striped jeans and holding a bag"
+  },
+  {
+    "image_id": 309,
+    "prediction": "this model is showcasing a black jeans with v-neck design"
+  },
+  {
+    "image_id": 310,
+    "prediction": "a stylish lady in a grey shirt standing against a wall"
+  },
+  {
+    "image_id": 311,
+    "prediction": "close up of a v-neck tank top in black"
+  },
+  {
+    "image_id": 312,
+    "prediction": "a woman wearing a printed striped jeans"
+  },
+  {
+    "image_id": 313,
+    "prediction": "this model is showcasing a beige shirt with sleeveless design and holding a bag"
+  },
+  {
+    "image_id": 314,
+    "prediction": "a stylish lady in a pink skirt standing against a wall and holding a bag"
+  },
+  {
+    "image_id": 315,
+    "prediction": "close up of a printed jeans in black and holding a bag"
+  },
+  {
+    "image_id": 316,
+    "prediction": "a woman wearing a printed striped shirt"
+  },
+  {
+    "image_id": 317,
+    "prediction": "this model is showcasing a red shirt with lace design"
+  },
+  {
+    "image_id": 318,
+    "prediction": "a stylish lady in a floral shirt standing against a wall"
+  },
+  {
+    "image_id": 319,
+    "prediction": "close up of a printed blouse in floral"
+  },
+  {
+    "image_id": 320,
+    "prediction": "a woman wearing a printed black blouse"
+  },
+  {
+    "image_id": 321,
+    "prediction": "this model is showcasing a pink shirt with denim design"
+  },
+  {
+    "image_id": 322,
+    "prediction": "a stylish lady in a grey dress standing against a wall"
+  },
+  {
+    "image_id": 323,
+    "prediction": "close up of a denim skirt in pink"
+  },
+  {
+    "image_id": 324,
+    "prediction": "a woman wearing a lace white jacket and holding a bag"
+  },
+  {
+    "image_id": 325,
+    "prediction": "this model is showcasing a floral tank top with denim design"
+  },
+  {
+    "image_id": 326,
+    "prediction": "a stylish lady in a floral jacket standing against a wall and holding a bag"
+  },
+  {
+    "image_id": 327,
+    "prediction": "close up of a sleeveless t-shirt in floral and holding a bag"
+  },
+  {
+    "image_id": 328,
+    "prediction": "a woman wearing a denim white t-shirt"
+  },
+  {
+    "image_id": 329,
+    "prediction": "this model is showcasing a red shorts with denim design"
+  },
+  {
+    "image_id": 330,
+    "prediction": "a stylish lady in a floral dress standing against a wall"
+  },
+  {
+    "image_id": 331,
+    "prediction": "close up of a v-neck shorts in striped and holding a bag"
+  },
+  {
+    "image_id": 332,
+    "prediction": "a woman wearing a denim black skirt"
+  },
+  {
+    "image_id": 333,
+    "prediction": "this model is showcasing a floral tank top with sleeveless design"
+  },
+  {
+    "image_id": 334,
+    "prediction": "a stylish lady in a pink tank top standing against a wall"
+  },
+  {
+    "image_id": 335,
+    "prediction": "close up of a sleeveless tank top in pink"
+  },
+  {
+    "image_id": 336,
+    "prediction": "a woman wearing a lace white shirt and holding a bag"
+  },
+  {
+    "image_id": 337,
+    "prediction": "this model is showcasing a beige t-shirt with denim design"
+  },
+  {
+    "image_id": 338,
+    "prediction": "a stylish lady in a beige skirt standing against a wall"
+  },
+  {
+    "image_id": 339,
+    "prediction": "close up of a sleeveless shirt in beige"
+  },
+  {
+    "image_id": 340,
+    "prediction": "a woman wearing a v-neck striped shorts"
+  },
+  {
+    "image_id": 341,
+    "prediction": "this model is showcasing a white t-shirt with lace design and holding a bag"
+  },
+  {
+    "image_id": 342,
+    "prediction": "a stylish lady in a blue tank top standing against a wall"
+  },
+  {
+    "image_id": 343,
+    "prediction": "close up of a denim jacket in white"
+  },
+  {
+    "image_id": 344,
+    "prediction": "a woman wearing a denim grey shirt and holding a bag"
+  },
+  {
+    "image_id": 345,
+    "prediction": "this model is showcasing a grey jeans with sleeveless design"
+  },
+  {
+    "image_id": 346,
+    "prediction": "a stylish lady in a white jeans standing against a wall and holding a bag"
+  },
+  {
+    "image_id": 347,
+    "prediction": "close up of a lace t-shirt in blue and holding a bag"
+  },
+  {
+    "image_id": 348,
+    "prediction": "a woman wearing a sleeveless blue dress and holding a bag"
+  },
+  {
+    "image_id": 349,
+    "prediction": "this model is showcasing a striped skirt with printed design"
+  },
+  {
+    "image_id": 350,
+    "prediction": "a stylish lady in a blue t-shirt standing against a wall"
+  },
+  {
+    "image_id": 351,
+    "prediction": "close up of a printed blouse in red"
+  },
+  {
+    "image_id": 352,
+    "prediction": "a woman wearing a lace red shorts and holding a bag"
+  },
+  {
+    "image_id": 353,
+    "prediction": "this model is showcasing a black dress with sleeveless design"
+  },
+  {
+    "image_id": 354,
+    "prediction": "a stylish lady in a beige jeans standing against a wall"
+  },
+  {
+    "image_id": 355,
+    "prediction": "close up of a denim tank top in grey"
+  },
+  {
+    "image_id": 356,
+    "prediction": "a woman wearing a v-neck striped jeans"
+  },
+  {
+    "image_id": 357,
+    "prediction": "this model is showcasing a pink jeans with denim design"
+  },
+  {
+    "image_id": 358,
+    "prediction": "a stylish lady in a blue tank top standing against a wall"
+  },
+  {
+    "image_id": 359,
+    "prediction": "close up of a v-neck jeans in striped"
+  },
+  {
+    "image_id": 360,
+    "prediction": "a woman wearing a lace pink dress and holding a bag"
+  },
+  {
+    "image_id": 361,
+    "prediction": "this model is showcasing a black shorts with sleeveless design and holding a bag"
+  },
+  {
+    "image_id": 362,
+    "prediction": "a stylish lady in a floral jeans standing against a wall and holding a bag"
+  },
+  {
+    "image_id": 363,
+    "prediction": "close up of a lace shirt in striped"
+  },
+  {
+    "image_id": 364,
+    "prediction": "a woman wearing a v-neck floral shorts"
+  },
+  {
+    "image_id": 365,
+    "prediction": "this model is showcasing a grey blouse with printed design"
+  },
+  {
+    "image_id": 366,
+    "prediction": "a stylish lady in a beige t-shirt standing against a wall"
+  },
+  {
+    "image_id": 367,
+    "prediction": "close up of a sleeveless jeans in floral"
+  },
+  {
+    "image_id": 368,
+    "prediction": "a woman wearing a lace blue jeans and holding a bag"
+  },
+  {
+    "image_id": 369,
+    "prediction": "this model is showcasing a black jacket with v-neck design"
+  },
+  {
+    "image_id": 370,
+    "prediction": "a stylish lady in a blue skirt standing against a wall"
+  },
+  {
+    "image_id": 371,
+    "prediction": "close up of a denim t-shirt in pink and holding a bag"
+  },
+  {
+    "image_id": 372,
+    "prediction": "a woman wearing a sleeveless red jeans"
+  },
+  {
+    "image_id": 373,
+    "prediction": "this model is showcasing a pink skirt with printed design"
+  },
+  {
+    "image_id": 374,
+    "prediction": "a stylish lady in a blue tank top standing against a wall"
+  },
+  {
+    "image_id": 375,
+    "prediction": "close up of a lace shorts in white"
+  },
+  {
+    "image_id": 376,
+    "prediction": "a woman wearing a sleeveless blue t-shirt"
+  },
+  {
+    "image_id": 377,
+    "prediction": "this model is showcasing a white skirt with v-neck design"
+  },
+  {
+    "image_id": 378,
+    "prediction": "a stylish lady in a striped skirt standing against a wall"
+  },
+  {
+    "image_id": 379,
+    "prediction": "close up of a sleeveless dress in striped"
+  },
+  {
+    "image_id": 380,
+    "prediction": "a woman wearing a lace grey jacket and holding a bag"
+  },
+  {
+    "image_id": 381,
+    "prediction": "this model is showcasing a beige shirt with lace design and holding a bag"
+  },
+  {
+    "image_id": 382,
+    "prediction": "a stylish lady in a blue blouse standing against a wall and holding a bag"
+  },
+  {
+    "image_id": 383,
+    "prediction": "close up of a denim jacket in striped"
+  },
+  {
+    "image_id": 384,
+    "prediction": "a woman wearing a v-neck red jacket"
+  },
+  {
+    "image_id": 385,
+    "prediction": "this model is showcasing a blue dress with lace design"
+  },
+  {
+    "image_id": 386,
+    "prediction": "a stylish lady in a striped jacket standing against a wall"
+  },
+  {
+    "image_id": 387,
+    "prediction": "close up of a denim jeans in striped"
+  },
+  {
+    "image_id": 388,
+    "prediction": "a woman wearing a sleeveless beige dress"
+  },
+  {
+    "image_id": 389,
+    "prediction": "this model is showcasing a black dress with v-neck design"
+  },
+  {
+    "image_id": 390,
+    "prediction": "a stylish lady in a red t-shirt standing against a wall"
+  },
+  {
+    "image_id": 391,
+    "prediction": "close up of a printed dress in floral"
+  },
+  {
+    "image_id": 392,
+    "prediction": "a woman wearing a denim floral blouse"
+  },
+  {
+    "image_id": 393,
+    "prediction": "this model is showcasing a white jacket with denim design and holding a bag"
+  },
+  {
+    "image_id": 394,
+    "prediction": "a stylish lady in a grey tank top standing against a wall"
+  },
+  {
+    "image_id": 395,
+    "prediction": "close up of a printed tank top in red"
+  },
+  {
+    "image_id": 396,
+    "prediction": "a woman wearing a denim blue dress"
+  },
+  {
+    "image_id": 397,
+    "prediction": "this model is showcasing a striped jacket with v-neck design"
+  },
+  {
+    "image_id": 398,
+    "prediction": "a stylish lady in a grey jacket standing against a wall"
+  },
+  {
+    "image_id": 399,
+    "prediction": "close up of a printed dress in white and holding a bag"
+  },
+  {
+    "image_id": 400,
+    "prediction": "a woman wearing a lace pink dress"
+  },
+  {
+    "image_id": 401,
+    "prediction": "this model is showcasing a pink dress with lace design"
+  },
+  {
+    "image_id": 402,
+    "prediction": "a stylish lady in a floral t-shirt standing against a wall and holding a bag"
+  },
+  {
+    "image_id": 403,
+    "prediction": "close up of a lace shorts in pink and holding a bag"
+  },
+  {
+    "image_id": 404,
+    "prediction": "a woman wearing a sleeveless red shirt"
+  },
+  {
+    "image_id": 405,
+    "prediction": "this model is showcasing a blue t-shirt with sleeveless design"
+  },
+  {
+    "image_id": 406,
+    "prediction": "a stylish lady in a pink shirt standing against a wall"
+  },
+  {
+    "image_id": 407,
+    "prediction": "close up of a printed dress in blue and holding a bag"
+  },
+  {
+    "image_id": 408,
+    "prediction": "a woman wearing a v-neck black shirt"
+  },
+  {
+    "image_id": 409,
+    "prediction": "this model is showcasing a grey t-shirt with sleeveless design"
+  },
+  {
+    "image_id": 410,
+    "prediction": "a stylish lady in a grey blouse standing against a wall"
+  },
+  {
+    "image_id": 411,
+    "prediction": "close up of a lace jacket in striped and holding a bag"
+  },
+  {
+    "image_id": 412,
+    "prediction": "a woman wearing a denim striped blouse and holding a bag"
+  },
+  {
+    "image_id": 413,
+    "prediction": "this model is showcasing a floral shirt with v-neck design"
+  },
+  {
+    "image_id": 414,
+    "prediction": "a stylish lady in a blue tank top standing against a wall"
+  },
+  {
+    "image_id": 415,
+    "prediction": "close up of a denim shirt in black and holding a bag"
+  },
+  {
+    "image_id": 416,
+    "prediction": "a woman wearing a sleeveless white shorts and holding a bag"
+  },
+  {
+    "image_id": 417,
+    "prediction": "this model is showcasing a black skirt with denim design"
+  },
+  {
+    "image_id": 418,
+    "prediction": "a stylish lady in a pink dress standing against a wall"
+  },
+  {
+    "image_id": 419,
+    "prediction": "close up of a denim jacket in striped"
+  },
+  {
+    "image_id": 420,
+    "prediction": "a woman wearing a denim blue shirt"
+  },
+  {
+    "image_id": 421,
+    "prediction": "this model is showcasing a pink blouse with denim design and holding a bag"
+  },
+  {
+    "image_id": 422,
+    "prediction": "a stylish lady in a floral shirt standing against a wall"
+  },
+  {
+    "image_id": 423,
+    "prediction": "close up of a v-neck jacket in blue"
+  },
+  {
+    "image_id": 424,
+    "prediction": "a woman wearing a denim red shirt and holding a bag"
+  },
+  {
+    "image_id": 425,
+    "prediction": "this model is showcasing a blue shirt with denim design"
+  },
+  {
+    "image_id": 426,
+    "prediction": "a stylish lady in a grey shirt standing against a wall"
+  },
+  {
+    "image_id": 427,
+    "prediction": "close up of a printed jacket in beige"
+  },
+  {
+    "image_id": 428,
+    "prediction": "a woman wearing a lace white skirt"
+  },
+  {
+    "image_id": 429,
+    "prediction": "this model is showcasing a striped jeans with denim design"
+  },
+  {
+    "image_id": 430,
+    "prediction": "a stylish lady in a grey jeans standing against a wall and holding a bag"
+  },
+  {
+    "image_id": 431,
+    "prediction": "close up of a printed jeans in black"
+  },
+  {
+    "image_id": 432,
+    "prediction": "a woman wearing a lace white jacket and holding a bag"
+  },
+  {
+    "image_id": 433,
+    "prediction": "this model is showcasing a blue t-shirt with v-neck design and holding a bag"
+  },
+  {
+    "image_id": 434,
+    "prediction": "a stylish lady in a red jacket standing against a wall"
+  },
+  {
+    "image_id": 435,
+    "prediction": "close up of a sleeveless jacket in beige"
+  },
+  {
+    "image_id": 436,
+    "prediction": "a woman wearing a denim floral blouse and holding a bag"
+  },
+  {
+    "image_id": 437,
+    "prediction": "this model is showcasing a white jeans with lace design"
+  },
+  {
+    "image_id": 438,
+    "prediction": "a stylish lady in a floral t-shirt standing against a wall"
+  },
+  {
+    "image_id": 439,
+    "prediction": "close up of a v-neck jeans in floral"
+  },
+  {
+    "image_id": 440,
+    "prediction": "a woman wearing a sleeveless beige dress and holding a bag"
+  },
+  {
+    "image_id": 441,
+    "prediction": "this model is showcasing a blue blouse with sleeveless design"
+  },
+  {
+    "image_id": 442,
+    "prediction": "a stylish lady in a beige blouse standing against a wall"
+  },
+  {
+    "image_id": 443,
+    "prediction": "close up of a sleeveless jacket in beige"
+  },
+  {
+    "image_id": 444,
+    "prediction": "a woman wearing a printed white jacket"
+  },
+  {
+    "image_id": 445,
+    "prediction": "this model is showcasing a pink jeans with printed design"
+  },
+  {
+    "image_id": 446,
+    "prediction": "a stylish lady in a floral blouse standing against a wall"
+  },
+  {
+    "image_id": 447,
+    "prediction": "close up of a sleeveless tank top in grey"
+  },
+  {
+    "image_id": 448,
+    "prediction": "a woman wearing a printed striped shirt"
+  },
+  {
+    "image_id": 449,
+    "prediction": "this model is showcasing a black jacket with v-neck design"
+  },
+  {
+    "image_id": 450,
+    "prediction": "a stylish lady in a blue blouse standing against a wall"
+  },
+  {
+    "image_id": 451,
+    "prediction": "close up of a printed jeans in pink"
+  },
+  {
+    "image_id": 452,
+    "prediction": "a woman wearing a lace blue shirt and holding a bag"
+  },
+  {
+    "image_id": 453,
+    "prediction": "this model is showcasing a pink skirt with printed design and holding a bag"
+  },
+  {
+    "image_id": 454,
+    "prediction": "a stylish lady in a floral jacket standing against a wall"
+  },
+  {
+    "image_id": 455,
+    "prediction": "close up of a denim jeans in beige and holding a bag"
+  },
+  {
+    "image_id": 456,
+    "prediction": "a woman wearing a v-neck white jeans"
+  },
+  {
+    "image_id": 457,
+    "prediction": "this model is showcasing a black blouse with lace design"
+  },
+  {
+    "image_id": 458,
+    "prediction": "a stylish lady in a blue jacket standing against a wall"
+  },
+  {
+    "image_id": 459,
+    "prediction": "close up of a v-neck tank top in grey"
+  },
+  {
+    "image_id": 460,
+    "prediction": "a woman wearing a lace floral dress"
+  },
+  {
+    "image_id": 461,
+    "prediction": "this model is showcasing a floral dress with sleeveless design and holding a bag"
+  },
+  {
+    "image_id": 462,
+    "prediction": "a stylish lady in a beige tank top standing against a wall"
+  },
+  {
+    "image_id": 463,
+    "prediction": "close up of a denim shorts in white"
+  },
+  {
+    "image_id": 464,
+    "prediction": "a woman wearing a v-neck blue tank top"
+  },
+  {
+    "image_id": 465,
+    "prediction": "this model is showcasing a red shirt with denim design"
+  },
+  {
+    "image_id": 466,
+    "prediction": "a stylish lady in a floral shorts standing against a wall"
+  },
+  {
+    "image_id": 467,
+    "prediction": "close up of a lace t-shirt in beige"
+  },
+  {
+    "image_id": 468,
+    "prediction": "a woman wearing a lace grey shirt"
+  },
+  {
+    "image_id": 469,
+    "prediction": "this model is showcasing a striped jeans with lace design"
+  },
+  {
+    "image_id": 470,
+    "prediction": "a stylish lady in a pink dress standing against a wall and holding a bag"
+  },
+  {
+    "image_id": 471,
+    "prediction": "close up of a lace tank top in beige"
+  },
+  {
+    "image_id": 472,
+    "prediction": "a woman wearing a printed white shorts and holding a bag"
+  },
+  {
+    "image_id": 473,
+    "prediction": "this model is showcasing a grey tank top with v-neck design"
+  },
+  {
+    "image_id": 474,
+    "prediction": "a stylish lady in a blue blouse standing against a wall and holding a bag"
+  },
+  {
+    "image_id": 475,
+    "prediction": "close up of a printed tank top in blue and holding a bag"
+  },
+  {
+    "image_id": 476,
+    "prediction": "a woman wearing a v-neck blue shirt and holding a bag"
+  },
+  {
+    "image_id": 477,
+    "prediction": "this model is showcasing a white dress with v-neck design and holding a bag"
+  },
+  {
+    "image_id": 478,
+    "prediction": "a stylish lady in a grey skirt standing against a wall and holding a bag"
+  },
+  {
+    "image_id": 479,
+    "prediction": "close up of a lace skirt in pink"
+  },
+  {
+    "image_id": 480,
+    "prediction": "a woman wearing a denim beige tank top and holding a bag"
+  },
+  {
+    "image_id": 481,
+    "prediction": "this model is showcasing a beige skirt with sleeveless design"
+  },
+  {
+    "image_id": 482,
+    "prediction": "a stylish lady in a pink skirt standing against a wall"
+  },
+  {
+    "image_id": 483,
+    "prediction": "close up of a v-neck jacket in black"
+  },
+  {
+    "image_id": 484,
+    "prediction": "a woman wearing a sleeveless pink blouse"
+  },
+  {
+    "image_id": 485,
+    "prediction": "this model is showcasing a blue jacket with denim design"
+  },
+  {
+    "image_id": 486,
+    "prediction": "a stylish lady in a red jacket standing against a wall"
+  },
+  {
+    "image_id": 487,
+    "prediction": "close up of a sleeveless jeans in black and holding a bag"
+  },
+  {
+    "image_id": 488,
+    "prediction": "a woman wearing a lace white jeans"
+  },
+  {
+    "image_id": 489,
+    "prediction": "this model is showcasing a blue blouse with lace design"
+  },
+  {
+    "image_id": 490,
+    "prediction": "a stylish lady in a grey blouse standing against a wall"
+  },
+  {
+    "image_id": 491,
+    "prediction": "close up of a denim jeans in white"
+  },
+  {
+    "image_id": 492,
+    "prediction": "a woman wearing a v-neck striped blouse"
+  },
+  {
+    "image_id": 493,
+    "prediction": "this model is showcasing a beige t-shirt with lace design and holding a bag"
+  },
+  {
+    "image_id": 494,
+    "prediction": "a stylish lady in a grey jacket standing against a wall"
+  },
+  {
+    "image_id": 495,
+    "prediction": "close up of a lace t-shirt in pink"
+  },
+  {
+    "image_id": 496,
+    "prediction": "a woman wearing a v-neck red shorts"
+  },
+  {
+    "image_id": 497,
+    "prediction": "this model is showcasing a red dress with sleeveless design"
+  },
+  {
+    "image_id": 498,
+    "prediction": "a stylish lady in a floral dress standing against a wall and holding a bag"
+  },
+  {
+    "image_id": 499,
+    "prediction": "close up of a printed blouse in blue and holding a bag"
+  },
+  {
+    "image_id": 500,
+    "prediction": "a woman wearing a lace striped dress"
+  },
+  {
+    "image_id": 501,
+    "prediction": "this model is showcasing a blue dress with denim design and holding a bag"
+  },
+  {
+    "image_id": 502,
+    "prediction": "a stylish lady in a floral dress standing against a wall"
+  },
+  {
+    "image_id": 503,
+    "prediction": "close up of a lace shirt in striped"
+  },
+  {
+    "image_id": 504,
+    "prediction": "a woman wearing a sleeveless pink t-shirt and holding a bag"
+  },
+  {
+    "image_id": 505,
+    "prediction": "this model is showcasing a pink t-shirt with v-neck design"
+  },
+  {
+    "image_id": 506,
+    "prediction": "a stylish lady in a grey shorts standing against a wall and holding a bag"
+  },
+  {
+    "image_id": 507,
+    "prediction": "close up of a printed t-shirt in blue and holding a bag"
+  },
+  {
+    "image_id": 508,
+    "prediction": "a woman wearing a sleeveless white dress"
+  },
+  {
+    "image_id": 509,
+    "prediction": "this model is showcasing a striped jeans with printed design"
+  },
+  {
+    "image_id": 510,
+    "prediction": "a stylish lady in a black t-shirt standing against a wall"
+  },
+  {
+    "image_id": 511,
+    "prediction": "close up of a denim skirt in white and holding a bag"
+  },
+  {
+    "image_id": 512,
+    "prediction": "a woman wearing a printed pink jacket"
+  },
+  {
+    "image_id": 513,
+    "prediction": "this model is showcasing a grey blouse with denim design"
+  },
+  {
+    "image_id": 514,
+    "prediction": "a stylish lady in a striped tank top standing against a wall and holding a bag"
+  },
+  {
+    "image_id": 515,
+    "prediction": "close up of a sleeveless jeans in pink"
+  },
+  {
+    "image_id": 516,
+    "prediction": "a woman wearing a sleeveless pink dress"
+  },
+  {
+    "image_id": 517,
+    "prediction": "this model is showcasing a beige jeans with printed design"
+  },
+  {
+    "image_id": 518,
+    "prediction": "a stylish lady in a striped jeans standing against a wall"
+  },
+  {
+    "image_id": 519,
+    "prediction": "close up of a v-neck shirt in grey"
+  },
+  {
+    "image_id": 520,
+    "prediction": "a woman wearing a sleeveless floral tank top"
+  },
+  {
+    "image_id": 521,
+    "prediction": "this model is showcasing a red blouse with printed design and holding a bag"
+  },
+  {
+    "image_id": 522,
+    "prediction": "a stylish lady in a striped shorts standing against a wall"
+  },
+  {
+    "image_id": 523,
+    "prediction": "close up of a denim t-shirt in pink and holding a bag"
+  },
+  {
+    "image_id": 524,
+    "prediction": "a woman wearing a printed pink jeans and holding a bag"
+  },
+  {
+    "image_id": 525,
+    "prediction": "this model is showcasing a beige tank top with v-neck design and holding a bag"
+  },
+  {
+    "image_id": 526,
+    "prediction": "a stylish lady in a white skirt standing against a wall"
+  },
+  {
+    "image_id": 527,
+    "prediction": "close up of a denim dress in floral"
+  },
+  {
+    "image_id": 528,
+    "prediction": "a woman wearing a v-neck striped tank top"
+  },
+  {
+    "image_id": 529,
+    "prediction": "this model is showcasing a beige skirt with lace design"
+  },
+  {
+    "image_id": 530,
+    "prediction": "a stylish lady in a striped blouse standing against a wall"
+  },
+  {
+    "image_id": 531,
+    "prediction": "close up of a denim shirt in grey"
+  },
+  {
+    "image_id": 532,
+    "prediction": "a woman wearing a sleeveless grey jacket"
+  },
+  {
+    "image_id": 533,
+    "prediction": "this model is showcasing a pink skirt with v-neck design"
+  },
+  {
+    "image_id": 534,
+    "prediction": "a stylish lady in a floral t-shirt standing against a wall and holding a bag"
+  },
+  {
+    "image_id": 535,
+    "prediction": "close up of a v-neck tank top in striped"
+  },
+  {
+    "image_id": 536,
+    "prediction": "a woman wearing a denim beige jeans"
+  },
+  {
+    "image_id": 537,
+    "prediction": "this model is showcasing a black skirt with v-neck design"
+  },
+  {
+    "image_id": 538,
+    "prediction": "a stylish lady in a pink jeans standing against a wall"
+  },
+  {
+    "image_id": 539,
+    "prediction": "close up of a sleeveless shirt in black and holding a bag"
+  },
+  {
+    "image_id": 540,
+    "prediction": "a woman wearing a printed beige dress and holding a bag"
+  },
+  {
+    "image_id": 541,
+    "prediction": "this model is showcasing a red t-shirt with lace design and holding a bag"
+  },
+  {
+    "image_id": 542,
+    "prediction": "a stylish lady in a beige jacket standing against a wall"
+  },
+  {
+    "image_id": 543,
+    "prediction": "close up of a lace shirt in red"
+  },
+  {
+    "image_id": 544,
+    "prediction": "a woman wearing a lace white shorts"
+  },
+  {
+    "image_id": 545,
+    "prediction": "this model is showcasing a pink shorts with denim design"
+  },
+  {
+    "image_id": 546,
+    "prediction": "a stylish lady in a black blouse standing against a wall and holding a bag"
+  },
+  {
+    "image_id": 547,
+    "prediction": "close up of a denim tank top in white"
+  },
+  {
+    "image_id": 548,
+    "prediction": "a woman wearing a v-neck black shorts"
+  },
+  {
+    "image_id": 549,
+    "prediction": "this model is showcasing a blue jacket with v-neck design"
+  },
+  {
+    "image_id": 550,
+    "prediction": "a stylish lady in a striped jeans standing against a wall and holding a bag"
+  },
+  {
+    "image_id": 551,
+    "prediction": "close up of a printed tank top in pink and holding a bag"
+  },
+  {
+    "image_id": 552,
+    "prediction": "a woman wearing a printed black dress and holding a bag"
+  },
+  {
+    "image_id": 553,
+    "prediction": "this model is showcasing a black shorts with denim design"
+  },
+  {
+    "image_id": 554,
+    "prediction": "a stylish lady in a beige jeans standing against a wall"
+  },
+  {
+    "image_id": 555,
+    "prediction": "close up of a sleeveless jacket in floral"
+  },
+  {
+    "image_id": 556,
+    "prediction": "a woman wearing a sleeveless floral jeans"
+  },
+  {
+    "image_id": 557,
+    "prediction": "this model is showcasing a beige shorts with printed design and holding a bag"
+  },
+  {
+    "image_id": 558,
+    "prediction": "a stylish lady in a white jeans standing against a wall"
+  },
+  {
+    "image_id": 559,
+    "prediction": "close up of a lace shorts in white"
+  },
+  {
+    "image_id": 560,
+    "prediction": "a woman wearing a denim white blouse"
+  },
+  {
+    "image_id": 561,
+    "prediction": "this model is showcasing a beige t-shirt with v-neck design and holding a bag"
+  },
+  {
+    "image_id": 562,
+    "prediction": "a stylish lady in a black blouse standing against a wall"
+  },
+  {
+    "image_id": 563,
+    "prediction": "close up of a denim t-shirt in floral and holding a bag"
+  },
+  {
+    "image_id": 564,
+    "prediction": "a woman wearing a printed beige blouse"
+  },
+  {
+    "image_id": 565,
+    "prediction": "this model is showcasing a white skirt with printed design"
+  },
+  {
+    "image_id": 566,
+    "prediction": "a stylish lady in a striped dress standing against a wall"
+  },
+  {
+    "image_id": 567,
+    "prediction": "close up of a printed dress in grey"
+  },
+  {
+    "image_id": 568,
+    "prediction": "a woman wearing a v-neck red jacket"
+  },
+  {
+    "image_id": 569,
+    "prediction": "this model is showcasing a white jeans with printed design"
+  },
+  {
+    "image_id": 570,
+    "prediction": "a stylish lady in a grey shirt standing against a wall and holding a bag"
+  },
+  {
+    "image_id": 571,
+    "prediction": "close up of a printed blouse in floral"
+  },
+  {
+    "image_id": 572,
+    "prediction": "a woman wearing a denim floral tank top and holding a bag"
+  },
+  {
+    "image_id": 573,
+    "prediction": "this model is showcasing a beige skirt with printed design"
+  },
+  {
+    "image_id": 574,
+    "prediction": "a stylish lady in a grey tank top standing against a wall and holding a bag"
+  },
+  {
+    "image_id": 575,
+    "prediction": "close up of a sleeveless tank top in blue"
+  },
+  {
+    "image_id": 576,
+    "prediction": "a woman wearing a denim red t-shirt and holding a bag"
+  },
+  {
+    "image_id": 577,
+    "prediction": "this model is showcasing a beige skirt with v-neck design"
+  },
+  {
+    "image_id": 578,
+    "prediction": "a stylish lady in a floral shorts standing against a wall and holding a bag"
+  },
+  {
+    "image_id": 579,
+    "prediction": "close up of a sleeveless t-shirt in striped"
+  },
+  {
+    "image_id": 580,
+    "prediction": "a woman wearing a sleeveless red shorts and holding a bag"
+  },
+  {
+    "image_id": 581,
+    "prediction": "this model is showcasing a red t-shirt with sleeveless design"
+  },
+  {
+    "image_id": 582,
+    "prediction": "a stylish lady in a floral t-shirt standing against a wall"
+  },
+  {
+    "image_id": 583,
+    "prediction": "close up of a lace jeans in pink and holding a bag"
+  },
+  {
+    "image_id": 584,
+    "prediction": "a woman wearing a lace white skirt"
+  },
+  {
+    "image_id": 585,
+    "prediction": "this model is showcasing a black blouse with v-neck design"
+  },
+  {
+    "image_id": 586,
+    "prediction": "a stylish lady in a blue shorts standing against a wall"
+  },
+  {
+    "image_id": 587,
+    "prediction": "close up of a denim skirt in pink"
+  },
+  {
+    "image_id": 588,
+    "prediction": "a woman wearing a sleeveless white shorts"
+  },
+  {
+    "image_id": 589,
+    "prediction": "this model is showcasing a black skirt with v-neck design"
+  },
+  {
+    "image_id": 590,
+    "prediction": "a stylish lady in a beige blouse standing against a wall"
+  },
+  {
+    "image_id": 591,
+    "prediction": "close up of a lace skirt in floral"
+  },
+  {
+    "image_id": 592,
+    "prediction": "a woman wearing a printed pink jeans"
+  },
+  {
+    "image_id": 593,
+    "prediction": "this model is showcasing a striped tank top with printed design"
+  },
+  {
+    "image_id": 594,
+    "prediction": "a stylish lady in a pink jacket standing against a wall"
+  },
+  {
+    "image_id": 595,
+    "prediction": "close up of a sleeveless dress in red"
+  },
+  {
+    "image_id": 596,
+    "prediction": "a woman wearing a denim blue tank top"
+  },
+  {
+    "image_id": 597,
+    "prediction": "this model is showcasing a pink t-shirt with printed design"
+  },
+  {
+    "image_id": 598,
+    "prediction": "a stylish lady in a red blouse standing against a wall and holding a bag"
+  },
+  {
+    "image_id": 599,
+    "prediction": "close up of a denim blouse in red and holding a bag"
+  },
+  {
+    "image_id": 600,
+    "prediction": "a woman wearing a printed grey dress"
+  },
+  {
+    "image_id": 601,
+    "prediction": "this model is showcasing a pink t-shirt with sleeveless design"
+  },
+  {
+    "image_id": 602,
+    "prediction": "a stylish lady in a grey shirt standing against a wall"
+  },
+  {
+    "image_id": 603,
+    "prediction": "close up of a denim shorts in striped and holding a bag"
+  },
+  {
+    "image_id": 604,
+    "prediction": "a woman wearing a denim pink dress and holding a bag"
+  },
+  {
+    "image_id": 605,
+    "prediction": "this model is showcasing a blue tank top with v-neck design"
+  },
+  {
+    "image_id": 606,
+    "prediction": "a stylish lady in a white dress standing against a wall"
+  },
+  {
+    "image_id": 607,
+    "prediction": "close up of a v-neck dress in beige"
+  },
+  {
+    "image_id": 608,
+    "prediction": "a woman wearing a sleeveless pink tank top"
+  },
+  {
+    "image_id": 609,
+    "prediction": "this model is showcasing a beige jacket with printed design"
+  },
+  {
+    "image_id": 610,
+    "prediction": "a stylish lady in a grey tank top standing against a wall"
+  },
+  {
+    "image_id": 611,
+    "prediction": "close up of a printed shorts in black and holding a bag"
+  },
+  {
+    "image_id": 612,
+    "prediction": "a woman wearing a denim red jeans and holding a bag"
+  },
+  {
+    "image_id": 613,
+    "prediction": "this model is showcasing a beige t-shirt with sleeveless design"
+  },
+  {
+    "image_id": 614,
+    "prediction": "a stylish lady in a beige tank top standing against a wall"
+  },
+  {
+    "image_id": 615,
+    "prediction": "close up of a lace blouse in floral"
+  },
+  {
+    "image_id": 616,
+    "prediction": "a woman wearing a denim black dress"
+  },
+  {
+    "image_id": 617,
+    "prediction": "this model is showcasing a grey shorts with printed design"
+  },
+  {
+    "image_id": 618,
+    "prediction": "a stylish lady in a striped t-shirt standing against a wall and holding a bag"
+  },
+  {
+    "image_id": 619,
+    "prediction": "close up of a v-neck shirt in white and holding a bag"
+  },
+  {
+    "image_id": 620,
+    "prediction": "a woman wearing a v-neck blue dress"
+  },
+  {
+    "image_id": 621,
+    "prediction": "this model is showcasing a grey t-shirt with lace design"
+  },
+  {
+    "image_id": 622,
+    "prediction": "a stylish lady in a blue dress standing against a wall and holding a bag"
+  },
+  {
+    "image_id": 623,
+    "prediction": "close up of a denim tank top in grey"
+  },
+  {
+    "image_id": 624,
+    "prediction": "a woman wearing a printed pink tank top"
+  },
+  {
+    "image_id": 625,
+    "prediction": "this model is showcasing a floral dress with denim design and holding a bag"
+  },
+  {
+    "image_id": 626,
+    "prediction": "a stylish lady in a black blouse standing against a wall"
+  },
+  {
+    "image_id": 627,
+    "prediction": "close up of a lace shorts in pink"
+  },
+  {
+    "image_id": 628,
+    "prediction": "a woman wearing a v-neck beige shirt"
+  },
+  {
+    "image_id": 629,
+    "prediction": "this model is showcasing a beige blouse with v-neck design and holding a bag"
+  },
+  {
+    "image_id": 630,
+    "prediction": "a stylish lady in a white dress standing against a wall"
+  },
+  {
+    "image_id": 631,
+    "prediction": "close up of a denim shirt in beige"
+  },
+  {
+    "image_id": 632,
+    "prediction": "a woman wearing a v-neck beige shorts"
+  },
+  {
+    "image_id": 633,
+    "prediction": "this model is showcasing a white t-shirt with v-neck design and holding a bag"
+  },
+  {
+    "image_id": 634,
+    "prediction": "a stylish lady in a beige tank top standing against a wall and holding a bag"
+  },
+  {
+    "image_id": 635,
+    "prediction": "close up of a denim t-shirt in striped"
+  },
+  {
+    "image_id": 636,
+    "prediction": "a woman wearing a denim beige shirt"
+  },
+  {
+    "image_id": 637,
+    "prediction": "this model is showcasing a pink shirt with printed design"
+  },
+  {
+    "image_id": 638,
+    "prediction": "a stylish lady in a pink shirt standing against a wall"
+  },
+  {
+    "image_id": 639,
+    "prediction": "close up of a v-neck tank top in striped"
+  },
+  {
+    "image_id": 640,
+    "prediction": "a woman wearing a v-neck red blouse"
+  },
+  {
+    "image_id": 641,
+    "prediction": "this model is showcasing a red shirt with v-neck design"
+  },
+  {
+    "image_id": 642,
+    "prediction": "a stylish lady in a grey blouse standing against a wall"
+  },
+  {
+    "image_id": 643,
+    "prediction": "close up of a lace t-shirt in pink"
+  },
+  {
+    "image_id": 644,
+    "prediction": "a woman wearing a denim white shirt and holding a bag"
+  },
+  {
+    "image_id": 645,
+    "prediction": "this model is showcasing a striped shirt with sleeveless design and holding a bag"
+  },
+  {
+    "image_id": 646,
+    "prediction": "a stylish lady in a pink shorts standing against a wall and holding a bag"
+  },
+  {
+    "image_id": 647,
+    "prediction": "close up of a denim shirt in grey"
+  },
+  {
+    "image_id": 648,
+    "prediction": "a woman wearing a lace white shorts"
+  },
+  {
+    "image_id": 649,
+    "prediction": "this model is showcasing a white dress with v-neck design"
+  },
+  {
+    "image_id": 650,
+    "prediction": "a stylish lady in a floral blouse standing against a wall and holding a bag"
+  },
+  {
+    "image_id": 651,
+    "prediction": "close up of a lace blouse in black"
+  },
+  {
+    "image_id": 652,
+    "prediction": "a woman wearing a lace white shorts"
+  },
+  {
+    "image_id": 653,
+    "prediction": "this model is showcasing a beige skirt with denim design"
+  },
+  {
+    "image_id": 654,
+    "prediction": "a stylish lady in a blue blouse standing against a wall"
+  },
+  {
+    "image_id": 655,
+    "prediction": "close up of a denim tank top in pink"
+  },
+  {
+    "image_id": 656,
+    "prediction": "a woman wearing a v-neck black skirt"
+  },
+  {
+    "image_id": 657,
+    "prediction": "this model is showcasing a black shorts with lace design"
+  },
+  {
+    "image_id": 658,
+    "prediction": "a stylish lady in a blue blouse standing against a wall"
+  },
+  {
+    "image_id": 659,
+    "prediction": "close up of a lace jeans in grey"
+  },
+  {
+    "image_id": 660,
+    "prediction": "a woman wearing a denim red jeans and holding a bag"
+  },
+  {
+    "image_id": 661,
+    "prediction": "this model is showcasing a grey jeans with sleeveless design"
+  },
+  {
+    "image_id": 662,
+    "prediction": "a stylish lady in a grey shorts standing against a wall"
+  },
+  {
+    "image_id": 663,
+    "prediction": "close up of a sleeveless tank top in pink and holding a bag"
+  },
+  {
+    "image_id": 664,
+    "prediction": "a woman wearing a lace pink jeans"
+  },
+  {
+    "image_id": 665,
+    "prediction": "this model is showcasing a striped dress with denim design"
+  },
+  {
+    "image_id": 666,
+    "prediction": "a stylish lady in a grey shirt standing against a wall"
+  },
+  {
+    "image_id": 667,
+    "prediction": "close up of a v-neck shirt in striped"
+  },
+  {
+    "image_id": 668,
+    "prediction": "a woman wearing a denim black tank top"
+  },
+  {
+    "image_id": 669,
+    "prediction": "this model is showcasing a pink dress with sleeveless design"
+  },
+  {
+    "image_id": 670,
+    "prediction": "a stylish lady in a black jeans standing against a wall"
+  },
+  {
+    "image_id": 671,
+    "prediction": "close up of a v-neck shirt in black"
+  },
+  {
+    "image_id": 672,
+    "prediction": "a woman wearing a lace floral t-shirt"
+  },
+  {
+    "image_id": 673,
+    "prediction": "this model is showcasing a beige t-shirt with printed design"
+  },
+  {
+    "image_id": 674,
+    "prediction": "a stylish lady in a blue skirt standing against a wall"
+  },
+  {
+    "image_id": 675,
+    "prediction": "close up of a printed dress in floral"
+  },
+  {
+    "image_id": 676,
+    "prediction": "a woman wearing a sleeveless black t-shirt and holding a bag"
+  },
+  {
+    "image_id": 677,
+    "prediction": "this model is showcasing a floral shirt with sleeveless design"
+  },
+  {
+    "image_id": 678,
+    "prediction": "a stylish lady in a striped jacket standing against a wall"
+  },
+  {
+    "image_id": 679,
+    "prediction": "close up of a v-neck jacket in beige"
+  },
+  {
+    "image_id": 680,
+    "prediction": "a woman wearing a denim floral jacket"
+  },
+  {
+    "image_id": 681,
+    "prediction": "this model is showcasing a blue dress with sleeveless design"
+  },
+  {
+    "image_id": 682,
+    "prediction": "a stylish lady in a white dress standing against a wall and holding a bag"
+  },
+  {
+    "image_id": 683,
+    "prediction": "close up of a printed skirt in floral and holding a bag"
+  },
+  {
+    "image_id": 684,
+    "prediction": "a woman wearing a v-neck red shirt and holding a bag"
+  },
+  {
+    "image_id": 685,
+    "prediction": "this model is showcasing a blue jacket with denim design and holding a bag"
+  },
+  {
+    "image_id": 686,
+    "prediction": "a stylish lady in a floral t-shirt standing against a wall"
+  },
+  {
+    "image_id": 687,
+    "prediction": "close up of a v-neck shirt in red"
+  },
+  {
+    "image_id": 688,
+    "prediction": "a woman wearing a v-neck pink dress"
+  },
+  {
+    "image_id": 689,
+    "prediction": "this model is showcasing a pink tank top with printed design"
+  },
+  {
+    "image_id": 690,
+    "prediction": "a stylish lady in a black t-shirt standing against a wall"
+  },
+  {
+    "image_id": 691,
+    "prediction": "close up of a v-neck tank top in floral and holding a bag"
+  },
+  {
+    "image_id": 692,
+    "prediction": "a woman wearing a printed striped shirt and holding a bag"
+  },
+  {
+    "image_id": 693,
+    "prediction": "this model is showcasing a pink shorts with denim design"
+  },
+  {
+    "image_id": 694,
+    "prediction": "a stylish lady in a blue shorts standing against a wall"
+  },
+  {
+    "image_id": 695,
+    "prediction": "close up of a denim skirt in grey"
+  },
+  {
+    "image_id": 696,
+    "prediction": "a woman wearing a v-neck white jacket"
+  },
+  {
+    "image_id": 697,
+    "prediction": "this model is showcasing a black skirt with lace design"
+  },
+  {
+    "image_id": 698,
+    "prediction": "a stylish lady in a black shirt standing against a wall and holding a bag"
+  },
+  {
+    "image_id": 699,
+    "prediction": "close up of a sleeveless skirt in pink and holding a bag"
+  },
+  {
+    "image_id": 700,
+    "prediction": "a woman wearing a v-neck striped skirt"
+  },
+  {
+    "image_id": 701,
+    "prediction": "this model is showcasing a white shorts with v-neck design"
+  },
+  {
+    "image_id": 702,
+    "prediction": "a stylish lady in a striped shirt standing against a wall"
+  },
+  {
+    "image_id": 703,
+    "prediction": "close up of a printed shorts in pink and holding a bag"
+  },
+  {
+    "image_id": 704,
+    "prediction": "a woman wearing a lace blue shirt and holding a bag"
+  },
+  {
+    "image_id": 705,
+    "prediction": "this model is showcasing a black jeans with v-neck design and holding a bag"
+  },
+  {
+    "image_id": 706,
+    "prediction": "a stylish lady in a floral jeans standing against a wall and holding a bag"
+  },
+  {
+    "image_id": 707,
+    "prediction": "close up of a sleeveless dress in floral and holding a bag"
+  },
+  {
+    "image_id": 708,
+    "prediction": "a woman wearing a sleeveless black jacket"
+  },
+  {
+    "image_id": 709,
+    "prediction": "this model is showcasing a beige dress with v-neck design"
+  },
+  {
+    "image_id": 710,
+    "prediction": "a stylish lady in a striped dress standing against a wall and holding a bag"
+  },
+  {
+    "image_id": 711,
+    "prediction": "close up of a lace dress in white and holding a bag"
+  },
+  {
+    "image_id": 712,
+    "prediction": "a woman wearing a v-neck red shirt"
+  },
+  {
+    "image_id": 713,
+    "prediction": "this model is showcasing a blue shorts with denim design and holding a bag"
+  },
+  {
+    "image_id": 714,
+    "prediction": "a stylish lady in a striped jacket standing against a wall"
+  },
+  {
+    "image_id": 715,
+    "prediction": "close up of a denim jeans in blue"
+  },
+  {
+    "image_id": 716,
+    "prediction": "a woman wearing a lace white jacket and holding a bag"
+  },
+  {
+    "image_id": 717,
+    "prediction": "this model is showcasing a red t-shirt with denim design"
+  },
+  {
+    "image_id": 718,
+    "prediction": "a stylish lady in a floral shorts standing against a wall"
+  },
+  {
+    "image_id": 719,
+    "prediction": "close up of a printed shirt in floral"
+  },
+  {
+    "image_id": 720,
+    "prediction": "a woman wearing a lace grey shorts"
+  },
+  {
+    "image_id": 721,
+    "prediction": "this model is showcasing a beige skirt with sleeveless design and holding a bag"
+  },
+  {
+    "image_id": 722,
+    "prediction": "a stylish lady in a striped skirt standing against a wall and holding a bag"
+  },
+  {
+    "image_id": 723,
+    "prediction": "close up of a lace jeans in beige and holding a bag"
+  },
+  {
+    "image_id": 724,
+    "prediction": "a woman wearing a lace red dress"
+  },
+  {
+    "image_id": 725,
+    "prediction": "this model is showcasing a red blouse with lace design"
+  },
+  {
+    "image_id": 726,
+    "prediction": "a stylish lady in a grey t-shirt standing against a wall and holding a bag"
+  },
+  {
+    "image_id": 727,
+    "prediction": "close up of a lace shorts in white"
+  },
+  {
+    "image_id": 728,
+    "prediction": "a woman wearing a sleeveless pink t-shirt"
+  },
+  {
+    "image_id": 729,
+    "prediction": "this model is showcasing a white jeans with v-neck design and holding a bag"
+  },
+  {
+    "image_id": 730,
+    "prediction": "a stylish lady in a black skirt standing against a wall"
+  },
+  {
+    "image_id": 731,
+    "prediction": "close up of a lace shorts in blue"
+  },
+  {
+    "image_id": 732,
+    "prediction": "a woman wearing a v-neck blue shirt"
+  },
+  {
+    "image_id": 733,
+    "prediction": "this model is showcasing a beige t-shirt with printed design"
+  },
+  {
+    "image_id": 734,
+    "prediction": "a stylish lady in a floral tank top standing against a wall"
+  },
+  {
+    "image_id": 735,
+    "prediction": "close up of a printed blouse in grey and holding a bag"
+  },
+  {
+    "image_id": 736,
+    "prediction": "a woman wearing a printed striped shorts and holding a bag"
+  },
+  {
+    "image_id": 737,
+    "prediction": "this model is showcasing a floral t-shirt with printed design"
+  },
+  {
+    "image_id": 738,
+    "prediction": "a stylish lady in a beige jacket standing against a wall and holding a bag"
+  },
+  {
+    "image_id": 739,
+    "prediction": "close up of a denim dress in floral and holding a bag"
+  },
+  {
+    "image_id": 740,
+    "prediction": "a woman wearing a v-neck grey tank top and holding a bag"
+  },
+  {
+    "image_id": 741,
+    "prediction": "this model is showcasing a pink jacket with sleeveless design"
+  },
+  {
+    "image_id": 742,
+    "prediction": "a stylish lady in a pink tank top standing against a wall and holding a bag"
+  },
+  {
+    "image_id": 743,
+    "prediction": "close up of a v-neck shorts in white"
+  },
+  {
+    "image_id": 744,
+    "prediction": "a woman wearing a lace pink shorts and holding a bag"
+  },
+  {
+    "image_id": 745,
+    "prediction": "this model is showcasing a red dress with sleeveless design"
+  },
+  {
+    "image_id": 746,
+    "prediction": "a stylish lady in a black shorts standing against a wall"
+  },
+  {
+    "image_id": 747,
+    "prediction": "close up of a sleeveless skirt in beige"
+  },
+  {
+    "image_id": 748,
+    "prediction": "a woman wearing a v-neck striped jeans"
+  },
+  {
+    "image_id": 749,
+    "prediction": "this model is showcasing a striped jacket with denim design"
+  },
+  {
+    "image_id": 750,
+    "prediction": "a stylish lady in a striped blouse standing against a wall"
+  },
+  {
+    "image_id": 751,
+    "prediction": "close up of a v-neck shorts in blue and holding a bag"
+  },
+  {
+    "image_id": 752,
+    "prediction": "a woman wearing a lace pink blouse"
+  },
+  {
+    "image_id": 753,
+    "prediction": "this model is showcasing a black jacket with sleeveless design and holding a bag"
+  },
+  {
+    "image_id": 754,
+    "prediction": "a stylish lady in a floral blouse standing against a wall and holding a bag"
+  },
+  {
+    "image_id": 755,
+    "prediction": "close up of a denim jeans in striped"
+  },
+  {
+    "image_id": 756,
+    "prediction": "a woman wearing a sleeveless white dress and holding a bag"
+  },
+  {
+    "image_id": 757,
+    "prediction": "this model is showcasing a pink tank top with v-neck design and holding a bag"
+  },
+  {
+    "image_id": 758,
+    "prediction": "a stylish lady in a pink blouse standing against a wall"
+  },
+  {
+    "image_id": 759,
+    "prediction": "close up of a lace shirt in pink"
+  },
+  {
+    "image_id": 760,
+    "prediction": "a woman wearing a v-neck floral dress"
+  },
+  {
+    "image_id": 761,
+    "prediction": "this model is showcasing a grey jeans with lace design"
+  },
+  {
+    "image_id": 762,
+    "prediction": "a stylish lady in a white skirt standing against a wall"
+  },
+  {
+    "image_id": 763,
+    "prediction": "close up of a v-neck t-shirt in grey"
+  },
+  {
+    "image_id": 764,
+    "prediction": "a woman wearing a denim grey tank top and holding a bag"
+  },
+  {
+    "image_id": 765,
+    "prediction": "this model is showcasing a red skirt with sleeveless design"
+  },
+  {
+    "image_id": 766,
+    "prediction": "a stylish lady in a white jacket standing against a wall"
+  },
+  {
+    "image_id": 767,
+    "prediction": "close up of a lace t-shirt in beige and holding a bag"
+  },
+  {
+    "image_id": 768,
+    "prediction": "a woman wearing a sleeveless red skirt"
+  },
+  {
+    "image_id": 769,
+    "prediction": "this model is showcasing a floral jeans with printed design"
+  },
+  {
+    "image_id": 770,
+    "prediction": "a stylish lady in a grey blouse standing against a wall"
+  },
+  {
+    "image_id": 771,
+    "prediction": "close up of a v-neck jeans in red"
+  },
+  {
+    "image_id": 772,
+    "prediction": "a woman wearing a denim grey tank top"
+  },
+  {
+    "image_id": 773,
+    "prediction": "this model is showcasing a floral blouse with printed design"
+  },
+  {
+    "image_id": 774,
+    "prediction": "a stylish lady in a beige jeans standing against a wall and holding a bag"
+  },
+  {
+    "image_id": 775,
+    "prediction": "close up of a printed blouse in black"
+  },
+  {
+    "image_id": 776,
+    "prediction": "a woman wearing a sleeveless striped shorts and holding a bag"
+  },
+  {
+    "image_id": 777,
+    "prediction": "this model is showcasing a floral blouse with printed design and holding a bag"
+  },
+  {
+    "image_id": 778,
+    "prediction": "a stylish lady in a white shorts standing against a wall"
+  },
+  {
+    "image_id": 779,
+    "prediction": "close up of a sleeveless jeans in black"
+  },
+  {
+    "image_id": 780,
+    "prediction": "a woman wearing a printed striped tank top and holding a bag"
+  },
+  {
+    "image_id": 781,
+    "prediction": "this model is showcasing a blue jeans with sleeveless design and holding a bag"
+  },
+  {
+    "image_id": 782,
+    "prediction": "a stylish lady in a black t-shirt standing against a wall and holding a bag"
+  },
+  {
+    "image_id": 783,
+    "prediction": "close up of a lace tank top in red"
+  },
+  {
+    "image_id": 784,
+    "prediction": "a woman wearing a lace grey blouse"
+  },
+  {
+    "image_id": 785,
+    "prediction": "this model is showcasing a black blouse with v-neck design"
+  },
+  {
+    "image_id": 786,
+    "prediction": "a stylish lady in a striped shorts standing against a wall and holding a bag"
+  },
+  {
+    "image_id": 787,
+    "prediction": "close up of a denim dress in black"
+  },
+  {
+    "image_id": 788,
+    "prediction": "a woman wearing a lace red t-shirt and holding a bag"
+  },
+  {
+    "image_id": 789,
+    "prediction": "this model is showcasing a white t-shirt with lace design"
+  },
+  {
+    "image_id": 790,
+    "prediction": "a stylish lady in a white blouse standing against a wall"
+  },
+  {
+    "image_id": 791,
+    "prediction": "close up of a v-neck t-shirt in striped and holding a bag"
+  },
+  {
+    "image_id": 792,
+    "prediction": "a woman wearing a denim black shirt"
+  },
+  {
+    "image_id": 793,
+    "prediction": "this model is showcasing a striped jeans with denim design"
+  },
+  {
+    "image_id": 794,
+    "prediction": "a stylish lady in a blue jacket standing against a wall"
+  },
+  {
+    "image_id": 795,
+    "prediction": "close up of a sleeveless jacket in grey"
+  },
+  {
+    "image_id": 796,
+    "prediction": "a woman wearing a printed grey shorts"
+  },
+  {
+    "image_id": 797,
+    "prediction": "this model is showcasing a floral jacket with lace design"
+  },
+  {
+    "image_id": 798,
+    "prediction": "a stylish lady in a striped t-shirt standing against a wall"
+  },
+  {
+    "image_id": 799,
+    "prediction": "close up of a lace jeans in grey"
+  },
+  {
+    "image_id": 800,
+    "prediction": "a woman wearing a lace pink t-shirt"
+  },
+  {
+    "image_id": 801,
+    "prediction": "this model is showcasing a black tank top with denim design"
+  },
+  {
+    "image_id": 802,
+    "prediction": "a stylish lady in a blue tank top standing against a wall and holding a bag"
+  },
+  {
+    "image_id": 803,
+    "prediction": "close up of a lace skirt in grey"
+  },
+  {
+    "image_id": 804,
+    "prediction": "a woman wearing a sleeveless blue blouse"
+  },
+  {
+    "image_id": 805,
+    "prediction": "this model is showcasing a red dress with lace design"
+  },
+  {
+    "image_id": 806,
+    "prediction": "a stylish lady in a white shirt standing against a wall and holding a bag"
+  },
+  {
+    "image_id": 807,
+    "prediction": "close up of a denim tank top in grey"
+  },
+  {
+    "image_id": 808,
+    "prediction": "a woman wearing a v-neck pink jacket"
+  },
+  {
+    "image_id": 809,
+    "prediction": "this model is showcasing a striped shirt with lace design"
+  },
+  {
+    "image_id": 810,
+    "prediction": "a stylish lady in a red t-shirt standing against a wall"
+  },
+  {
+    "image_id": 811,
+    "prediction": "close up of a lace shorts in blue"
+  },
+  {
+    "image_id": 812,
+    "prediction": "a woman wearing a sleeveless black skirt and holding a bag"
+  },
+  {
+    "image_id": 813,
+    "prediction": "this model is showcasing a blue dress with v-neck design and holding a bag"
+  },
+  {
+    "image_id": 814,
+    "prediction": "a stylish lady in a beige tank top standing against a wall"
+  },
+  {
+    "image_id": 815,
+    "prediction": "close up of a lace shorts in beige and holding a bag"
+  },
+  {
+    "image_id": 816,
+    "prediction": "a woman wearing a denim blue blouse"
+  },
+  {
+    "image_id": 817,
+    "prediction": "this model is showcasing a blue jacket with sleeveless design and holding a bag"
+  },
+  {
+    "image_id": 818,
+    "prediction": "a stylish lady in a grey dress standing against a wall"
+  },
+  {
+    "image_id": 819,
+    "prediction": "close up of a denim tank top in black and holding a bag"
+  },
+  {
+    "image_id": 820,
+    "prediction": "a woman wearing a printed white dress and holding a bag"
+  },
+  {
+    "image_id": 821,
+    "prediction": "this model is showcasing a striped shorts with lace design and holding a bag"
+  },
+  {
+    "image_id": 822,
+    "prediction": "a stylish lady in a white dress standing against a wall and holding a bag"
+  },
+  {
+    "image_id": 823,
+    "prediction": "close up of a lace jeans in beige"
+  },
+  {
+    "image_id": 824,
+    "prediction": "a woman wearing a printed pink skirt"
+  },
+  {
+    "image_id": 825,
+    "prediction": "this model is showcasing a blue skirt with printed design"
+  },
+  {
+    "image_id": 826,
+    "prediction": "a stylish lady in a pink shorts standing against a wall and holding a bag"
+  },
+  {
+    "image_id": 827,
+    "prediction": "close up of a printed blouse in white"
+  },
+  {
+    "image_id": 828,
+    "prediction": "a woman wearing a printed grey skirt and holding a bag"
+  },
+  {
+    "image_id": 829,
+    "prediction": "this model is showcasing a floral t-shirt with v-neck design"
+  },
+  {
+    "image_id": 830,
+    "prediction": "a stylish lady in a grey blouse standing against a wall"
+  },
+  {
+    "image_id": 831,
+    "prediction": "close up of a lace t-shirt in beige"
+  },
+  {
+    "image_id": 832,
+    "prediction": "a woman wearing a lace black skirt"
+  },
+  {
+    "image_id": 833,
+    "prediction": "this model is showcasing a blue shirt with printed design and holding a bag"
+  },
+  {
+    "image_id": 834,
+    "prediction": "a stylish lady in a red blouse standing against a wall"
+  },
+  {
+    "image_id": 835,
+    "prediction": "close up of a denim jacket in floral"
+  },
+  {
+    "image_id": 836,
+    "prediction": "a woman wearing a v-neck grey shorts"
+  },
+  {
+    "image_id": 837,
+    "prediction": "this model is showcasing a white shorts with v-neck design and holding a bag"
+  },
+  {
+    "image_id": 838,
+    "prediction": "a stylish lady in a grey dress standing against a wall"
+  },
+  {
+    "image_id": 839,
+    "prediction": "close up of a denim shorts in beige"
+  },
+  {
+    "image_id": 840,
+    "prediction": "a woman wearing a denim black tank top"
+  },
+  {
+    "image_id": 841,
+    "prediction": "this model is showcasing a beige jeans with denim design"
+  },
+  {
+    "image_id": 842,
+    "prediction": "a stylish lady in a black t-shirt standing against a wall"
+  },
+  {
+    "image_id": 843,
+    "prediction": "close up of a sleeveless skirt in beige and holding a bag"
+  },
+  {
+    "image_id": 844,
+    "prediction": "a woman wearing a printed white blouse"
+  },
+  {
+    "image_id": 845,
+    "prediction": "this model is showcasing a blue jacket with denim design"
+  },
+  {
+    "image_id": 846,
+    "prediction": "a stylish lady in a striped jeans standing against a wall"
+  },
+  {
+    "image_id": 847,
+    "prediction": "close up of a sleeveless shirt in beige"
+  },
+  {
+    "image_id": 848,
+    "prediction": "a woman wearing a lace blue tank top and holding a bag"
+  },
+  {
+    "image_id": 849,
+    "prediction": "this model is showcasing a blue t-shirt with lace design"
+  },
+  {
+    "image_id": 850,
+    "prediction": "a stylish lady in a beige skirt standing against a wall"
+  },
+  {
+    "image_id": 851,
+    "prediction": "close up of a denim dress in blue"
+  },
+  {
+    "image_id": 852,
+    "prediction": "a woman wearing a denim pink jeans"
+  },
+  {
+    "image_id": 853,
+    "prediction": "this model is showcasing a grey shirt with printed design"
+  },
+  {
+    "image_id": 854,
+    "prediction": "a stylish lady in a blue jacket standing against a wall"
+  },
+  {
+    "image_id": 855,
+    "prediction": "close up of a v-neck skirt in grey"
+  },
+  {
+    "image_id": 856,
+    "prediction": "a woman wearing a lace black dress and holding a bag"
+  },
+  {
+    "image_id": 857,
+    "prediction": "this model is showcasing a pink jacket with lace design"
+  },
+  {
+    "image_id": 858,
+    "prediction": "a stylish lady in a striped shorts standing against a wall"
+  },
+  {
+    "image_id": 859,
+    "prediction": "close up of a lace skirt in floral"
+  },
+  {
+    "image_id": 860,
+    "prediction": "a woman wearing a v-neck blue skirt"
+  },
+  {
+    "image_id": 861,
+    "prediction": "this model is showcasing a white jacket with v-neck design and holding a bag"
+  },
+  {
+    "image_id": 862,
+    "prediction": "a stylish lady in a grey tank top standing against a wall"
+  },
+  {
+    "image_id": 863,
+    "prediction": "close up of a v-neck shirt in pink"
+  },
+  {
+    "image_id": 864,
+    "prediction": "a woman wearing a sleeveless striped t-shirt and holding a bag"
+  },
+  {
+    "image_id": 865,
+    "prediction": "this model is showcasing a floral skirt with sleeveless design"
+  },
+  {
+    "image_id": 866,
+    "prediction": "a stylish lady in a striped jeans standing against a wall"
+  },
+  {
+    "image_id": 867,
+    "prediction": "close up of a lace blouse in red and holding a bag"
+  },
+  {
+    "image_id": 868,
+    "prediction": "a woman wearing a printed pink tank top"
+  },
+  {
+    "image_id": 869,
+    "prediction": "this model is showcasing a white t-shirt with v-neck design and holding a bag"
+  },
+  {
+    "image_id": 870,
+    "prediction": "a stylish lady in a striped dress standing against a wall"
+  },
+  {
+    "image_id": 871,
+    "prediction": "close up of a printed shirt in black and holding a bag"
+  },
+  {
+    "image_id": 872,
+    "prediction": "a woman wearing a denim black skirt"
+  },
+  {
+    "image_id": 873,
+    "prediction": "this model is showcasing a black jeans with printed design"
+  },
+  {
+    "image_id": 874,
+    "prediction": "a stylish lady in a floral tank top standing against a wall"
+  },
+  {
+    "image_id": 875,
+    "prediction": "close up of a lace tank top in black"
+  },
+  {
+    "image_id": 876,
+    "prediction": "a woman wearing a denim white blouse"
+  },
+  {
+    "image_id": 877,
+    "prediction": "this model is showcasing a white blouse with v-neck design"
+  },
+  {
+    "image_id": 878,
+    "prediction": "a stylish lady in a striped t-shirt standing against a wall"
+  },
+  {
+    "image_id": 879,
+    "prediction": "close up of a printed skirt in grey"
+  },
+  {
+    "image_id": 880,
+    "prediction": "a woman wearing a denim white jeans"
+  },
+  {
+    "image_id": 881,
+    "prediction": "this model is showcasing a blue jeans with printed design"
+  },
+  {
+    "image_id": 882,
+    "prediction": "a stylish lady in a beige dress standing against a wall"
+  },
+  {
+    "image_id": 883,
+    "prediction": "close up of a v-neck dress in pink"
+  },
+  {
+    "image_id": 884,
+    "prediction": "a woman wearing a v-neck striped tank top"
+  },
+  {
+    "image_id": 885,
+    "prediction": "this model is showcasing a striped blouse with v-neck design"
+  },
+  {
+    "image_id": 886,
+    "prediction": "a stylish lady in a white skirt standing against a wall"
+  },
+  {
+    "image_id": 887,
+    "prediction": "close up of a denim jacket in grey and holding a bag"
+  },
+  {
+    "image_id": 888,
+    "prediction": "a woman wearing a v-neck pink blouse and holding a bag"
+  },
+  {
+    "image_id": 889,
+    "prediction": "this model is showcasing a floral dress with denim design"
+  },
+  {
+    "image_id": 890,
+    "prediction": "a stylish lady in a striped jacket standing against a wall"
+  },
+  {
+    "image_id": 891,
+    "prediction": "close up of a v-neck blouse in floral and holding a bag"
+  },
+  {
+    "image_id": 892,
+    "prediction": "a woman wearing a denim grey t-shirt and holding a bag"
+  },
+  {
+    "image_id": 893,
+    "prediction": "this model is showcasing a striped jacket with lace design"
+  },
+  {
+    "image_id": 894,
+    "prediction": "a stylish lady in a black shorts standing against a wall"
+  },
+  {
+    "image_id": 895,
+    "prediction": "close up of a lace dress in floral and holding a bag"
+  },
+  {
+    "image_id": 896,
+    "prediction": "a woman wearing a denim striped blouse"
+  },
+  {
+    "image_id": 897,
+    "prediction": "this model is showcasing a red jeans with sleeveless design"
+  },
+  {
+    "image_id": 898,
+    "prediction": "a stylish lady in a grey t-shirt standing against a wall and holding a bag"
+  },
+  {
+    "image_id": 899,
+    "prediction": "close up of a sleeveless jeans in blue and holding a bag"
+  },
+  {
+    "image_id": 900,
+    "prediction": "a woman wearing a lace striped blouse and holding a bag"
+  },
+  {
+    "image_id": 901,
+    "prediction": "this model is showcasing a red blouse with lace design"
+  },
+  {
+    "image_id": 902,
+    "prediction": "a stylish lady in a beige tank top standing against a wall"
+  },
+  {
+    "image_id": 903,
+    "prediction": "close up of a lace shirt in striped"
+  },
+  {
+    "image_id": 904,
+    "prediction": "a woman wearing a denim striped jacket"
+  },
+  {
+    "image_id": 905,
+    "prediction": "this model is showcasing a pink tank top with printed design and holding a bag"
+  },
+  {
+    "image_id": 906,
+    "prediction": "a stylish lady in a grey skirt standing against a wall"
+  },
+  {
+    "image_id": 907,
+    "prediction": "close up of a v-neck blouse in blue and holding a bag"
+  },
+  {
+    "image_id": 908,
+    "prediction": "a woman wearing a v-neck white blouse"
+  },
+  {
+    "image_id": 909,
+    "prediction": "this model is showcasing a black jeans with v-neck design"
+  },
+  {
+    "image_id": 910,
+    "prediction": "a stylish lady in a floral jacket standing against a wall"
+  },
+  {
+    "image_id": 911,
+    "prediction": "close up of a sleeveless shirt in black and holding a bag"
+  },
+  {
+    "image_id": 912,
+    "prediction": "a woman wearing a lace red shirt"
+  },
+  {
+    "image_id": 913,
+    "prediction": "this model is showcasing a floral jeans with denim design and holding a bag"
+  },
+  {
+    "image_id": 914,
+    "prediction": "a stylish lady in a pink tank top standing against a wall"
+  },
+  {
+    "image_id": 915,
+    "prediction": "close up of a lace tank top in floral"
+  },
+  {
+    "image_id": 916,
+    "prediction": "a woman wearing a v-neck red shirt and holding a bag"
+  },
+  {
+    "image_id": 917,
+    "prediction": "this model is showcasing a white jeans with printed design"
+  },
+  {
+    "image_id": 918,
+    "prediction": "a stylish lady in a black shorts standing against a wall and holding a bag"
+  },
+  {
+    "image_id": 919,
+    "prediction": "close up of a sleeveless tank top in red"
+  },
+  {
+    "image_id": 920,
+    "prediction": "a woman wearing a printed floral skirt"
+  },
+  {
+    "image_id": 921,
+    "prediction": "this model is showcasing a black tank top with denim design"
+  },
+  {
+    "image_id": 922,
+    "prediction": "a stylish lady in a beige tank top standing against a wall"
+  },
+  {
+    "image_id": 923,
+    "prediction": "close up of a v-neck t-shirt in pink"
+  },
+  {
+    "image_id": 924,
+    "prediction": "a woman wearing a denim red jacket"
+  },
+  {
+    "image_id": 925,
+    "prediction": "this model is showcasing a white blouse with lace design and holding a bag"
+  },
+  {
+    "image_id": 926,
+    "prediction": "a stylish lady in a grey tank top standing against a wall and holding a bag"
+  },
+  {
+    "image_id": 927,
+    "prediction": "close up of a lace dress in beige and holding a bag"
+  },
+  {
+    "image_id": 928,
+    "prediction": "a woman wearing a denim pink jeans and holding a bag"
+  },
+  {
+    "image_id": 929,
+    "prediction": "this model is showcasing a pink shorts with lace design"
+  },
+  {
+    "image_id": 930,
+    "prediction": "a stylish lady in a pink shirt standing against a wall"
+  },
+  {
+    "image_id": 931,
+    "prediction": "close up of a v-neck shirt in floral"
+  },
+  {
+    "image_id": 932,
+    "prediction": "a woman wearing a lace blue jacket and holding a bag"
+  },
+  {
+    "image_id": 933,
+    "prediction": "this model is showcasing a red jeans with sleeveless design"
+  },
+  {
+    "image_id": 934,
+    "prediction": "a stylish lady in a grey jeans standing against a wall and holding a bag"
+  },
+  {
+    "image_id": 935,
+    "prediction": "close up of a lace shorts in grey"
+  },
+  {
+    "image_id": 936,
+    "prediction": "a woman wearing a denim blue jacket"
+  },
+  {
+    "image_id": 937,
+    "prediction": "this model is showcasing a striped blouse with printed design and holding a bag"
+  },
+  {
+    "image_id": 938,
+    "prediction": "a stylish lady in a white skirt standing against a wall and holding a bag"
+  },
+  {
+    "image_id": 939,
+    "prediction": "close up of a lace jacket in floral"
+  },
+  {
+    "image_id": 940,
+    "prediction": "a woman wearing a lace floral shorts"
+  },
+  {
+    "image_id": 941,
+    "prediction": "this model is showcasing a black tank top with printed design"
+  },
+  {
+    "image_id": 942,
+    "prediction": "a stylish lady in a red shirt standing against a wall and holding a bag"
+  },
+  {
+    "image_id": 943,
+    "prediction": "close up of a denim shirt in striped"
+  },
+  {
+    "image_id": 944,
+    "prediction": "a woman wearing a denim grey dress and holding a bag"
+  },
+  {
+    "image_id": 945,
+    "prediction": "this model is showcasing a white shirt with v-neck design and holding a bag"
+  },
+  {
+    "image_id": 946,
+    "prediction": "a stylish lady in a white t-shirt standing against a wall"
+  },
+  {
+    "image_id": 947,
+    "prediction": "close up of a v-neck jeans in blue"
+  },
+  {
+    "image_id": 948,
+    "prediction": "a woman wearing a v-neck white jacket"
+  },
+  {
+    "image_id": 949,
+    "prediction": "this model is showcasing a grey tank top with denim design and holding a bag"
+  },
+  {
+    "image_id": 950,
+    "prediction": "a stylish lady in a red tank top standing against a wall"
+  },
+  {
+    "image_id": 951,
+    "prediction": "close up of a lace shorts in floral"
+  },
+  {
+    "image_id": 952,
+    "prediction": "a woman wearing a printed white jeans and holding a bag"
+  },
+  {
+    "image_id": 953,
+    "prediction": "this model is showcasing a striped skirt with denim design"
+  },
+  {
+    "image_id": 954,
+    "prediction": "a stylish lady in a beige shorts standing against a wall"
+  },
+  {
+    "image_id": 955,
+    "prediction": "close up of a denim skirt in striped"
+  },
+  {
+    "image_id": 956,
+    "prediction": "a woman wearing a v-neck red skirt"
+  },
+  {
+    "image_id": 957,
+    "prediction": "this model is showcasing a pink blouse with denim design"
+  },
+  {
+    "image_id": 958,
+    "prediction": "a stylish lady in a floral jacket standing against a wall"
+  },
+  {
+    "image_id": 959,
+    "prediction": "close up of a denim skirt in grey"
+  },
+  {
+    "image_id": 960,
+    "prediction": "a woman wearing a v-neck striped dress"
+  },
+  {
+    "image_id": 961,
+    "prediction": "this model is showcasing a white blouse with sleeveless design"
+  },
+  {
+    "image_id": 962,
+    "prediction": "a stylish lady in a white t-shirt standing against a wall"
+  },
+  {
+    "image_id": 963,
+    "prediction": "close up of a v-neck shirt in white and holding a bag"
+  },
+  {
+    "image_id": 964,
+    "prediction": "a woman wearing a v-neck striped blouse"
+  },
+  {
+    "image_id": 965,
+    "prediction": "this model is showcasing a striped shorts with v-neck design"
+  },
+  {
+    "image_id": 966,
+    "prediction": "a stylish lady in a striped blouse standing against a wall and holding a bag"
+  },
+  {
+    "image_id": 967,
+    "prediction": "close up of a denim skirt in floral and holding a bag"
+  },
+  {
+    "image_id": 968,
+    "prediction": "a woman wearing a sleeveless grey t-shirt"
+  },
+  {
+    "image_id": 969,
+    "prediction": "this model is showcasing a floral blouse with printed design"
+  },
+  {
+    "image_id": 970,
+    "prediction": "a stylish lady in a floral shirt standing against a wall and holding a bag"
+  },
+  {
+    "image_id": 971,
+    "prediction": "close up of a sleeveless skirt in white"
+  },
+  {
+    "image_id": 972,
+    "prediction": "a woman wearing a v-neck white shorts"
+  },
+  {
+    "image_id": 973,
+    "prediction": "this model is showcasing a striped dress with denim design and holding a bag"
+  },
+  {
+    "image_id": 974,
+    "prediction": "a stylish lady in a black dress standing against a wall and holding a bag"
+  },
+  {
+    "image_id": 975,
+    "prediction": "close up of a sleeveless skirt in red"
+  },
+  {
+    "image_id": 976,
+    "prediction": "a woman wearing a v-neck beige shirt"
+  },
+  {
+    "image_id": 977,
+    "prediction": "this model is showcasing a grey blouse with lace design and holding a bag"
+  },
+  {
+    "image_id": 978,
+    "prediction": "a stylish lady in a white jacket standing against a wall"
+  },
+  {
+    "image_id": 979,
+    "prediction": "close up of a lace t-shirt in blue"
+  },
+  {
+    "image_id": 980,
+    "prediction": "a woman wearing a lace striped tank top"
+  },
+  {
+    "image_id": 981,
+    "prediction": "this model is showcasing a grey jeans with v-neck design"
+  },
+  {
+    "image_id": 982,
+    "prediction": "a stylish lady in a floral t-shirt standing against a wall"
+  },
+  {
+    "image_id": 983,
+    "prediction": "close up of a sleeveless dress in beige and holding a bag"
+  },
+  {
+    "image_id": 984,
+    "prediction": "a woman wearing a lace white t-shirt and holding a bag"
+  },
+  {
+    "image_id": 985,
+    "prediction": "this model is showcasing a striped tank top with printed design"
+  },
+  {
+    "image_id": 986,
+    "prediction": "a stylish lady in a pink dress standing against a wall"
+  },
+  {
+    "image_id": 987,
+    "prediction": "close up of a lace blouse in pink"
+  },
+  {
+    "image_id": 988,
+    "prediction": "a woman wearing a denim pink jeans and holding a bag"
+  },
+  {
+    "image_id": 989,
+    "prediction": "this model is showcasing a floral shirt with sleeveless design and holding a bag"
+  },
+  {
+    "image_id": 990,
+    "prediction": "a stylish lady in a grey tank top standing against a wall"
+  },
+  {
+    "image_id": 991,
+    "prediction": "close up of a v-neck blouse in floral"
+  },
+  {
+    "image_id": 992,
+    "prediction": "a woman wearing a v-neck red tank top"
+  },
+  {
+    "image_id": 993,
+    "prediction": "this model is showcasing a grey blouse with v-neck design"
+  },
+  {
+    "image_id": 994,
+    "prediction": "a stylish lady in a blue shorts standing against a wall"
+  },
+  {
+    "image_id": 995,
+    "prediction": "close up of a lace jacket in pink"
+  },
+  {
+    "image_id": 996,
+    "prediction": "a woman wearing a denim beige t-shirt"
+  },
+  {
+    "image_id": 997,
+    "prediction": "this model is showcasing a pink dress with sleeveless design"
+  },
+  {
+    "image_id": 998,
+    "prediction": "a stylish lady in a striped blouse standing against a wall"
+  },
+  {
+    "image_id": 999,
+    "prediction": "close up of a denim shorts in pink"
+  }
+]

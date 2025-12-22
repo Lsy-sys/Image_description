@@ -1,0 +1,397 @@
+[
+  {
+    "meta": {
+      "model_type": "cnn_gru",
+      "checkpoint": "checkpoints/cnn_gru/best_model.pth",
+      "split": "test",
+      "timestamp": "2025-12-21 22:28:51",
+      "num_samples": 1000
+    },
+    "results": {
+      "rouge_l": {
+        "scores": [
+          0.275,
+          0.284,
+          0.295,
+          0.282
+        ],
+        "mean": 0.284,
+        "std": 0.007
+      },
+      "cider_d": {
+        "scores": [
+          0.344,
+          0.301,
+          0.315,
+          0.323
+        ],
+        "mean": 0.321,
+        "std": 0.016
+      },
+      "bleu_1": {
+        "scores": [
+          0.494,
+          0.497,
+          0.5,
+          0.514
+        ],
+        "mean": 0.501,
+        "std": 0.008
+      },
+      "bleu_2": {
+        "scores": [
+          0.304,
+          0.301,
+          0.304,
+          0.318
+        ],
+        "mean": 0.307,
+        "std": 0.007
+      },
+      "bleu_3": {
+        "scores": [
+          0.173,
+          0.195,
+          0.171,
+          0.185
+        ],
+        "mean": 0.181,
+        "std": 0.01
+      },
+      "bleu_4": {
+        "scores": [
+          0.074,
+          0.091,
+          0.098,
+          0.076
+        ],
+        "mean": 0.085,
+        "std": 0.01
+      }
+    },
+    "summary": {
+      "rouge_l": 0.284,
+      "cider_d": 0.321,
+      "bleu_1": 0.501,
+      "bleu_2": 0.307,
+      "bleu_3": 0.181,
+      "bleu_4": 0.085
+    }
+  },
+  {
+    "meta": {
+      "model_type": "attn_gru",
+      "checkpoint": "checkpoints/attn_gru/best_model.pth",
+      "split": "test",
+      "timestamp": "2025-12-21 22:28:51",
+      "num_samples": 1000
+    },
+    "results": {
+      "rouge_l": {
+        "scores": [
+          0.323,
+          0.334,
+          0.316,
+          0.316
+        ],
+        "mean": 0.322,
+        "std": 0.007
+      },
+      "cider_d": {
+        "scores": [
+          0.457,
+          0.462,
+          0.451,
+          0.464
+        ],
+        "mean": 0.459,
+        "std": 0.005
+      },
+      "bleu_1": {
+        "scores": [
+          0.517,
+          0.517,
+          0.521,
+          0.515
+        ],
+        "mean": 0.518,
+        "std": 0.002
+      },
+      "bleu_2": {
+        "scores": [
+          0.322,
+          0.317,
+          0.327,
+          0.328
+        ],
+        "mean": 0.324,
+        "std": 0.004
+      },
+      "bleu_3": {
+        "scores": [
+          0.2,
+          0.201,
+          0.19,
+          0.21
+        ],
+        "mean": 0.2,
+        "std": 0.007
+      },
+      "bleu_4": {
+        "scores": [
+          0.098,
+          0.11,
+          0.13,
+          0.099
+        ],
+        "mean": 0.109,
+        "std": 0.013
+      }
+    },
+    "summary": {
+      "rouge_l": 0.322,
+      "cider_d": 0.459,
+      "bleu_1": 0.518,
+      "bleu_2": 0.324,
+      "bleu_3": 0.2,
+      "bleu_4": 0.109
+    }
+  },
+  {
+    "meta": {
+      "model_type": "region_transformer",
+      "checkpoint": "checkpoints/region_transformer/best_model.pth",
+      "split": "test",
+      "timestamp": "2025-12-21 22:28:51",
+      "num_samples": 1000
+    },
+    "results": {
+      "rouge_l": {
+        "scores": [
+          0.404,
+          0.374,
+          0.386,
+          0.396
+        ],
+        "mean": 0.39,
+        "std": 0.011
+      },
+      "cider_d": {
+        "scores": [
+          0.684,
+          0.672,
+          0.67,
+          0.69
+        ],
+        "mean": 0.679,
+        "std": 0.008
+      },
+      "bleu_1": {
+        "scores": [
+          0.601,
+          0.596,
+          0.565,
+          0.59
+        ],
+        "mean": 0.588,
+        "std": 0.014
+      },
+      "bleu_2": {
+        "scores": [
+          0.415,
+          0.397,
+          0.397,
+          0.398
+        ],
+        "mean": 0.402,
+        "std": 0.008
+      },
+      "bleu_3": {
+        "scores": [
+          0.238,
+          0.267,
+          0.256,
+          0.259
+        ],
+        "mean": 0.255,
+        "std": 0.011
+      },
+      "bleu_4": {
+        "scores": [
+          0.149,
+          0.173,
+          0.196,
+          0.164
+        ],
+        "mean": 0.171,
+        "std": 0.017
+      }
+    },
+    "summary": {
+      "rouge_l": 0.39,
+      "cider_d": 0.679,
+      "bleu_1": 0.588,
+      "bleu_2": 0.402,
+      "bleu_3": 0.255,
+      "bleu_4": 0.171
+    }
+  },
+  {
+    "meta": {
+      "model_type": "vit_transformer",
+      "checkpoint": "checkpoints/vit_transformer/best_model.pth",
+      "split": "test",
+      "timestamp": "2025-12-21 22:28:51",
+      "num_samples": 1000
+    },
+    "results": {
+      "rouge_l": {
+        "scores": [
+          0.363,
+          0.352,
+          0.357,
+          0.369
+        ],
+        "mean": 0.36,
+        "std": 0.006
+      },
+      "cider_d": {
+        "scores": [
+          0.621,
+          0.626,
+          0.61,
+          0.611
+        ],
+        "mean": 0.617,
+        "std": 0.007
+      },
+      "bleu_1": {
+        "scores": [
+          0.597,
+          0.6,
+          0.606,
+          0.616
+        ],
+        "mean": 0.605,
+        "std": 0.007
+      },
+      "bleu_2": {
+        "scores": [
+          0.39,
+          0.388,
+          0.405,
+          0.388
+        ],
+        "mean": 0.393,
+        "std": 0.007
+      },
+      "bleu_3": {
+        "scores": [
+          0.226,
+          0.219,
+          0.22,
+          0.224
+        ],
+        "mean": 0.222,
+        "std": 0.003
+      },
+      "bleu_4": {
+        "scores": [
+          0.15,
+          0.162,
+          0.16,
+          0.142
+        ],
+        "mean": 0.153,
+        "std": 0.008
+      }
+    },
+    "summary": {
+      "rouge_l": 0.36,
+      "cider_d": 0.617,
+      "bleu_1": 0.605,
+      "bleu_2": 0.393,
+      "bleu_3": 0.222,
+      "bleu_4": 0.153
+    }
+  },
+  {
+    "meta": {
+      "model_type": "graph_transformer",
+      "checkpoint": "checkpoints/graph_transformer/best_model.pth",
+      "split": "test",
+      "timestamp": "2025-12-21 22:28:51",
+      "num_samples": 1000
+    },
+    "results": {
+      "rouge_l": {
+        "scores": [
+          0.374,
+          0.385,
+          0.368,
+          0.367
+        ],
+        "mean": 0.373,
+        "std": 0.007
+      },
+      "cider_d": {
+        "scores": [
+          0.734,
+          0.729,
+          0.734,
+          0.737
+        ],
+        "mean": 0.734,
+        "std": 0.003
+      },
+      "bleu_1": {
+        "scores": [
+          0.566,
+          0.579,
+          0.586,
+          0.585
+        ],
+        "mean": 0.579,
+        "std": 0.008
+      },
+      "bleu_2": {
+        "scores": [
+          0.418,
+          0.407,
+          0.404,
+          0.402
+        ],
+        "mean": 0.408,
+        "std": 0.006
+      },
+      "bleu_3": {
+        "scores": [
+          0.268,
+          0.26,
+          0.271,
+          0.275
+        ],
+        "mean": 0.269,
+        "std": 0.006
+      },
+      "bleu_4": {
+        "scores": [
+          0.201,
+          0.171,
+          0.165,
+          0.183
+        ],
+        "mean": 0.18,
+        "std": 0.014
+      }
+    },
+    "summary": {
+      "rouge_l": 0.373,
+      "cider_d": 0.734,
+      "bleu_1": 0.579,
+      "bleu_2": 0.408,
+      "bleu_3": 0.269,
+      "bleu_4": 0.18
+    }
+  }
+]
